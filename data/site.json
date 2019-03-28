@@ -2,12 +2,14 @@
   "site": [
     {
       "id":  "elem0",
+      "label": "Home",
       "header":  "header0",
       "background":  "AngularJS-Shield.svg",
       "content":  {}
     },
     {
       "id":  "elem1",
+      "label": "Professional",
       "header":  "header1",
       "background":  "",
       "content":  {
@@ -41,6 +43,7 @@
     {
       "id":  "elem2",
       "header":  "header2",
+      "label": "Personal",
       "background":  "",
       "content":  {
         "article1":  {
@@ -73,6 +76,7 @@
     {
       "id":  "elem3",
       "header":  "header3",
+      "label": "Contact",
       "background":  "",
       "content":  {
         "contactInputFor": "inputEmail",

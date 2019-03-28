@@ -20,7 +20,7 @@
         height:100%;
       }
 
-      .header__main {
+      .header__Main {
         position: fixed;
         top: 10px;
         right: 10px;
@@ -30,7 +30,7 @@
         border: 1px solid #999999;
       }
 
-      .button__main {
+      .button__Main {
         margin: 0 10px;
       }
 
