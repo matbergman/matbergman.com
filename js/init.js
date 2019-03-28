@@ -2,6 +2,12 @@ window.onbeforeunload = function() {
   window.scrollTo(0, 0);
 };
 
+window.onresize = function() {
+  document.querySelector("#elem0").style.transform = `scale(${
+    getAspectRatio() === "horizontal" ? window.innerHeight : window.innerWidth
+  })`;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   showLayout = obj => {
     const wrapper = document.querySelector(".wrapper");
@@ -72,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
       newElem.appendChild(newHeader);
       wrapper.appendChild(newElem);
 
-      // ***** set attributes for rendered elements *****
+      // ***** set interactive attributes for rendered elements *****
 
       // set height of each scroll section
       wrapper.style.height = windowHeight * numberOfPages + "px";
