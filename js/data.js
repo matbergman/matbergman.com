@@ -22,7 +22,7 @@ xhr.send();
 
 // Execute function if data loaded
 xhrSuccess = obj => {
- showLayout(obj.site);
+  showLayout(obj.site);
 };
 
 // Display error if data is not loaded
