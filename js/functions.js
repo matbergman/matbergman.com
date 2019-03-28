@@ -36,16 +36,16 @@ setView = (element, windowHeight) => {
   element.style.height = windowHeight + "px";
 };
 
-animation_0 = (element, wrapperHeight, numberOfPages) => {
+animation_0 = (element) => {
   if (window.scrollY === 0) {
-    getAspectRatio() === "horizontal"
-      ? (scaleValue = window.innerHeight)
-      : (scaleValue = window.innerWidth);
+    scaleValue = 100;
   } else {
-    scaleValue = (wrapperHeight * numberOfPages) / window.scrollY;
+    scaleValue = 100 / (window.scrollY / 10);
   }
-  element.style.transform = `scale(${scaleValue})`;
-};
+  if (scaleValue <= 100) {
+    element.style.transform = `scale(${scaleValue})`;
+    }
+  };
 
 animation_1 = (element, wrapperWidth, articles) => {
   element.style.position = `fixed`;

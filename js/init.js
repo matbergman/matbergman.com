@@ -3,9 +3,7 @@ window.onbeforeunload = function() {
 };
 
 window.onresize = function() {
-  document.querySelector("#elem0").style.transform = `scale(${
-    getAspectRatio() === "horizontal" ? window.innerHeight : window.innerWidth
-  })`;
+  document.querySelector("#elem0").style.transform = `scale(100)`;
 }
 
 
@@ -33,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
       let newHeader = document.createElement("header");
       newHeader.classList.add("view__Header");
       newHeader.innerText = obj[i].header;
+
+      if (obj[i].id === "elem0") {
+        getArticles(Object.entries(obj[i].content), newElem, "scale");
+      }
 
       if (obj[i].id === "elem1") {
         let wipeBg = document.createElement("div");
@@ -89,9 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // elem0 - scalable element size
       if (document.querySelector("#elem0")) {
-        elem0.style.transform = `scale(${
-          getAspectRatio() === "horizontal" ? windowHeight : windowWidth
-        })`;
+        elem0.style.transform = `scale(100)`;
         elem0.classList.add("scale");
       }
 

@@ -5,7 +5,12 @@
       "label": "Home",
       "header":  "header0",
       "background":  "AngularJS-Shield.svg",
-      "content":  {}
+      "content":  {
+        "article1": {
+          "classList": ["scale__Article"],
+          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      }
     },
     {
       "id":  "elem1",
