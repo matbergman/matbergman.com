@@ -1,0 +1,149 @@
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-size: 16px;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      ul,
+      li {
+        display: block;
+        list-style: none;
+        position: relative;
+        margin: 0;
+        padding: 0;
+      }
+
+      svg {
+        width:100%;
+        height:100%;
+      }
+
+      .header__main {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 40;
+        padding: 10px;
+        background-color: #cccccc;
+        border: 1px solid #999999;
+      }
+
+      .button__main {
+        margin: 0 10px;
+      }
+
+      .wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+      }
+
+      .view {
+
+      }
+
+      .view__Header {
+        display: none;
+      }
+
+      #elem0 {
+        position: fixed;
+        top: calc(50%);
+        left: calc(50%);
+        z-index: 10;
+        width: 1px;
+        height: 1px;
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #elem1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+      }
+
+      #elem2 {
+        visibility: hidden;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #ffffff;
+      }
+
+      #elem3 {
+        visibility: hidden;
+        position: relative;
+        width: 100%;
+        background-color: #cccccc;
+      }
+
+      .scale {
+        transition-timing-function: ease-in-out;
+        transition: 0.2s;
+      }
+      
+      .wipe {
+        position: absolute;
+        transition-timing-function: ease-in-out;
+        transition: 0.2s;
+      }
+
+        .wipe__Background {
+          background-color: #cccccc;
+          height: 100%;
+          z-index: 10;
+        }
+
+        .wipe__Article {
+          background-color: #999999;
+          width: 40%;
+          border: 1px solid #000000;
+          z-index: 20;
+        }
+
+        .wipe__Content {
+          font-size: 1em;
+        }
+      
+      .fadeIn {
+        position: relative;
+        display: block;
+        overflow: auto;
+        transition-timing-function: ease-in-out;
+        transition: 0.2s;
+      }
+
+        .fadeIn__Background {
+          position: fixed;
+          top: 0;
+          background-image:url(../images/bg.png);
+          width: 100%;
+          height: 100%;
+        }
+
+        .fadeIn__Article {
+          opacity: 0;
+          background-color: #999999;
+          width: 40%;
+          border: 1px solid #000000;
+          z-index: 20;
+          transform: rotateX(180deg);
+        }
+
+          .fadeIn__Article.fade {
+            opacity: 1;
+            transition-timing-function: ease-in-out;
+            transition: transform 1s opacity 0.4s;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg);
+          }
