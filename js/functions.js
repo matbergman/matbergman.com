@@ -36,7 +36,7 @@ setView = (element, windowHeight) => {
   element.style.height = windowHeight + "px";
 };
 
-animation_0 = (element) => {
+animation_0 = element => {
   if (window.scrollY === 0) {
     scaleValue = 100;
   } else {
@@ -44,8 +44,8 @@ animation_0 = (element) => {
   }
   if (scaleValue <= 100) {
     element.style.transform = `scale(${scaleValue})`;
-    }
-  };
+  }
+};
 
 animation_1 = (element, wrapperWidth, articles) => {
   element.style.position = `fixed`;
@@ -62,17 +62,17 @@ animation_1 = (element, wrapperWidth, articles) => {
 
   wipeBgElem.style.transform = `translateX(${wipeBgElemValue}px)`;
 
-  for (let i = 0; i < articles.length; i++) {
-    let wipeArticlePos = parseInt(articles[i].style.left);
-    let wipeArticleValue = 0 - window.scrollY * articles[i].dataset.speed;
+  let wipeArticlesWrapper = document.querySelector(".wipe__Wrapper");
 
-    let wipeArticleEnd = wipeArticlePos * -1 + wrapperWidth / 2;
-    if (wipeArticleValue <= wipeArticleEnd) {
-      wipeArticleValue = wipeArticleEnd;
-    }
+  let wipeArticlePos = parseInt(wipeArticlesWrapper.style.left);
+  let wipeArticleValue = 0 - window.scrollY * 4;
 
-    articles[i].style.transform = `translateX(${wipeArticleValue}px)`;
+  let wipeArticleEnd = wipeArticlePos * -1 + wrapperWidth / 2;
+  if (wipeArticleValue <= wipeArticleEnd) {
+    wipeArticleValue = wipeArticleEnd;
   }
+
+  wipeArticlesWrapper.style.transform = `translateX(${wipeArticleValue}px)`;
 };
 
 animation_2 = (element, windowHeight) => {

@@ -4,8 +4,7 @@ window.onbeforeunload = function() {
 
 window.onresize = function() {
   document.querySelector("#elem0").style.transform = `scale(100)`;
-}
-
+};
 
 document.addEventListener("DOMContentLoaded", function() {
   showLayout = obj => {
@@ -40,7 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
         let wipeBg = document.createElement("div");
         wipeBg.classList.add("wipe", "wipe__Background");
         newElem.appendChild(wipeBg);
-        getArticles(Object.entries(obj[i].content), newElem, "wipe");
+
+        let wipeWrapper = document.createElement("div");
+        wipeWrapper.classList.add("wipe", "wipe__Wrapper");
+        getArticles(Object.entries(obj[i].content), wipeWrapper, "wipe");
+        newElem.appendChild(wipeWrapper);
       }
 
       if (obj[i].id === "elem2") {
@@ -80,88 +83,77 @@ document.addEventListener("DOMContentLoaded", function() {
       // render elements
       newElem.appendChild(newHeader);
       wrapper.appendChild(newElem);
-
-      // ***** set interactive attributes for rendered elements *****
-
-      // set height of each scroll section
-      wrapper.style.height = windowHeight * numberOfPages + "px";
-      for (let j = 0; j < numberOfPages; j++) {
-        pageBreaks[j] = wrapperHeight * j;
-      }
-
-      // elem0 - scalable element size
-      if (document.querySelector("#elem0")) {
-        elem0.style.transform = `scale(100)`;
-        elem0.classList.add("scale");
-      }
-
-      // elem1 - set wipe elements
-      if (document.querySelector("#elem1")) {
-        const wipeElem = elem1.querySelectorAll(".wipe__Article");
-        const wipeBg = elem1.querySelector(".wipe__Background");
-
-        // Get top position value to vertically align articles
-        let wipeTopPos = 0;
-        for (let i = 0; i < wipeElem.length; i++) {
-          wipeTopPos = wipeTopPos + wipeElem[i].offsetHeight;
-        }
-        wipeTopPos = (windowHeight - wipeTopPos) / (wipeElem.length * 2);
-
-        wipeBg.style.width = `${wrapperWidth}px`;
-        wipeBg.style.left = `-${wrapperWidth}px`;
-        for (let i = 0; i < wipeElem.length; i++) {
-          wipeElem[i].style.left = `${wrapperWidth * 2}px`;
-          wipeElem[i].style.top = `${wipeTopPos}px`;
-          wipeTopPos = wipeTopPos + windowHeight / wipeElem.length;
-        }
-      }
-
-      // scroll event listener
-      window.addEventListener("scroll", function(e) {
-        const wipeElem = elem1.querySelectorAll(".wipe__Article");
-        if (window.scrollY >= pageBreaks[0]) {
-          animation_0(elem0, wrapperHeight, numberOfPages);
-          animation_1(elem1, wrapperWidth, wipeElem);
-          elem0.style.visibility = "visible";
-          elem2.style.visibility = "hidden";
-          elem3.style.visibility = "hidden";
-        }
-
-        if (window.scrollY >= pageBreaks[1]) {
-          animation_2(elem1, wrapperHeight);
-          animation_3(elem2, wrapperHeight);
-          elem0.style.visibility = "hidden";
-          elem2.style.visibility = "visible";
-        }
-
-        if (window.scrollY >= pageBreaks[2]) {
-          animation_4(wrapperHeight);
-          elem3.style.visibility = "visible";
-        }
-
-        if (window.scrollY >= pageBreaks[3]) {
-        }
-      });
     }
 
-      // main navigation
-      const headerMain = document.querySelector(".header__Main");
-      let navMain = document.createElement("nav");
-      navMain.classList.add("nav__Main");
+    // ***** set interactive attributes for rendered elements *****
 
-      for (let i = 0; i < obj.length; i++) {
-        let navButton = document.createElement("button");
-        navButton.classList.add("button__Main");
-        navButton.innerText = obj[i].label;
-        navButton.addEventListener("click", function(e) {
-          window.scrollTo({
-            top: pageBreaks[i],
-            left: 0,
-            behavior: "smooth"
-          });
-        });
-        navMain.appendChild(navButton);
+    // set height of each scroll section
+    wrapper.style.height = windowHeight * numberOfPages + "px";
+    for (let j = 0; j < numberOfPages; j++) {
+      pageBreaks[j] = wrapperHeight * j;
+    }
+
+    // elem0 - scalable element size
+    if (document.querySelector("#elem0")) {
+      elem0.style.transform = `scale(100)`;
+      elem0.classList.add("scale");
+    }
+
+    // elem1 - set wipe elements
+    if (document.querySelector("#elem1")) {
+      const wipeBg = elem1.querySelector(".wipe__Background");
+      wipeBg.style.width = `${wrapperWidth}px`;
+      wipeBg.style.left = `-${wrapperWidth}px`;
+
+      const wipeWrapper = elem1.querySelector(".wipe__Wrapper");
+      wipeWrapper.style.left = `${wrapperWidth * 2}px`;
+    }
+
+    // scroll event listener
+    window.addEventListener("scroll", function(e) {
+      const wipeElem = elem1.querySelectorAll(".wipe__Article");
+      if (window.scrollY >= pageBreaks[0]) {
+        animation_0(elem0, wrapperHeight, numberOfPages);
+        animation_1(elem1, wrapperWidth, wipeElem);
+        elem0.style.visibility = "visible";
+        elem2.style.visibility = "hidden";
+        elem3.style.visibility = "hidden";
       }
-      headerMain.appendChild(navMain);
+
+      if (window.scrollY >= pageBreaks[1]) {
+        animation_2(elem1, wrapperHeight);
+        animation_3(elem2, wrapperHeight);
+        elem0.style.visibility = "hidden";
+        elem2.style.visibility = "visible";
+      }
+
+      if (window.scrollY >= pageBreaks[2]) {
+        animation_4(wrapperHeight);
+        elem3.style.visibility = "visible";
+      }
+
+      if (window.scrollY >= pageBreaks[3]) {
+      }
+    });
+
+    // main navigation
+    const headerMain = document.querySelector(".header__Main");
+    let navMain = document.createElement("nav");
+    navMain.classList.add("nav__Main");
+
+    for (let i = 0; i < obj.length; i++) {
+      let navButton = document.createElement("button");
+      navButton.classList.add("button__Main");
+      navButton.innerText = obj[i].label;
+      navButton.addEventListener("click", function(e) {
+        window.scrollTo({
+          top: pageBreaks[i],
+          left: 0,
+          behavior: "smooth"
+        });
+      });
+      navMain.appendChild(navButton);
+    }
+    headerMain.appendChild(navMain);
   };
 });

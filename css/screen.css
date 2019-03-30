@@ -108,6 +108,7 @@ svg {
     
   }
 
+
 .wipe {
   position: absolute;
   transition-timing-function: ease-in-out;
@@ -118,6 +119,16 @@ svg {
     background-color: #cccccc;
     height: 100%;
     z-index: 10;
+  }
+
+  .wipe__Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
   }
 
   .wipe__Article {
