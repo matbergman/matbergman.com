@@ -127,7 +127,7 @@ svg {
     justify-content: space-evenly;
     flex-wrap: wrap;
     z-index: 20;
-    width: 100%;
+    width: 60%;
     height: 100%;
   }
 
@@ -135,7 +135,8 @@ svg {
     background-color: #999999;
     border: 1px solid #000000;
     z-index: 20;
-    width: 80%;
+    width: auto;
+    margin: 1em;
   }
 
   .wipe__Content {
@@ -184,9 +185,5 @@ svg {
 }          
 
 @media only screen and (min-width: 768px) {
-
-  .wipe__Article {
-    width: 40%;
-  }
 
 }

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Mat Bergman</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.typekit.net/mhn7kil.css">
+
+    <link rel="stylesheet" href="css/screen.css" />
+
+    <style type="text/css">
+    
+    .scale__Content {
+        overflow-y: hidden;
+        width: 100%;
+        height: 100vh;
+        background-image:
+            radial-gradient(
+            circle at bottom left,
+            #0f111e 0%,
+            #0a0918 80%
+            );
+        }
+
+
+        .stripes {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 15%;
+            z-index: 10;
+            transform: rotate(10.5deg);
+            height: 100%;
+        }
+
+        .stripe {
+            visibility: hidden;
+            width: 3px;
+            margin-right: 18px;
+            height: calc(100% + 68px);
+        }
+
+            .stripe--active {
+                visibility: visible;
+            }
+
+            .stripe:last-child {
+                margin-right: 0;
+            }
+
+            .stripe__0 {
+                background-color: #da7317;
+            }
+
+            .stripe__1 {
+                background-color: #da171b;
+            }
+
+            .stripe__2 {
+                background-color: #da7317;
+            }
+
+        .header__Home {
+            display: block;
+            position: absolute;
+            width: 315px;
+            height: 105px;
+            margin: 0;
+            padding: 0;
+            right: -18px;
+            top: calc(33% - 105px);
+            text-indent: -9999px;
+            z-index: 20;
+            background-image:url(../images/logo.svg);
+        }
+
+        .content__Home {
+            font-family: botanika-web, sans-serif;
+            color: #ffffff;
+            position: absolute;
+            top: 33%;
+            margin-right: 2em;
+        }
+
+        .content__Home__Polygon {
+            display: block;
+            shape-outside: polygon(0 0, 10.5% 0, 0 100%);
+            width: 100%;
+            height: 400px;
+            float: left;
+        }
+
+        .content__Home__Text {
+            font-size: 2em;
+        }
+
+
+.scale__Description {
+    position: relative;
+    display: block;
+    z-index: 30;
+    color: #ffffff;
+
+}
+
+.scale__Alignment {
+    shape-outside: polygon(0 0, 100% 100%, 0 100%);
+    float: left;
+    width: 50%;
+    height: 1000px;
+}
+.logo__Test {
+    display: inline-block;
+    writing-mode: vertical-rl;
+text-orientation: upright;
+    width: 315px;
+    height: 105px;
+    margin: 0;
+    padding: 0;
+    text-indent: -9999px;
+    background-image:url(../images/logo.svg);
+}
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="scale__Content">
+
+
+        <div class="stripes">
+
+            <h1 class="header__Home">Mat Bergman</h1>
+
+            <span class="stripe stripe__0" role="presentation"></span>
+            <span class="stripe stripe__1" role="presentation"></span>
+            <span class="stripe stripe__2" role="presentation"></span>
+
+            <span class="stripe stripe__0" role="presentation"></span>
+            <span class="stripe stripe__1" role="presentation"></span>
+            <span class="stripe stripe__2" role="presentation"></span>
+
+            <span class="stripe stripe__0" role="presentation"></span>
+            <span class="stripe stripe__1" role="presentation"></span>
+            <span class="stripe stripe__2" role="presentation"></span>
+            
+            <span class="stripe stripe__0" role="presentation"></span>
+            <span class="stripe stripe__1" role="presentation"></span>
+            <span class="stripe stripe__2" role="presentation"></span>        
+
+            <span class="stripe stripe__0" role="presentation"></span>
+            <span class="stripe stripe__1" role="presentation"></span>
+
+        </div>
+
+        <div class="content__Home">
+            <span class="content__Home__Polygon" role="presentation"></span>
+            <p class="content__Home__Text">
+            I'm Mat. You may know me from my professional work as a software engineer and user experience designer. Or maybe you came across my photography or animation projects. You can also send me a message. 
+            </p>
+        </div>
+
+
+    </div>
+    
+    
+    
+    <script>
+    
+        // init - configure homepage stripes for animation
+        const stripeWrapper = document.querySelector(".stripes");
+        const stripes = document.querySelectorAll(".stripe");
+        const headerHome = document.querySelector(".header__Home");
+        const stripesRect = stripes[stripes.length-1].getBoundingClientRect();
+        const offsetLeft = (stripesRect.left + stripesRect.width)*-1;
+        const startStripeAnimValue = 0.4;
+        const endStripeAnimValue = 1;
+        const stripeAnimValue = (endStripeAnimValue - startStripeAnimValue) / stripes.length;
+        let stripeAnimIncrement = startStripeAnimValue;
+        let stripeAnimArr = [];   
+
+        for (let i=0; i<stripes.length; i++) {
+            stripes[i].style.transform = `translateY(-34px) translateX(${offsetLeft}px)`;
+        }
+
+        // init - configure homepage header
+
+        headerHome.style.transform = `rotate(-10.5deg) translateX(${offsetLeft}px)`;
+
+        // init - configure content
+        let contentHome = document.querySelector(".content__Home");
+        let contentHomeElem = document.querySelector(".content__Home__Text");
+        let contentHomeText = contentHomeElem.innerText.split(/(\s+)/);
+        contentHomeElem.innerText = "";
+
+
+        contentHome.style.left = stripeWrapper.getBoundingClientRect().width/1.1 + "px";
+
+        document.addEventListener("DOMContentLoaded", function() {
+  
+            // stripes - timing values
+            for (let i=0; i<stripes.length; i++) {
+                stripeAnimIncrement = stripeAnimIncrement + stripeAnimValue;
+                stripeAnimArr[i] = stripeAnimIncrement;
+            }
+            stripeAnimArr.reverse()
+
+
+            setTimeout(function(){
+
+                // stripes - animate
+                for (let i=0; i<stripes.length; i++) {
+                    stripes[i].classList.add("stripe--active");
+                    stripes[i].style.transform = "translateY(-34px) translateX(0px)";
+                    stripes[i].style.transition = `${stripeAnimArr[i]}s`;
+                    stripes[i].style.transitionTimingFunction = "ease-out";
+                }
+
+                // header - animate
+                headerHome.style.transform = "rotate(-10.5deg) translateX(0px)";
+                headerHome.style.transition = "0.5s";
+                headerHome.style.transitionDelay = "0.5s";
+                headerHome.style.transitionTimingFunction = "ease-out";
+
+                // content - animate
+                for (let i=0; i<contentHomeText.length; i++) {
+                    setTimeout( function timer(){
+                        contentHomeElem.innerHTML += contentHomeText[i];
+                    }, i*10 );
+                }
+
+
+
+
+            }, 100);
+
+        });
+
+        </script>
+    
+    
+
+  </body>
+
+</html>

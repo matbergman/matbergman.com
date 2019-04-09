@@ -67,7 +67,7 @@ animation_1 = (element, wrapperWidth, articles) => {
   let wipeArticlePos = parseInt(wipeArticlesWrapper.style.left);
   let wipeArticleValue = 0 - window.scrollY * 4;
 
-  let wipeArticleEnd = wipeArticlePos * -1 + wrapperWidth / 2;
+  let wipeArticleEnd = wipeArticlePos * -1 + wrapperWidth * .4;
   if (wipeArticleValue <= wipeArticleEnd) {
     wipeArticleValue = wipeArticleEnd;
   }
