@@ -82,7 +82,15 @@
             position: absolute;
             top: 33%;
             margin-right: 4em;
+            opacity: 0;
+            transition: 0.125s;
+            transition-delay: 0.25s;
+            transition-timing-function: ease-out;
         }
+
+            .content__Home--active {
+                opacity: 1;
+            }
 
         .content__Home__Polygon {
             display: block;
@@ -103,7 +111,6 @@
     display: block;
     z-index: 30;
     color: #ffffff;
-
 }
 
 .scale__Alignment {
@@ -115,7 +122,7 @@
 .logo__Test {
     display: inline-block;
     writing-mode: vertical-rl;
-text-orientation: upright;
+    text-orientation: upright;
     width: 315px;
     height: 105px;
     margin: 0;
@@ -235,12 +242,16 @@ text-orientation: upright;
                 headerHome.style.transitionTimingFunction = "ease-out";
 
                 // content - animate
-                for (let i=0; i<contentHomeString.length; i++) {
-                    setTimeout( function timer(){
-                        contentHomeText.innerHTML += contentHomeString[i];
-                    }, i*10 );
-                }
 
+                setTimeout(function() {
+
+                    contentHome.classList.add("content__Home--active");
+                    for (let i=0; i<contentHomeString.length; i++) {
+                        setTimeout(function(){
+                            contentHomeText.innerHTML += contentHomeString[i];
+                        }, i*10 );
+                    }
+                }, 500);
 
 
 
