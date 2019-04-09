@@ -29,7 +29,7 @@
             display: flex;
             position: fixed;
             top: 0;
-            left: 15%;
+            left: 200px;
             z-index: 10;
             transform: rotate(10.5deg);
             height: 100%;
@@ -39,7 +39,7 @@
             visibility: hidden;
             width: 3px;
             margin-right: 18px;
-            height: calc(100% + 68px);
+            height: calc(100% + 80px);
         }
 
             .stripe--active {
@@ -81,7 +81,7 @@
             color: #ffffff;
             position: absolute;
             top: 33%;
-            margin-right: 2em;
+            margin-right: 4em;
         }
 
         .content__Home__Polygon {
@@ -94,8 +94,9 @@
 
         .content__Home__Text {
             font-size: 2em;
+            line-height: 1.4;
+            letter-spacing: .05em;
         }
-
 
 .scale__Description {
     position: relative;
@@ -129,52 +130,61 @@ text-orientation: upright;
 
   <body>
 
-    <div class="scale__Content">
-
-
-        <div class="stripes">
-
-            <h1 class="header__Home">Mat Bergman</h1>
-
-            <span class="stripe stripe__0" role="presentation"></span>
-            <span class="stripe stripe__1" role="presentation"></span>
-            <span class="stripe stripe__2" role="presentation"></span>
-
-            <span class="stripe stripe__0" role="presentation"></span>
-            <span class="stripe stripe__1" role="presentation"></span>
-            <span class="stripe stripe__2" role="presentation"></span>
-
-            <span class="stripe stripe__0" role="presentation"></span>
-            <span class="stripe stripe__1" role="presentation"></span>
-            <span class="stripe stripe__2" role="presentation"></span>
-            
-            <span class="stripe stripe__0" role="presentation"></span>
-            <span class="stripe stripe__1" role="presentation"></span>
-            <span class="stripe stripe__2" role="presentation"></span>        
-
-            <span class="stripe stripe__0" role="presentation"></span>
-            <span class="stripe stripe__1" role="presentation"></span>
-
-        </div>
-
-        <div class="content__Home">
-            <span class="content__Home__Polygon" role="presentation"></span>
-            <p class="content__Home__Text">
-            I'm Mat. You may know me from my professional work as a software engineer and user experience designer. Or maybe you came across my photography or animation projects. You can also send me a message. 
-            </p>
-        </div>
-
-
-    </div>
+    <div class="scale__Content"></div>
     
     
     
     <script>
     
+        // mock data
+        const mockHomeHeader = "Mat Bergman";
+        const mockHomeContent = "I'm Mat. You may know me from my professional work as a software engineer and user experience designer. Or maybe you came across my photography or animation projects. You can also send me a message."
+        const mockStripeCount = 14;
+
+        // init - create elements
+        const contentElem = document.querySelector(".scale__Content");
+        const stripeWrapper = document.createElement("div");
+        stripeWrapper.classList.add("stripes");
+
+        const headerHome = document.createElement("h1");
+        headerHome.classList.add("header__Home");
+        headerHome.innerText = mockHomeHeader;
+
+        stripeWrapper.appendChild(headerHome);
+
+        let classIncrement = 0;
+        for (let i=0; i<mockStripeCount; i++) {
+            const stripeElem = document.createElement("span");
+            stripeElem.classList.add("stripe", "stripe__"+classIncrement);
+            stripeElem.setAttribute("role", "presentation");
+            stripeWrapper.appendChild(stripeElem);
+
+            if (classIncrement < 2) {
+                classIncrement ++;
+            }
+            else {
+                classIncrement = 0;
+            }
+        }
+        
+        const contentHomeElem = document.createElement("div");
+        contentHomeElem.classList.add("content__Home");
+
+        const contentHomePolygonElem = document.createElement("span");
+        contentHomePolygonElem.classList.add ("content__Home__Polygon");
+        contentHomePolygonElem.setAttribute("role", "presentation");
+
+        const contentHomeTextElem = document.createElement("p");
+        contentHomeTextElem.classList.add("content__Home__Text");
+        
+        contentHomeElem.appendChild(contentHomePolygonElem);
+        contentHomeElem.appendChild(contentHomeTextElem);
+
+        contentElem.appendChild(stripeWrapper);
+        contentElem.appendChild(contentHomeElem);
+
         // init - configure homepage stripes for animation
-        const stripeWrapper = document.querySelector(".stripes");
         const stripes = document.querySelectorAll(".stripe");
-        const headerHome = document.querySelector(".header__Home");
         const stripesRect = stripes[stripes.length-1].getBoundingClientRect();
         const offsetLeft = (stripesRect.left + stripesRect.width)*-1;
         const startStripeAnimValue = 0.4;
@@ -188,17 +198,15 @@ text-orientation: upright;
         }
 
         // init - configure homepage header
-
         headerHome.style.transform = `rotate(-10.5deg) translateX(${offsetLeft}px)`;
 
         // init - configure content
         let contentHome = document.querySelector(".content__Home");
-        let contentHomeElem = document.querySelector(".content__Home__Text");
-        let contentHomeText = contentHomeElem.innerText.split(/(\s+)/);
-        contentHomeElem.innerText = "";
+        let contentHomeText = document.querySelector(".content__Home__Text");
+        let contentHomeString = mockHomeContent.split(/(\s+)/);
 
-
-        contentHome.style.left = stripeWrapper.getBoundingClientRect().width/1.1 + "px";
+        contentHome.style.left = stripeWrapper.getBoundingClientRect().width + "px";
+        contentHome.style.maxWidth = window.innerWidth / 2 + "px";
 
         document.addEventListener("DOMContentLoaded", function() {
   
@@ -227,9 +235,9 @@ text-orientation: upright;
                 headerHome.style.transitionTimingFunction = "ease-out";
 
                 // content - animate
-                for (let i=0; i<contentHomeText.length; i++) {
+                for (let i=0; i<contentHomeString.length; i++) {
                     setTimeout( function timer(){
-                        contentHomeElem.innerHTML += contentHomeText[i];
+                        contentHomeText.innerHTML += contentHomeString[i];
                     }, i*10 );
                 }
 
