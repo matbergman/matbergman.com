@@ -29,10 +29,13 @@
             display: flex;
             position: fixed;
             top: 0;
-            left: 200px;
+            left: 0;
             z-index: 10;
-            transform: rotate(10.5deg);
+            transform: rotate(0deg);
+            width: 100%;
             height: 100%;
+            transition: 0.5s;
+            transition-timing-function: ease-out;            
         }
 
         .stripe {
@@ -44,6 +47,10 @@
 
             .stripe--active {
                 visibility: visible;
+            }
+
+            .stripe:nth-child(n+5) {
+                display: none;
             }
 
             .stripe:last-child {
@@ -65,12 +72,12 @@
         .header__Home {
             display: block;
             position: absolute;
-            width: 315px;
-            height: 105px;
+            width: 275px;
+            height: 92px;
             margin: 0;
             padding: 0;
-            right: -18px;
-            top: calc(33% - 105px);
+            top: 0.5em;
+            right: 0.5em;
             text-indent: -9999px;
             z-index: 20;
             background-image:url(../images/logo.svg);
@@ -79,9 +86,10 @@
         .content__Home {
             font-family: botanika-web, sans-serif;
             color: #ffffff;
-            position: absolute;
-            top: 33%;
-            margin-right: 4em;
+            position: relative;
+            margin-right: 1em;
+            margin-left: 4em;
+            margin-top: 200px;
             opacity: 0;
             transition: 0.125s;
             transition-delay: 0.25s;
@@ -93,43 +101,73 @@
             }
 
         .content__Home__Polygon {
-            display: block;
-            shape-outside: polygon(0 0, 10.5% 0, 0 100%);
+            display: none;
+            shape-outside: polygon(0 0, 80px 0, 0 100%);
             width: 100%;
             height: 400px;
             float: left;
         }
 
         .content__Home__Text {
-            font-size: 2em;
+            font-size: 1.6em;
             line-height: 1.4;
             letter-spacing: .05em;
+            margin: 0;
         }
 
-.scale__Description {
-    position: relative;
-    display: block;
-    z-index: 30;
-    color: #ffffff;
+
+
+
+
+@media only screen and (min-width: 768px) {
+
+    .stripes {
+        width: auto;
+        transform: rotate(10.5deg);
+    }
+
+    .stripe:nth-child(n+5) {
+        display: block;
+    }
+
+    .header__Home {
+        right: -18px;
+        top: calc(33% - 105px);
+        width: 315px;
+            height: 105px;
+    }
+
+    .content__Home {
+        margin-left: -200px;
+        margin-right: 2em;
+        position: absolute;
+        top: 33%;
+        left: 452px;
+        margin-top: 0;
+    }
+
+    .content__Home__Polygon {
+        display: block;
+    }
+
+    .content__Home__Text {
+        font-size: 2em;
+    }
+
 }
 
-.scale__Alignment {
-    shape-outside: polygon(0 0, 100% 100%, 0 100%);
-    float: left;
-    width: 50%;
-    height: 1000px;
+@media only screen and (min-width: 960px) {
+
+    .content__Home {
+        margin-left: 0;
+    }
+
+    .stripes {
+            left: 200px;
+        }
+    
 }
-.logo__Test {
-    display: inline-block;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    width: 315px;
-    height: 105px;
-    margin: 0;
-    padding: 0;
-    text-indent: -9999px;
-    background-image:url(../images/logo.svg);
-}
+
 
     </style>
 
@@ -142,7 +180,12 @@
     
     
     <script>
-    
+
+        window.onresize = function() {
+            layoutUpdate();
+        };
+
+
         // mock data
         const mockHomeHeader = "Mat Bergman";
         const mockHomeContent = "I'm Mat. You may know me from my professional work as a software engineer and user experience designer. Or maybe you came across my photography or animation projects. You can also send me a message."
@@ -174,8 +217,8 @@
             }
         }
         
-        const contentHomeElem = document.createElement("div");
-        contentHomeElem.classList.add("content__Home");
+        const contentHome = document.createElement("div");
+        contentHome.classList.add("content__Home");
 
         const contentHomePolygonElem = document.createElement("span");
         contentHomePolygonElem.classList.add ("content__Home__Polygon");
@@ -184,11 +227,11 @@
         const contentHomeTextElem = document.createElement("p");
         contentHomeTextElem.classList.add("content__Home__Text");
         
-        contentHomeElem.appendChild(contentHomePolygonElem);
-        contentHomeElem.appendChild(contentHomeTextElem);
+        contentHome.appendChild(contentHomePolygonElem);
+        contentHome.appendChild(contentHomeTextElem);
 
         contentElem.appendChild(stripeWrapper);
-        contentElem.appendChild(contentHomeElem);
+        contentElem.appendChild(contentHome);
 
         // init - configure homepage stripes for animation
         const stripes = document.querySelectorAll(".stripe");
@@ -205,15 +248,32 @@
         }
 
         // init - configure homepage header
-        headerHome.style.transform = `rotate(-10.5deg) translateX(${offsetLeft}px)`;
+        isTablet()? headerHome.style.transform = `rotate(-10.5deg) translateX(${offsetLeft}px)` : headerHome.style.transform = `rotate(0deg) translateX(0px)`;  
 
         // init - configure content
-        let contentHome = document.querySelector(".content__Home");
         let contentHomeText = document.querySelector(".content__Home__Text");
         let contentHomeString = mockHomeContent.split(/(\s+)/);
 
-        contentHome.style.left = stripeWrapper.getBoundingClientRect().width + "px";
-        contentHome.style.maxWidth = window.innerWidth / 2 + "px";
+        if (isTablet()) {
+            console.log(stripeWrapper.getBoundingClientRect());
+            // contentHome.style.left = stripeWrapper.getBoundingClientRect().width + "px";
+        }
+
+        else {
+            // contentHome.style.left = "auto";
+        }
+
+        if (isHd()) {
+            contentHome.style.maxWidth = window.innerWidth / 4 + "px";
+        }
+
+        else if (isDesktop()) {
+            contentHome.style.maxWidth = window.innerWidth / 2 + "px";          
+        }
+
+        else {
+            contentHome.style.maxWidth = "none";
+        }
 
         document.addEventListener("DOMContentLoaded", function() {
   
@@ -223,7 +283,6 @@
                 stripeAnimArr[i] = stripeAnimIncrement;
             }
             stripeAnimArr.reverse()
-
 
             setTimeout(function(){
 
@@ -236,15 +295,15 @@
                 }
 
                 // header - animate
-                headerHome.style.transform = "rotate(-10.5deg) translateX(0px)";
-                headerHome.style.transition = "0.5s";
-                headerHome.style.transitionDelay = "0.5s";
-                headerHome.style.transitionTimingFunction = "ease-out";
+                if (isTablet()) {
+                    headerHome.style.transform = "rotate(-10.5deg) translateX(0px)";
+                    headerHome.style.transition = "0.5s";
+                    headerHome.style.transitionDelay = "0.5s";
+                    headerHome.style.transitionTimingFunction = "ease-out";
+                }
 
                 // content - animate
-
                 setTimeout(function() {
-
                     contentHome.classList.add("content__Home--active");
                     for (let i=0; i<contentHomeString.length; i++) {
                         setTimeout(function(){
@@ -253,11 +312,46 @@
                     }
                 }, 500);
 
-
-
             }, 100);
 
         });
+
+
+        function isTablet() {
+            return window.innerWidth >= 768;
+        }
+
+        function isDesktop() {
+            return window.innerWidth >= 960;
+        }
+
+        function isHd() {
+            return window.innerWidth >= 1600;
+        }
+
+        function layoutUpdate() {
+            headerHome.style.transition = "0s";
+            stripeWrapper.style.transition = "0s";
+            contentHome.style.transition = "0s";
+            if (isHd()) {
+                contentHome.style.maxWidth = window.innerWidth / 4 + "px";                
+            }
+            else if (isTablet()) {
+                headerHome.style.transform = `rotate(-10.5deg) translateX(0px)`;
+                // contentHome.style.left = stripeWrapper.getBoundingClientRect().width + "px";
+                contentHome.style.maxWidth = window.innerWidth / 2 + "px";
+            }
+            else {
+                headerHome.style.transform = `rotate(0deg) translateX(0px)`; 
+               // contentHome.style.left = "auto";
+                contentHome.style.maxWidth = "none";
+            }
+
+            if (window.innerHeight >= 1080) {
+
+            }
+
+        }
 
         </script>
     
