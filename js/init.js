@@ -2,16 +2,12 @@ window.onbeforeunload = function() {
   window.scrollTo(0, 0);
 };
 
-window.onload = function() {
-  homeInit();
-}
-
 window.onresize = function() {
   layoutUpdate();
 };
 
 window.onresize = function() {
-  document.querySelector("#elem0").style.transform = `scale(100)`;
+  document.querySelector("#elem0").style.transform = `scale(1)`;
   layoutUpdate();
 };
 
@@ -19,13 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
   showLayout = obj => {
     const wrapper = document.querySelector(".wrapper");
     const imagePath = "images";
-    let windowWidth = window.innerWidth;
     let windowHeight = window.innerHeight;
     let wrapperHeight = wrapper.offsetHeight;
     let wrapperWidth = wrapper.offsetWidth;
     let pageBreaks = [];
     let numberOfPages = obj.length;
-
 
     // ***** generate elements *****
 
@@ -33,31 +27,24 @@ document.addEventListener("DOMContentLoaded", function() {
       let newElem = document.createElement("section");
       newElem.classList.add("view");
       newElem.id = obj[i].id;
-      if (obj.background) {
-        newElem.style.backgroundImage = `url(${imagePath}/${elem.background})`;
-      }
 
-      let newHeader = document.createElement("header");
-      newHeader.classList.add("view__Header");
-      newHeader.innerText = obj[i].header;
-
+      // generate home page "scale" view
       if (obj[i].id === "elem0") {
         getArticles(Object.entries(obj[i].content), newElem, "scale");
-
-
       }
 
+      // generate portfolio page "wipe" view
       if (obj[i].id === "elem1") {
         let wipeBg = document.createElement("div");
         wipeBg.classList.add("wipe", "wipe__Background");
         newElem.appendChild(wipeBg);
-
         let wipeWrapper = document.createElement("div");
         wipeWrapper.classList.add("wipe", "wipe__Wrapper");
-        getArticles(Object.entries(obj[i].content), wipeWrapper, "wipe");
         newElem.appendChild(wipeWrapper);
+        getArticles(Object.entries(obj[i].content), wipeWrapper, "wipe");
       }
 
+      // generate personal page "parallax" view
       if (obj[i].id === "elem2") {
         let scrollBg = document.createElement("div");
         scrollBg.classList.add("fadeIn", "fadeIn__Background");
@@ -65,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         getArticles(Object.entries(obj[i].content), newElem, "fadeIn");
       }
 
+      // generate contact form view
       if (obj[i].id === "elem3") {
         let contactForm = document.createElement("form");
         contactForm.classList.add("form__Contact");
@@ -93,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       // render elements
-      newElem.appendChild(newHeader);
       wrapper.appendChild(newElem);
     }
 
