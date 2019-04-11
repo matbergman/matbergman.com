@@ -10,7 +10,7 @@ getArticles = (articles, newElem, type) => {
   for (let j = 0; j < articles.length; j++) {
     let articleElem = document.createElement("article");
     articleElem.classList.add(...articles[j][1].classList);
-    articleElem.dataset.speed = articles[j][1].speed;
+    articleElem.dataset.speed = articles[j][1].speed? articles[j][1] : "";
     let articleContent = document.createElement("div");
     articleContent.classList.add(`${type}__Content`);
     articleContent.innerText = articles[j][1].text;
@@ -37,12 +37,13 @@ setView = (element, windowHeight) => {
 };
 
 animation_0 = element => {
+  console.log(element);
   if (window.scrollY === 0) {
-    scaleValue = 100;
+    scaleValue = 1;
   } else {
-    scaleValue = 100 / (window.scrollY / 10);
+    scaleValue = 1 / (window.scrollY / 10);
   }
-  if (scaleValue <= 100) {
+  if (scaleValue <= 1) {
     element.style.transform = `scale(${scaleValue})`;
   }
 };
@@ -96,3 +97,175 @@ animation_4 = windowHeight => {
   elementScroll.style.top = windowHeight + "px";
   elementScroll.style.height = windowHeight + "px";
 };
+
+
+homeInit = () => {
+ 
+    // mock data
+    const mockHomeHeader = "Mat Bergman";
+    const mockStripeCount = 14;
+
+
+  const contentElem = document.querySelector(".scale__Content");
+  const stripeWrapper = document.createElement("div");
+  stripeWrapper.classList.add("stripes");
+
+  const headerHome = document.createElement("h1");
+  headerHome.classList.add("header__Home");
+  headerHome.innerText = mockHomeHeader;
+
+  stripeWrapper.appendChild(headerHome);
+
+  let classIncrement = 0;
+  for (let i=0; i<mockStripeCount; i++) {
+      const stripeElem = document.createElement("span");
+      stripeElem.classList.add("stripe", "stripe__"+classIncrement);
+      stripeElem.setAttribute("role", "presentation");
+      stripeWrapper.appendChild(stripeElem);
+
+      if (classIncrement < 2) {
+          classIncrement ++;
+      }
+      else {
+          classIncrement = 0;
+      }
+  }
+
+
+  const contentHome = document.createElement("div");
+  contentHome.classList.add("content__Home");
+
+  const contentHomePolygonElem = document.createElement("span");
+  contentHomePolygonElem.classList.add ("content__Home__Polygon");
+  contentHomePolygonElem.setAttribute("role", "presentation");
+
+  const contentHomeTextElem = document.createElement("p");
+  contentHomeTextElem.classList.add("content__Home__Text");
+  
+  contentHome.appendChild(contentHomePolygonElem);
+  contentHome.appendChild(contentHomeTextElem);
+  
+  contentElem.appendChild(stripeWrapper);
+  contentElem.appendChild(contentHome);
+
+
+
+
+
+
+
+    // init - configure homepage stripes for animation
+    const stripes = document.querySelectorAll(".stripe");
+    // const headerHome = document.querySelector(".header__Home");
+
+    const stripesRect = stripes[stripes.length-1].getBoundingClientRect();
+    const offsetLeft = (stripesRect.left + stripesRect.width)*-1;
+    const startStripeAnimValue = 0.4;
+    const endStripeAnimValue = 1;
+    const stripeAnimValue = (endStripeAnimValue - startStripeAnimValue) / stripes.length;
+    let stripeAnimIncrement = startStripeAnimValue;
+    let stripeAnimArr = [];   
+
+    const mockHomeContent = "I'm Mat. You may know me from my professional work as a software engineer and user experience designer. Or maybe you came across my personal photography or animation projects. You can also contact me by email and Twitter."
+
+
+
+    for (let i=0; i<stripes.length; i++) {
+        stripes[i].style.transform = `translateY(-34px) translateX(${offsetLeft}px)`;
+    }
+
+  // stripes - timing values
+  for (let i=0; i<stripes.length; i++) {
+      stripeAnimIncrement = stripeAnimIncrement + stripeAnimValue;
+      stripeAnimArr[i] = stripeAnimIncrement;
+  }
+  stripeAnimArr.reverse()
+
+
+       // init - configure homepage header
+       isTablet()? headerHome.style.transform = `rotate(-10.5deg) translateX(${offsetLeft}px)` : headerHome.style.transform = `rotate(0deg) translateX(0px)`;  
+
+       // init - configure content
+       // let contentHome = document.querySelector(".content__Home");
+       let contentHomeText = document.querySelector(".content__Home__Text");
+       let contentHomeString = mockHomeContent.split(/(\s+)/);
+
+       if (isHd()) {
+           contentHome.style.maxWidth = window.innerWidth / 4 + "px";
+       }
+
+       else if (isDesktop()) {
+           contentHome.style.maxWidth = window.innerWidth / 2 + "px";          
+       }
+
+       else {
+           contentHome.style.maxWidth = "none";
+       }
+
+
+
+  setTimeout(function(){
+
+    // stripes - animate
+      for (let i=0; i<stripes.length; i++) {
+          stripes[i].classList.add("stripe--active");
+          stripes[i].style.transform = "translateY(-34px) translateX(0px)";
+          stripes[i].style.transition = `${stripeAnimArr[i]}s`;
+          stripes[i].style.transitionTimingFunction = "ease-out";
+      }
+
+      // header - animate
+      if (isTablet()) {
+          headerHome.style.transform = "rotate(-10.5deg) translateX(0px)";
+          headerHome.style.transition = "0.5s";
+          headerHome.style.transitionDelay = "0.5s";
+          headerHome.style.transitionTimingFunction = "ease-out";
+      }
+
+      // content - animate
+      setTimeout(function() {
+          contentHome.classList.add("content__Home--active");
+          for (let i=0; i<contentHomeString.length; i++) {
+              setTimeout(function(){
+                  contentHomeText.innerHTML += contentHomeString[i];
+              }, i*10 );
+          }
+      }, 500);
+
+  }, 100);
+
+}
+
+function isTablet() {
+  return window.innerWidth >= 768;
+}
+
+function isDesktop() {
+  return window.innerWidth >= 960;
+}
+
+function isHd() {
+  return window.innerWidth >= 1600;
+}
+
+function layoutUpdate() {
+  headerHome.style.transition = "0s";
+  stripeWrapper.style.transition = "0s";
+  contentHome.style.transition = "0s";
+  if (isHd()) {
+      contentHome.style.maxWidth = window.innerWidth / 4 + "px";                
+  }
+  else if (isTablet()) {
+      headerHome.style.transform = `rotate(-10.5deg) translateX(0px)`;
+      contentHome.style.maxWidth = window.innerWidth / 2 + "px";
+  }
+  else {
+      headerHome.style.transform = `rotate(0deg) translateX(0px)`; 
+      contentHome.style.maxWidth = "none";
+  }
+
+  if (window.innerHeight >= 1080) {
+
+  }
+
+}

@@ -3,12 +3,12 @@
     {
       "id":  "elem0",
       "label": "Home",
-      "header":  "header0",
-      "background":  "AngularJS-Shield.svg",
+      "header":  "Mat Bergman",
+      "stripeCount":  14,
       "content":  {
         "article1": {
           "classList": ["scale__Article"],
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "text":  "I'm Mat. You may know me from my professional work as a software engineer and user experience designer. Or maybe you came across my personal photography or animation projects. You can also contact me by email and Twitter."
         }
       }
     },

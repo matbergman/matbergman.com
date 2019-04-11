@@ -2,8 +2,17 @@ window.onbeforeunload = function() {
   window.scrollTo(0, 0);
 };
 
+window.onload = function() {
+  homeInit();
+}
+
+window.onresize = function() {
+  layoutUpdate();
+};
+
 window.onresize = function() {
   document.querySelector("#elem0").style.transform = `scale(100)`;
+  layoutUpdate();
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let wrapperWidth = wrapper.offsetWidth;
     let pageBreaks = [];
     let numberOfPages = obj.length;
+
 
     // ***** generate elements *****
 
@@ -33,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (obj[i].id === "elem0") {
         getArticles(Object.entries(obj[i].content), newElem, "scale");
+
+
       }
 
       if (obj[i].id === "elem1") {
@@ -95,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // elem0 - scalable element size
     if (document.querySelector("#elem0")) {
-      elem0.style.transform = `scale(100)`;
+      elem0.style.transform = `scale(1)`;
       elem0.classList.add("scale");
     }
 
