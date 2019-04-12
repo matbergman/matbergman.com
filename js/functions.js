@@ -8,12 +8,12 @@ getAspectRatio = () => {
 
 getArticles = (articles, newElem, type) => {
   for (let j = 0; j < articles.length; j++) {
-    let articleElem = document.createElement("article");
+    const articleElem = document.createElement("article");
     articleElem.classList.add(...articles[j][1].classList);
-    articleElem.dataset.speed = articles[j][1].speed ? articles[j][1] : "";
-    let articleContent = document.createElement("div");
+    articleElem.dataset.speed = articles[j][1].speed ? articles[j][1].speed : "";
+    const articleContent = document.createElement("div");
     articleContent.classList.add(`${type}__Content`);
-    if (j > 0) {
+    if (articles[j][1] !== "scale__Article") {
       articleContent.innerHTML = articles[j][1].text;
     }
     articleElem.appendChild(articleContent);
@@ -22,7 +22,7 @@ getArticles = (articles, newElem, type) => {
 };
 
 isInViewport = elem => {
-  let bounding = elem.getBoundingClientRect();
+  const bounding = elem.getBoundingClientRect();
   return (
     bounding.top >= 0 &&
     bounding.left >= 0 &&
@@ -39,6 +39,7 @@ setView = (element, windowHeight) => {
 };
 
 animation_0 = element => {
+  document.querySelector(".wrapper").style.backgroundColor = "#02ca98";
   if (window.scrollY === 0) {
     scaleValue = 1;
   } else {
@@ -54,8 +55,8 @@ animation_1 = (element, wrapperWidth, articles) => {
   element.style.top = 0;
   element.style.height = "100%";
 
-  let wipeBgElem = element.querySelector(".wipe__Background");
-  let wipeBgElemPos = parseInt(wipeBgElem.style.left);
+  const wipeBgElem = element.querySelector(".wipe__Background");
+  const wipeBgElemPos = parseInt(wipeBgElem.style.left);
   let wipeBgElemValue =
     (wipeBgElemPos + (wrapperWidth - window.scrollY * 2)) * -1;
   if (wipeBgElemValue >= wrapperWidth) {
@@ -64,7 +65,7 @@ animation_1 = (element, wrapperWidth, articles) => {
 
   wipeBgElem.style.transform = `translateX(${wipeBgElemValue}px)`;
 
-  let wipeArticlesWrapper = document.querySelector(".wipe__Wrapper");
+  const wipeArticlesWrapper = document.querySelector(".wipe__Content");
 
   let wipeArticlePos = parseInt(wipeArticlesWrapper.style.left);
   let wipeArticleValue = 0 - window.scrollY * 4;
@@ -84,7 +85,7 @@ animation_2 = (element, windowHeight) => {
 
 animation_3 = (element, windowHeight) => {
   setView(element, windowHeight);
-  let fadeInArticles = element.querySelectorAll(".fadeIn__Article");
+  const fadeInArticles = element.querySelectorAll(".fadeIn__Article");
   for (let i = 0; i < fadeInArticles.length; i++) {
     fadeInArticles[i].classList.remove("fade");
     if (isInViewport(fadeInArticles[i])) {
@@ -223,6 +224,10 @@ function isHd() {
 }
 
 function layoutUpdate() {
+  const headerHome = document.querySelector(".header__Home");
+  const stripeWrapper = document.querySelector(".stripes");
+  const contentHome = document.querySelector(".content__Home")
+
   headerHome.style.transition = "0s";
   stripeWrapper.style.transition = "0s";
   contentHome.style.transition = "0s";

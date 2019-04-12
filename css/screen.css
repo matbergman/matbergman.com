@@ -19,11 +19,12 @@ li {
 }
 
 svg {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 .header__Main {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -32,7 +33,7 @@ svg {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid #da7317;
-  border-radius: .25em;
+  border-radius: 0.25em;
 }
 
 .button__Main {
@@ -50,11 +51,7 @@ svg {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #efeee1;
-}
-
-.view {
-
+  background-color: #0a0918;
 }
 
 .view__Header {
@@ -63,18 +60,12 @@ svg {
 
 #elem0 {
   position: fixed;
-  /* top: calc(50%);
-  left: calc(50%); */
   z-index: 10;
-  /* width: 1%;
-  height: 1%; */
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #cccccc;
-  background-repeat: no-repeat;
-  background-size: cover;
+  overflow: hidden;
 }
 
 #elem1 {
@@ -106,20 +97,14 @@ svg {
 .scale {
   transition-timing-function: ease-in-out;
   transition: 0.2s;
-  }
+}
 
-  .scale__Article {
-    display: flex;
-    align-items: center;
-    /* font-size: .035em; */
-    line-height: 2em;
-    height: 100%;
-  }
-
-  .scale__Content {
-    
-  }
-
+.scale__Article {
+  display: flex;
+  align-items: center;
+  line-height: 2em;
+  height: 100%;
+}
 
 .wipe {
   position: absolute;
@@ -127,33 +112,33 @@ svg {
   transition: 0.2s;
 }
 
-  .wipe__Background {
-    background-color: #cccccc;
-    height: 100%;
-    z-index: 10;
-  }
+.wipe__Background {
+  background-color: #cccccc;
+  height: 100%;
+  z-index: 10;
+}
 
-  .wipe__Wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    z-index: 20;
-    width: 60%;
-    height: 100%;
-  }
+.wipe__Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  z-index: 20;
+  width: 60%;
+  height: 100%;
+}
 
-  .wipe__Article {
-    background-color: #999999;
-    border: 1px solid #000000;
-    z-index: 20;
-    width: auto;
-    margin: 1em;
-  }
+.wipe__Article {
+  background-color: #999999;
+  border: 1px solid #000000;
+  z-index: 20;
+  width: auto;
+  margin: 1em;
+}
 
-  .wipe__Content {
-    font-size: 1em;
-  }
+.wipe__Content {
+  font-size: 1em;
+}
 
 .fadeIn {
   position: relative;
@@ -163,30 +148,30 @@ svg {
   transition: 0.2s;
 }
 
-  .fadeIn__Background {
-    position: fixed;
-    top: 0;
-    background-image:url(../images/bg.png);
-    width: 100%;
-    height: 100%;
-  }
+.fadeIn__Background {
+  position: fixed;
+  top: 0;
+  background-image: url(../images/bg.png);
+  width: 100%;
+  height: 100%;
+}
 
-  .fadeIn__Article {
-    opacity: 0;
-    background-color: #999999;
-    width: 40%;
-    border: 1px solid #000000;
-    z-index: 20;
-    transform: rotateX(180deg);
-  }
+.fadeIn__Article {
+  opacity: 0;
+  background-color: #999999;
+  width: 40%;
+  border: 1px solid #000000;
+  z-index: 20;
+  transform: rotateX(180deg);
+}
 
-    .fadeIn__Article.fade {
-      opacity: 1;
-      transition-timing-function: ease-in-out;
-      transition: transform 1s opacity 0.4s;
-      transform-style: preserve-3d;
-      transform: rotateX(0deg);
-    }
+.fadeIn__Article.fade {
+  opacity: 1;
+  transition-timing-function: ease-in-out;
+  transition: transform 1s opacity 0.4s;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+}
 
 .form__Contact {
   display: flex;
@@ -194,8 +179,10 @@ svg {
   flex-direction: column;
   align-items: baseline;
   justify-content: center;
-}          
+}
 
 @media only screen and (min-width: 768px) {
-
+  .header__Main {
+    display: block;
+  }
 }

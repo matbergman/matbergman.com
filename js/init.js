@@ -3,10 +3,6 @@ window.onbeforeunload = function() {
 };
 
 window.onresize = function() {
-  layoutUpdate();
-};
-
-window.onresize = function() {
   document.querySelector("#elem0").style.transform = `scale(1)`;
   layoutUpdate();
 };
@@ -39,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         wipeBg.classList.add("wipe", "wipe__Background");
         newElem.appendChild(wipeBg);
         let wipeWrapper = document.createElement("div");
-        wipeWrapper.classList.add("wipe", "wipe__Wrapper");
+        wipeWrapper.classList.add("wipe", "wipe__Content");
         newElem.appendChild(wipeWrapper);
         getArticles(Object.entries(obj[i].content), wipeWrapper, "wipe");
       }
@@ -104,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
       wipeBg.style.width = `${wrapperWidth}px`;
       wipeBg.style.left = `-${wrapperWidth}px`;
 
-      const wipeWrapper = elem1.querySelector(".wipe__Wrapper");
+      const wipeWrapper = elem1.querySelector(".wipe__Content");
       wipeWrapper.style.left = `${wrapperWidth * 2}px`;
     }
 
