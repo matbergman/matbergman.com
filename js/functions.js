@@ -1,3 +1,6 @@
+const imagePath = "images";
+let contentWipeIncrement = 0;
+
 getAspectRatio = () => {
   if (window.innerWidth > window.innerHeight) {
     return "horizontal";
@@ -6,17 +9,39 @@ getAspectRatio = () => {
   }
 };
 
-getArticles = (articles, newElem, type) => {
+getHomeContent = (articles, newElem, type) => {
   for (let j = 0; j < articles.length; j++) {
     const articleElem = document.createElement("article");
     articleElem.classList.add(...articles[j][1].classList);
-    articleElem.dataset.speed = articles[j][1].speed ? articles[j][1].speed : "";
     const articleContent = document.createElement("div");
     articleContent.classList.add(`${type}__Content`);
-    if (articles[j][1] !== "scale__Article") {
-      articleContent.innerHTML = articles[j][1].text;
-    }
     articleElem.appendChild(articleContent);
+    newElem.appendChild(articleElem);
+  }
+};
+
+getCardContent = (articles, newElem, type) => {
+  for (let j = 0; j < articles.length; j++) {
+    const articleElem = document.createElement("article");
+    articleElem.classList.add(...articles[j][1].classList);
+    articleElem.dataset.speed = articles[j][1].speed
+      ? articles[j][1].speed
+      : null;
+
+    const articleContent = document.createElement("div");
+    articleContent.classList.add(`${type}__Content`);
+    articles[j][1].text
+      ? (articleContent.innerHTML = articles[j][1].text)
+      : null;
+
+    const articleThumbnail = document.createElement("img");
+    articleThumbnail.classList.add("article__Thumbnail");
+    articles[j][1].thumbnail
+      ? (articleThumbnail.src = `${imagePath}/${articles[j][1].thumbnail}`)
+      : null;
+
+    articleElem.appendChild(articleContent);
+    articleElem.appendChild(articleThumbnail);
     newElem.appendChild(articleElem);
   }
 };
@@ -39,34 +64,73 @@ setView = (element, windowHeight) => {
 };
 
 animation_0 = element => {
-  document.querySelector(".wrapper").style.backgroundColor = "#02ca98";
   if (window.scrollY === 0) {
     scaleValue = 1;
   } else {
-    scaleValue = 1 / (window.scrollY / 10);
+    scaleValue = 1 / (window.scrollY / 5);
   }
   if (scaleValue <= 1) {
     element.style.transform = `scale(${scaleValue})`;
+    element.style.opacity = 1;
   }
+  if (scaleValue <= 0.025) {
+    element.style.opacity = scaleValue;
+  }
+
+
 };
 
-animation_1 = (element, wrapperWidth, articles) => {
+animation_1 = (obj, element, wrapperWidth) => {
   element.style.position = `fixed`;
   element.style.top = 0;
   element.style.height = "100%";
 
-  const wipeBgElem = element.querySelector(".wipe__Background");
-  const wipeBgElemPos = parseInt(wipeBgElem.style.left);
-  let wipeBgElemValue =
-    (wipeBgElemPos + (wrapperWidth - window.scrollY * 2)) * -1;
-  if (wipeBgElemValue >= wrapperWidth) {
-    wipeBgElemValue = wrapperWidth;
+  const wipeElem0 = element.querySelector(".wipeElem__0");
+  let wipeElem0Pos = wipeElem0.offsetLeft + wipeElem0.offsetWidth;
+  let wipeElem0Value = wipeElem0Pos * -1 + window.scrollY;
+  const contentWipeText = document.querySelector(".wipe__Description");
+
+  if (wipeElem0Value >= 0) {
+    wipeElem0Value = 0;
+    
+    // content - animate
+    if (contentWipeIncrement === 0) {
+      contentWipeText.innerHTML = "";
+      let contentWipeString = obj.intro.split(/(\s+)/);
+      drawText(contentWipeString, contentWipeText);
+      contentWipeIncrement++;
+    }
   }
 
-  wipeBgElem.style.transform = `translateX(${wipeBgElemValue}px)`;
+  // content - hide on scrollup
+  if (wipeElem0Value < 0) {
+      contentWipeText.classList.remove("drawText--Active");
+      contentWipeIncrement = 0;
+  }
 
-  const wipeArticlesWrapper = document.querySelector(".wipe__Content");
+  // animate - scale homepage view
+  wipeElem0.style.transform = `translateX(${wipeElem0Value}px) rotate(11deg) scaleY(100)`;
 
+  const wipeElem1 = element.querySelector(".wipeElem__1");
+  let wipeElem1Pos = wipeElem1.offsetHeight;
+  let wipeElem1Value = wipeElem1Pos - window.scrollY;
+  if (wipeElem1Value <= 0) {
+    wipeElem1Value = 0;
+  }
+
+  // animate - wipe views
+  wipeElem1.style.transform = `translateY(${wipeElem1Value}px)`;
+
+  const wipeElem2 = element.querySelector(".wipeElem__2");
+  let wipeElem2Pos = window.innerWidth;
+  let wipeElem2Value = wipeElem2Pos - window.scrollY * 2;
+  if (wipeElem2Value <= 0) {
+    wipeElem2Value = 0;
+  }
+
+  wipeElem2.style.transform = `translateX(${wipeElem2Value}px) rotate(-38deg) scaleX(100)`;
+
+  const wipeArticlesWrapper = document.querySelector(".wipe__Wrapper");
   let wipeArticlePos = parseInt(wipeArticlesWrapper.style.left);
   let wipeArticleValue = 0 - window.scrollY * 4;
 
@@ -76,6 +140,8 @@ animation_1 = (element, wrapperWidth, articles) => {
   }
 
   wipeArticlesWrapper.style.transform = `translateX(${wipeArticleValue}px)`;
+
+
 };
 
 animation_2 = (element, windowHeight) => {
@@ -99,6 +165,18 @@ animation_4 = windowHeight => {
   elementScroll.style.top = windowHeight + "px";
   elementScroll.style.height = windowHeight + "px";
 };
+
+drawText = (str, elem) => {
+  setTimeout(function() {
+    elem.classList.add("drawText--Active");
+    for (let i = 0; i < str.length; i++) {
+      setTimeout(function() {
+        elem.innerHTML += str[i];
+      }, i * 10);
+    }
+  }, 500);
+}
+
 
 homeInit = obj => {
   const contentElem = document.querySelector(".scale__Content");
@@ -133,7 +211,7 @@ homeInit = obj => {
   contentHomePolygonElem.setAttribute("role", "presentation");
 
   const contentHomeTextElem = document.createElement("p");
-  contentHomeTextElem.classList.add("content__Home__Text");
+  contentHomeTextElem.classList.add("content__Home__Text", "drawText");
 
   contentHome.appendChild(contentHomePolygonElem);
   contentHome.appendChild(contentHomeTextElem);
@@ -165,14 +243,10 @@ homeInit = obj => {
   }
   stripeAnimArr.reverse();
 
-  // init - configure homepage header
+  // header - config
   isTablet()
     ? (headerHome.style.transform = `rotate(-10.5deg) translateX(${offsetLeft}px)`)
     : (headerHome.style.transform = `rotate(0deg) translateX(0px)`);
-
-  // init - configure content
-  let contentHomeText = document.querySelector(".content__Home__Text");
-  let contentHomeString = obj.content.article1.text.split(/(\s+)/);
 
   if (isHd()) {
     contentHome.style.maxWidth = window.innerWidth / 4 + "px";
@@ -200,14 +274,10 @@ homeInit = obj => {
     }
 
     // content - animate
-    setTimeout(function() {
-      contentHome.classList.add("content__Home--active");
-      for (let i = 0; i < contentHomeString.length; i++) {
-        setTimeout(function() {
-          contentHomeText.innerHTML += contentHomeString[i];
-        }, i * 10);
-      }
-    }, 500);
+    let contentHomeText = document.querySelector(".content__Home__Text");
+    let contentHomeString = obj.content.article1.text.split(/(\s+)/);
+    drawText(contentHomeString, contentHomeText);
+
   }, 100);
 };
 
@@ -226,7 +296,7 @@ function isHd() {
 function layoutUpdate() {
   const headerHome = document.querySelector(".header__Home");
   const stripeWrapper = document.querySelector(".stripes");
-  const contentHome = document.querySelector(".content__Home")
+  const contentHome = document.querySelector(".content__Home");
 
   headerHome.style.transition = "0s";
   stripeWrapper.style.transition = "0s";

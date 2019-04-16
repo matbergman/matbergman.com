@@ -10,7 +10,6 @@ window.onresize = function() {
 document.addEventListener("DOMContentLoaded", function() {
   showLayout = obj => {
     const wrapper = document.querySelector(".wrapper");
-    const imagePath = "images";
     let windowHeight = window.innerHeight;
     let wrapperHeight = wrapper.offsetHeight;
     let wrapperWidth = wrapper.offsetWidth;
@@ -20,32 +19,60 @@ document.addEventListener("DOMContentLoaded", function() {
     // ***** generate elements *****
 
     for (let i = 0; i < obj.length; i++) {
-      let newElem = document.createElement("section");
-      newElem.classList.add("view");
-      newElem.id = obj[i].id;
+      const newSection = document.createElement("section");
+      newSection.classList.add("view");
+      newSection.id = obj[i].id;
 
       // generate home page "scale" view
       if (obj[i].id === "elem0") {
-        getArticles(Object.entries(obj[i].content), newElem, "scale");
+        getHomeContent(Object.entries(obj[i].content), newSection, "scale");
       }
 
       // generate portfolio page "wipe" view
       if (obj[i].id === "elem1") {
-        let wipeBg = document.createElement("div");
+        const wipeBg = document.createElement("div");
         wipeBg.classList.add("wipe", "wipe__Background");
-        newElem.appendChild(wipeBg);
-        let wipeWrapper = document.createElement("div");
-        wipeWrapper.classList.add("wipe", "wipe__Content");
-        newElem.appendChild(wipeWrapper);
-        getArticles(Object.entries(obj[i].content), wipeWrapper, "wipe");
+        newSection.appendChild(wipeBg);
+
+        // background presentation elements
+        for (let i=0; i<3; i++) {
+          let wipeElem = document.createElement("span");
+          wipeElem.classList.add("wipeElem", "wipeElem__"+i);
+          wipeElem.setAttribute("role", "presentation");
+          wipeBg.appendChild(wipeElem);
+        }
+        for (let i=0; i<4; i++) {
+            let shadowElem = document.createElement("span");
+            shadowElem.classList.add("shadowElem", "shadowElem__"+i);
+            shadowElem.setAttribute("role","presentation");
+            wipeBg.appendChild(shadowElem);
+        }
+
+        const wipeWrapper = document.createElement("div");
+        wipeWrapper.classList.add("wipe", "wipe__Wrapper");
+
+        
+        const articleIntro = document.createElement("div");
+        articleIntro.classList.add("wipe__Intro");
+
+        const articleDescription = document.createElement("p");
+        articleDescription.classList.add("wipe__Description", "drawText");
+
+
+        articleIntro.appendChild(articleDescription);
+
+
+        newSection.appendChild(articleIntro);
+        newSection.appendChild(wipeWrapper);
+        getCardContent(Object.entries(obj[i].content), wipeWrapper, "wipe");
       }
 
       // generate personal page "parallax" view
       if (obj[i].id === "elem2") {
         let scrollBg = document.createElement("div");
         scrollBg.classList.add("fadeIn", "fadeIn__Background");
-        newElem.appendChild(scrollBg);
-        getArticles(Object.entries(obj[i].content), newElem, "fadeIn");
+        newSection.appendChild(scrollBg);
+        getCardContent(Object.entries(obj[i].content), newSection, "fadeIn");
       }
 
       // generate contact form view
@@ -73,11 +100,11 @@ document.addEventListener("DOMContentLoaded", function() {
         contactForm.appendChild(contactInput);
         contactForm.appendChild(contactTextarea);
         contactForm.appendChild(contactSubmit);
-        newElem.appendChild(contactForm);
+        newSection.appendChild(contactForm);
       }
 
       // render elements
-      wrapper.appendChild(newElem);
+      wrapper.appendChild(newSection);
     }
 
     // ***** set interactive attributes for rendered elements *****
@@ -96,20 +123,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
-      const wipeBg = elem1.querySelector(".wipe__Background");
-      wipeBg.style.width = `${wrapperWidth}px`;
-      wipeBg.style.left = `-${wrapperWidth}px`;
-
-      const wipeWrapper = elem1.querySelector(".wipe__Content");
+      const wipeWrapper = elem1.querySelector(".wipe__Wrapper");
       wipeWrapper.style.left = `${wrapperWidth * 2}px`;
     }
 
     // scroll event listener
     window.addEventListener("scroll", function(e) {
-      const wipeElem = elem1.querySelectorAll(".wipe__Article");
       if (window.scrollY >= pageBreaks[0]) {
         animation_0(elem0, wrapperHeight, numberOfPages);
-        animation_1(elem1, wrapperWidth, wipeElem);
+        animation_1(obj[1], elem1, wrapperWidth);
         elem0.style.visibility = "visible";
         elem2.style.visibility = "hidden";
         elem3.style.visibility = "hidden";

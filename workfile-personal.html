@@ -107,24 +107,26 @@
     <main class="temp__Background">
 
         <div class="wipe__Content"></div>
-
-        <span class="shadowElem shadowElem__0" role="presentation"></span>
-        <span class="shadowElem shadowElem__1" role="presentation"></span>
-        <span class="shadowElem shadowElem__2" role="presentation"></span>
-        <span class="shadowElem shadowElem__3" role="presentation"></span>
-
-        <span class="wipeElem wipeElem__0" role="presentation"></span>
-        <span class="wipeElem wipeElem__1" role="presentation"></span>
-        <span class="wipeElem wipeElem__2" role="presentation"></span>
-
-        <div>
-
-
-    </div>
     
     </main>
 
     <script>
+
+
+        for (let i=0; i<4; i++) {
+            let wipeElem = document.createElement("span");
+            wipeElem.classList.add("wipeElem", "wipeElem__"+i);
+            wipeElem.setAttribute("role", "presentation");
+            document.querySelector(".wipe__Content").appendChild(wipeElem);
+        }
+
+        for (let i=0; i<3; i++) {
+            let shadowElem = document.createElement("span");
+            shadowElem.classList.add("shadowElem", "shadowElem__"+i);
+            shadowElem.setAttribute("role","presentation");
+            document.querySelector(".wipe__Content").appendChild(shadowElem);
+        }
+
     </script>
     
     

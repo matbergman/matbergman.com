@@ -17,59 +17,69 @@
       "id":  "elem1",
       "label": "Professional",
       "header":  "header1",
+      "intro": "I'm a skilled front end software engineer and user experience designer, with an eye for detail and mastery of layout, color, and typography fundamentals.",
       "content":  {
         "article1":  {
           "classList":  ["wipe__Article"],
           "speed": 5,
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article2": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article3": {
           "classList":  ["wipe__Article"],
           "speed": 4,
-          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article4":  {
           "classList":  ["wipe__Article"],
           "speed": 5,
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article5": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article6":  {
           "classList":  ["wipe__Article"],
           "speed": 5,
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article7": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article8": {
           "classList":  ["wipe__Article"],
           "speed": 4,
-          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article9":  {
           "classList":  ["wipe__Article"],
           "speed": 5,
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "thumbnail": "thumbnail.jpg"
         },
         "article10": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "thumbnail": "thumbnail.jpg"
         }               
-      },
-      "stripeCount":  14
+      }
     },
     {
       "id":  "elem2",
@@ -101,8 +111,7 @@
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         }     
-      },
-      "stripeCount":  14
+      }
     },
     {
       "id":  "elem3",
@@ -112,8 +121,7 @@
         "contactInputFor": "inputEmail",
         "contactInputLabel": "Email address"
 
-      },
-      "stripeCount":  14
+      }
     }
   ]
 }
