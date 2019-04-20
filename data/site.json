@@ -23,61 +23,81 @@
           "classList":  ["wipe__Article"],
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article2": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article3": {
           "classList":  ["wipe__Article"],
           "speed": 4,
           "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article4":  {
           "classList":  ["wipe__Article"],
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article5": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article6":  {
           "classList":  ["wipe__Article"],
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article7": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article8": {
           "classList":  ["wipe__Article"],
           "speed": 4,
           "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article9":  {
           "classList":  ["wipe__Article"],
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article10": {
           "classList":  ["wipe__Article"],
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "thumbnail": "thumbnail.jpg"
+          "thumbnail": "thumbnail.jpg",
+          "fullsize": "image.jpg",          
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         }               
       }
     },
@@ -89,27 +109,37 @@
         "article1":  {
           "classList":  ["fadeIn", "fadeIn__Article"],
           "speed": 5,
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "thumbnail": "thumbnail.jpg",
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article2": {
           "classList":  ["fadeIn", "fadeIn__Article"],
           "speed": 4.5,
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "thumbnail": "thumbnail.jpg",
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article3": {
           "classList":  ["fadeIn", "fadeIn__Article"],
           "speed": 4,
-          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "thumbnail": "thumbnail.jpg",
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article4":  {
           "classList":  ["fadeIn", "fadeIn__Article"],
           "speed": 5,
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "thumbnail": "thumbnail.jpg",
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article5": {
           "classList":  ["fadeIn", "fadeIn__Article"],
           "speed": 4.5,
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "thumbnail": "thumbnail.jpg",
+          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         }     
       }
     },

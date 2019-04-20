@@ -123,15 +123,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
-      const wipeWrapper = elem1.querySelector(".wipe__Wrapper");
-      wipeWrapper.style.left = `${wrapperWidth * 2}px`;
+        getWipeWrapperLeft();
     }
 
     // scroll event listener
     window.addEventListener("scroll", function(e) {
       if (window.scrollY >= pageBreaks[0]) {
         animation_0(elem0, wrapperHeight, numberOfPages);
-        animation_1(obj[1], elem1, wrapperWidth);
+        animation_1(obj[1], elem1);
         elem0.style.visibility = "visible";
         elem2.style.visibility = "hidden";
         elem3.style.visibility = "hidden";

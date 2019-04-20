@@ -1,5 +1,6 @@
 const imagePath = "images";
 let contentWipeIncrement = 0;
+let toggleFullscreenState = false;
 
 getAspectRatio = () => {
   if (window.innerWidth > window.innerHeight) {
@@ -28,21 +29,94 @@ getCardContent = (articles, newElem, type) => {
       ? articles[j][1].speed
       : null;
 
+    const articleImage = document.createElement("img");
+    articleImage.classList.add("article__Image");
+    articleImage.src = `${imagePath}/${articles[j][1].thumbnail}`;
+    articleImage.setAttribute("data-thumbnail", articles[j][1].thumbnail);
+    articleImage.setAttribute("data-fullsize", articles[j][1].fullsize);
+
     const articleContent = document.createElement("div");
     articleContent.classList.add(`${type}__Content`);
-    articles[j][1].text
-      ? (articleContent.innerHTML = articles[j][1].text)
-      : null;
 
-    const articleThumbnail = document.createElement("img");
-    articleThumbnail.classList.add("article__Thumbnail");
-    articles[j][1].thumbnail
-      ? (articleThumbnail.src = `${imagePath}/${articles[j][1].thumbnail}`)
-      : null;
+    const articleText = document.createElement("p");
+    articleText.classList.add("article__Text", `${type}__Text`);
+    articles[j][1].text ? (articleText.innerHTML = articles[j][1].text) : null;
 
+    const articleTech = document.createElement("p");
+    articleTech.classList.add("article__Tech", `${type}__Tech`);
+    if (articles[j][1].tech) {
+      articleTech.innerText = "Technologies: ";
+      for (let i = 0; i < articles[j][1].tech.length; i++) {
+        articleTech.innerText += articles[j][1].tech[i];
+        i < articles[j][1].tech.length - 1
+          ? (articleTech.innerText += ", ")
+          : (articleTech.innerText += ".");
+      }
+    }
+
+    articleElem.appendChild(articleImage);
+
+    articleContent.appendChild(articleText);
+    articleContent.appendChild(articleTech);
     articleElem.appendChild(articleContent);
-    articleElem.appendChild(articleThumbnail);
     newElem.appendChild(articleElem);
+
+    articleElem.addEventListener("click", function() {
+      toggleFullscreen(articleElem);
+    });
+  }
+};
+
+getWipeWrapperTranslate = () => {
+  const wrapperWidth = document.querySelector(".wrapper").offsetWidth;
+  const wipeArticlesWrapper = document.querySelector(".wipe__Wrapper");
+  let wipeArticlePos = parseInt(wipeArticlesWrapper.style.left);
+  let wipeArticleValue = 0 - window.scrollY * 4;
+
+  let wipeArticleEnd = wipeArticlePos * -1 + wrapperWidth * 0.4;
+  if (wipeArticleValue <= wipeArticleEnd) {
+    wipeArticleValue = wipeArticleEnd;
+  }
+  wipeArticlesWrapper.style.transform = `translateX(${wipeArticleValue}px)`;
+};
+
+getWipeWrapperLeft = () => {
+  const wipeWrapper = elem1.querySelector(".wipe__Wrapper");
+  const wrapperWidth = document.querySelector(".wrapper").offsetWidth;
+  wipeWrapper.style.left = `${wrapperWidth * 2}px`;
+};
+
+toggleFullscreen = elem => {
+  const headerMain = document.querySelector(".header__Main");
+  const parentElem = elem.parentNode;
+  const imageElem = elem.querySelector(".article__Image");
+
+  if (toggleFullscreenState === false) {
+    parentElem.style.transform = "translateX(0px)";
+    parentElem.style.left = "0px";
+    parentElem.classList.add("wipe__Wrapper--active");
+    elem.classList.add("wipe__Article--active");
+
+    const buttonClose = document.createElement("div");
+    buttonClose.classList.add("fas", "fa-times", "button__Close");
+    elem.appendChild(buttonClose);
+
+    imageElem.src = `${imagePath}/${imageElem.dataset.fullsize}`;
+    headerMain.classList.add("header__Main--hide");
+
+    toggleFullscreenState = true;
+  } else {
+    getWipeWrapperTranslate();
+    getWipeWrapperLeft();
+    parentElem.classList.remove("wipe__Wrapper--active");
+    elem.classList.remove("wipe__Article--active");
+    document
+      .querySelector(".wipe__Article")
+      .removeChild(document.querySelector(".button__Close"));
+
+    headerMain.classList.remove("header__Main--hide");
+
+    toggleFullscreenState = false;
   }
 };
 
@@ -76,11 +150,9 @@ animation_0 = element => {
   if (scaleValue <= 0.025) {
     element.style.opacity = scaleValue;
   }
-
-
 };
 
-animation_1 = (obj, element, wrapperWidth) => {
+animation_1 = (obj, element) => {
   element.style.position = `fixed`;
   element.style.top = 0;
   element.style.height = "100%";
@@ -92,7 +164,7 @@ animation_1 = (obj, element, wrapperWidth) => {
 
   if (wipeElem0Value >= 0) {
     wipeElem0Value = 0;
-    
+
     // content - animate
     if (contentWipeIncrement === 0) {
       contentWipeText.innerHTML = "";
@@ -104,8 +176,8 @@ animation_1 = (obj, element, wrapperWidth) => {
 
   // content - hide on scrollup
   if (wipeElem0Value < 0) {
-      contentWipeText.classList.remove("drawText--Active");
-      contentWipeIncrement = 0;
+    contentWipeText.classList.remove("drawText--Active");
+    contentWipeIncrement = 0;
   }
 
   // animate - scale homepage view
@@ -130,18 +202,7 @@ animation_1 = (obj, element, wrapperWidth) => {
 
   wipeElem2.style.transform = `translateX(${wipeElem2Value}px) rotate(-38deg) scaleX(100)`;
 
-  const wipeArticlesWrapper = document.querySelector(".wipe__Wrapper");
-  let wipeArticlePos = parseInt(wipeArticlesWrapper.style.left);
-  let wipeArticleValue = 0 - window.scrollY * 4;
-
-  let wipeArticleEnd = wipeArticlePos * -1 + wrapperWidth * 0.4;
-  if (wipeArticleValue <= wipeArticleEnd) {
-    wipeArticleValue = wipeArticleEnd;
-  }
-
-  wipeArticlesWrapper.style.transform = `translateX(${wipeArticleValue}px)`;
-
-
+  getWipeWrapperTranslate();
 };
 
 animation_2 = (element, windowHeight) => {
@@ -175,8 +236,7 @@ drawText = (str, elem) => {
       }, i * 10);
     }
   }, 500);
-}
-
+};
 
 homeInit = obj => {
   const contentElem = document.querySelector(".scale__Content");
@@ -277,7 +337,6 @@ homeInit = obj => {
     let contentHomeText = document.querySelector(".content__Home__Text");
     let contentHomeString = obj.content.article1.text.split(/(\s+)/);
     drawText(contentHomeString, contentHomeText);
-
   }, 100);
 };
 
