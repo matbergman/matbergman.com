@@ -31,36 +31,33 @@ document.addEventListener("DOMContentLoaded", function() {
       // generate portfolio page "wipe" view
       if (obj[i].id === "elem1") {
         const wipeBg = document.createElement("div");
-        wipeBg.classList.add("wipe", "wipe__Background");
+        wipeBg.classList.add("wipe__Background");
         newSection.appendChild(wipeBg);
 
         // background presentation elements
-        for (let i=0; i<3; i++) {
+        for (let i = 0; i < 3; i++) {
           let wipeElem = document.createElement("span");
-          wipeElem.classList.add("wipeElem", "wipeElem__"+i);
+          wipeElem.classList.add("wipeElem", "wipeElem__" + i);
           wipeElem.setAttribute("role", "presentation");
           wipeBg.appendChild(wipeElem);
         }
-        for (let i=0; i<4; i++) {
-            let shadowElem = document.createElement("span");
-            shadowElem.classList.add("shadowElem", "shadowElem__"+i);
-            shadowElem.setAttribute("role","presentation");
-            wipeBg.appendChild(shadowElem);
+        for (let i = 0; i < 4; i++) {
+          let shadowElem = document.createElement("span");
+          shadowElem.classList.add("shadowElem", "shadowElem__" + i);
+          shadowElem.setAttribute("role", "presentation");
+          wipeBg.appendChild(shadowElem);
         }
 
         const wipeWrapper = document.createElement("div");
-        wipeWrapper.classList.add("wipe", "wipe__Wrapper");
+        wipeWrapper.classList.add("wipe__Wrapper");
 
-        
         const articleIntro = document.createElement("div");
         articleIntro.classList.add("wipe__Intro");
 
         const articleDescription = document.createElement("p");
         articleDescription.classList.add("wipe__Description", "drawText");
 
-
         articleIntro.appendChild(articleDescription);
-
 
         newSection.appendChild(articleIntro);
         newSection.appendChild(wipeWrapper);
@@ -123,7 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
-        getWipeWrapperLeft();
+      elem1.classList.add("wipe");
+      getWipeWrapperLeft();
     }
 
     // scroll event listener

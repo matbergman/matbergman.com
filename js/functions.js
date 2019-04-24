@@ -60,6 +60,7 @@ getCardContent = (articles, newElem, type) => {
     articleContent.appendChild(articleTech);
     articleElem.appendChild(articleContent);
     newElem.appendChild(articleElem);
+    //    newElem.appendChild(articleImage);
 
     articleElem.addEventListener("click", function() {
       toggleFullscreen(articleElem);
