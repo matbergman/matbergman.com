@@ -32,52 +32,27 @@ getCardContent = (articles, newElem, type) => {
     const articleImage = document.createElement("img");
     articleImage.classList.add("article__Image");
     articleImage.src = `${imagePath}/${articles[j][1].thumbnail}`;
-    articleImage.setAttribute("data-thumbnail", articles[j][1].thumbnail);
-    articleImage.setAttribute("data-fullsize", articles[j][1].fullsize);
-
-    const articleContent = document.createElement("div");
-    articleContent.classList.add(`${type}__Content`);
-
-    const articleText = document.createElement("p");
-    articleText.classList.add("article__Text", `${type}__Text`);
-    articles[j][1].text ? (articleText.innerHTML = articles[j][1].text) : null;
-
-    const articleTech = document.createElement("p");
-    articleTech.classList.add("article__Tech", `${type}__Tech`);
-    if (articles[j][1].tech) {
-      articleTech.innerText = "Technologies: ";
-      for (let i = 0; i < articles[j][1].tech.length; i++) {
-        articleTech.innerText += articles[j][1].tech[i];
-        i < articles[j][1].tech.length - 1
-          ? (articleTech.innerText += ", ")
-          : (articleTech.innerText += ".");
-      }
-    }
 
     articleElem.appendChild(articleImage);
-
-    articleContent.appendChild(articleText);
-    articleContent.appendChild(articleTech);
-    articleElem.appendChild(articleContent);
     newElem.appendChild(articleElem);
 
     articleElem.addEventListener("click", function() {
-      toggleFullscreen(articleElem);
+      toggleFullscreen(articleElem, articles[j][1]);
     });
   }
 };
 
-getWipeWrapperTranslate = () => {
+getWipeWrapperTranslate = elem => {
   const wrapperWidth = document.querySelector(".wrapper").offsetWidth;
-  const wipeArticlesWrapper = document.querySelector(".wipe__Wrapper");
-  let wipeArticlePos = parseInt(wipeArticlesWrapper.style.left);
-  let wipeArticleValue = 0 - window.scrollY * 4;
+  articlesWrapper = document.querySelector(`.${elem}`);
+  let articlePos = parseInt(articlesWrapper.style.left);
+  let articleValue = 0 - window.scrollY * 4;
 
-  let wipeArticleEnd = wipeArticlePos * -1 + wrapperWidth * 0.4;
-  if (wipeArticleValue <= wipeArticleEnd) {
-    wipeArticleValue = wipeArticleEnd;
+  let articleEnd = articlePos * -1 + wrapperWidth * 0.4;
+  if (articleValue <= articleEnd) {
+    articleValue = articleEnd;
   }
-  wipeArticlesWrapper.style.transform = `translateX(${wipeArticleValue}px)`;
+  articlesWrapper.style.transform = `translateX(${articleValue}px)`;
 };
 
 getWipeWrapperLeft = () => {
@@ -86,33 +61,58 @@ getWipeWrapperLeft = () => {
   wipeWrapper.style.left = `${wrapperWidth * 2}px`;
 };
 
-toggleFullscreen = elem => {
+toggleFullscreen = (elem, obj) => {
   const headerMain = document.querySelector(".header__Main");
-  const parentElem = elem.parentNode;
-  const imageElem = elem.querySelector(".article__Image");
+  const parentElem = elem.parentNode.parentNode;
 
   if (toggleFullscreenState === false) {
-    parentElem.style.transform = "translateX(0px)";
-    parentElem.style.left = "0px";
-    parentElem.classList.add("wipe__Wrapper--active");
-    elem.classList.add("wipe__Article--active");
+    const fullscreenElem = document.createElement("div");
+    fullscreenElem.classList.add("fullscreen");
 
     const buttonClose = document.createElement("div");
     buttonClose.classList.add("fas", "fa-times", "button__Close");
-    elem.appendChild(buttonClose);
+    buttonClose.setAttribute("role", "presentation");
 
-    imageElem.src = `${imagePath}/${imageElem.dataset.fullsize}`;
+    const imageElem = document.createElement("img");
+    imageElem.classList.add("article__Image__Fullscreen");
+    imageElem.src = `${imagePath}/${obj.fullsize}`;
+
+    const articleContent = document.createElement("div");
+    articleContent.classList.add(`article__Content__Fullscreen`);
+
+    const articleText = document.createElement("p");
+    articleText.classList.add("article__Text");
+    obj.text ? (articleText.innerHTML = obj.text) : null;
+
+    const articleTech = document.createElement("p");
+    articleTech.classList.add("article__Tech");
+    if (obj.tech) {
+      articleTech.innerText = "Technologies: ";
+      for (let i = 0; i < obj.tech.length; i++) {
+        articleTech.innerText += obj.tech[i];
+        i < obj.tech.length - 1
+          ? (articleTech.innerText += ", ")
+          : (articleTech.innerText += ".");
+      }
+    }
+
+    fullscreenElem.appendChild(imageElem);
+    articleContent.appendChild(articleText);
+    articleContent.appendChild(articleTech);
+    fullscreenElem.appendChild(articleContent);
+    fullscreenElem.appendChild(buttonClose);
+
+    parentElem.appendChild(fullscreenElem);
+
+    fullscreenElem.addEventListener("click", function() {
+      toggleFullscreen(elem, obj);
+    });
+
     headerMain.classList.add("header__Main--hide");
 
     toggleFullscreenState = true;
   } else {
-    getWipeWrapperTranslate();
-    getWipeWrapperLeft();
-    parentElem.classList.remove("wipe__Wrapper--active");
-    elem.classList.remove("wipe__Article--active");
-    document
-      .querySelector(".wipe__Article")
-      .removeChild(document.querySelector(".button__Close"));
+    parentElem.removeChild(document.querySelector(".fullscreen"));
 
     headerMain.classList.remove("header__Main--hide");
 
@@ -202,7 +202,7 @@ animation_1 = (obj, element) => {
 
   wipeElem2.style.transform = `translateX(${wipeElem2Value}px) rotate(-38deg) scaleX(100)`;
 
-  getWipeWrapperTranslate();
+  getWipeWrapperTranslate("wipe__Wrapper");
 };
 
 animation_2 = (element, windowHeight) => {

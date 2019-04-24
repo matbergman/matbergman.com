@@ -39,8 +39,8 @@ svg {
   transition: transform 1s opacity 0.4s;
 }
 
-.header__Main--hide {
-  opacity: 0;
+.header__Main.header__Main--hide {
+  display: none;;
 }
 
 .button__Main {
@@ -61,6 +61,8 @@ svg {
   cursor: pointer;
   color: #efeee1;
   font-size: 3em;
+  width: 33px;
+  height: 48px;
 }
 
 .wrapper {
@@ -175,6 +177,40 @@ svg {
   align-items: baseline;
   justify-content: center;
 }
+
+
+.fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 30;
+  max-width: none;
+}
+
+.article__Image__Fullscreen {
+  display: block;
+  width: 90%;
+  border: 3px solid #000000;
+  border-bottom: 0px;
+}
+
+.article__Content__Fullscreen {
+  display: block;
+  width: 90%;
+  border: 3px solid #000000;
+  background-color: #efeee1;
+}
+
+
+
 
 @media only screen and (min-width: 768px) {
   .header__Main {
