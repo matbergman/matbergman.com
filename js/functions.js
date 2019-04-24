@@ -23,21 +23,14 @@ getHomeContent = (articles, newElem, type) => {
 
 getCardContent = (articles, newElem, type) => {
   for (let j = 0; j < articles.length; j++) {
-    const articleElem = document.createElement("article");
-    articleElem.classList.add(...articles[j][1].classList);
-    articleElem.dataset.speed = articles[j][1].speed
-      ? articles[j][1].speed
-      : null;
-
     const articleImage = document.createElement("img");
-    articleImage.classList.add("article__Image");
+    articleImage.classList.add("article__Image", `${type}__Image`);
     articleImage.src = `${imagePath}/${articles[j][1].thumbnail}`;
 
-    articleElem.appendChild(articleImage);
-    newElem.appendChild(articleElem);
+    newElem.appendChild(articleImage);
 
-    articleElem.addEventListener("click", function() {
-      toggleFullscreen(articleElem, articles[j][1]);
+    articleImage.addEventListener("click", function() {
+      toggleFullscreen(articleImage, articles[j][1]);
     });
   }
 };

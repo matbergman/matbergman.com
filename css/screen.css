@@ -40,7 +40,7 @@ svg {
 }
 
 .header__Main.header__Main--hide {
-  display: none;;
+  display: none;
 }
 
 .button__Main {
@@ -178,7 +178,6 @@ svg {
   justify-content: center;
 }
 
-
 .fullscreen {
   display: flex;
   flex-direction: column;
@@ -208,9 +207,6 @@ svg {
   border: 3px solid #000000;
   background-color: #efeee1;
 }
-
-
-
 
 @media only screen and (min-width: 768px) {
   .header__Main {
