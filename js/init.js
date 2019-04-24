@@ -5,6 +5,7 @@ window.onbeforeunload = function() {
 window.onresize = function() {
   document.querySelector("#elem0").style.transform = `scale(1)`;
   layoutUpdate();
+  getWipeWrapperTranslate();
 };
 
 document.addEventListener("DOMContentLoaded", function() {
