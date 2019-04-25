@@ -42,19 +42,17 @@ getWrapperTranslate = elem => {
   if (!isMobile()) {
     let articlePos = parseInt(articlesWrapper.style.left);
     let articleValue = 0 - window.scrollY * 4;
-  
+
     let articleEnd = articlePos * -1 + wrapperWidth * 0.4;
     if (articleValue <= articleEnd) {
       articleValue = articleEnd;
     }
-  
+
     articlesWrapper.style.transform = `translateX(${articleValue}px)`;
-}
-  else {
+  } else {
     articlesWrapper.style.transform = "translateX(0px)";
     articlesWrapper.style.left = "0px";
   }
-
 };
 
 getWrapperLeft = elem => {
@@ -63,8 +61,7 @@ getWrapperLeft = elem => {
 
   if (!isMobile()) {
     wipeWrapper.style.left = `${wrapperWidth * 2}px`;
-  }
-  else {
+  } else {
     wipeWrapper.style.left = "0px";
   }
 };
@@ -143,6 +140,14 @@ isInViewport = elem => {
 setView = (element, windowHeight) => {
   element.style.top = windowHeight + "px";
   element.style.height = windowHeight + "px";
+};
+
+setBodyClass = className => {
+  const bodyTag = document.getElementsByTagName("body")[0];
+  while (bodyTag.classList.length > 0) {
+    bodyTag.classList.remove(bodyTag.classList.item(0));
+  }
+  bodyTag.classList.add(className);
 };
 
 animation_0 = element => {
@@ -238,22 +243,22 @@ animation_4 = windowHeight => {
 
 drawText = (text, str, elem) => {
   if (!isMobile()) {
-  setTimeout(function() {
+    setTimeout(function() {
+      elem.classList.add("drawText--Active");
+      for (let i = 0; i < str.length; i++) {
+        setTimeout(function() {
+          elem.innerHTML += str[i];
+        }, i * 10);
+      }
+    }, 500);
+  } else {
     elem.classList.add("drawText--Active");
-    for (let i = 0; i < str.length; i++) {
-      setTimeout(function() {
-        elem.innerHTML += str[i];
-      }, i * 10);
-    }
-  }, 500);
-}
-else {
-  elem.classList.add("drawText--Active");  
-  elem.innerHTML = text;
-}
+    elem.innerHTML = text;
+  }
 };
 
 homeInit = obj => {
+  document.getElementsByTagName("body")[0].classList.add("view0");
   const contentElem = document.querySelector(".scale__Content");
   const stripeWrapper = document.createElement("div");
   stripeWrapper.classList.add("stripes");

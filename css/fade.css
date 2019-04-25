@@ -1,0 +1,38 @@
+.fadeIn {
+  position: relative;
+  display: block;
+  overflow: auto;
+  transition-timing-function: ease-in-out;
+  transition: 0.2s;
+}
+
+.fadeIn__Background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-image: url(../images/bg10.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.fadeIn__Image {
+  z-index: 20;
+}
+
+.fadeIn__Article {
+  opacity: 0;
+  width: 40%;
+  border: 1px solid #000000;
+  z-index: 20;
+  transform: rotateX(180deg);
+}
+
+.fadeIn__Article.fade {
+  opacity: 1;
+  transition-timing-function: ease-in-out;
+  transition: transform 1s opacity 0.4s;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+}

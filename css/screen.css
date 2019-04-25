@@ -29,7 +29,7 @@ svg {
   top: 0;
   right: 0;
   margin: 10px;
-  z-index: 40;
+  z-index: 50;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid #da7317;
@@ -77,7 +77,7 @@ svg {
 
 #elem0 {
   position: fixed;
-  z-index: 20;
+  z-index: 40;
   width: 100%;
   height: 100%;
   top: 0;
@@ -89,7 +89,7 @@ svg {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 30;
   width: 100%;
   height: 100%;
 }
@@ -101,6 +101,7 @@ svg {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  z-index: 20;
 }
 
 #elem3 {
@@ -108,6 +109,7 @@ svg {
   position: relative;
   width: 100%;
   background-color: #cccccc;
+  z-index: 30;
 }
 
 .drawText {
@@ -130,52 +132,9 @@ svg {
 }
 
 .article__Image {
-  /* width: 100%;
-  height: auto; */
   max-width: 100%;
   height: auto;
-  /* width: inherit; */
   object-fit: contain;
-}
-
-.fadeIn {
-  position: relative;
-  display: block;
-  overflow: auto;
-  transition-timing-function: ease-in-out;
-  transition: 0.2s;
-}
-
-.fadeIn__Background {
-  position: fixed;
-  top: 0;
-  background-image: url(../images/bg.png);
-  width: 100%;
-  height: 100%;
-}
-
-.fadeIn__Article {
-  opacity: 0;
-  width: 40%;
-  border: 1px solid #000000;
-  z-index: 20;
-  transform: rotateX(180deg);
-}
-
-.fadeIn__Article.fade {
-  opacity: 1;
-  transition-timing-function: ease-in-out;
-  transition: transform 1s opacity 0.4s;
-  transform-style: preserve-3d;
-  transform: rotateX(0deg);
-}
-
-.form__Contact {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  align-items: baseline;
-  justify-content: center;
 }
 
 .fullscreen {

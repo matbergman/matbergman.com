@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const wrapper = document.querySelector(".wrapper");
     let windowHeight = window.innerHeight;
     let wrapperHeight = wrapper.offsetHeight;
-    let wrapperWidth = wrapper.offsetWidth;
     let pageBreaks = [];
     let numberOfPages = obj.length;
 
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         getCardContent(Object.entries(obj[i].content), wipeWrapper, "wipe");
       }
 
-      // generate personal page "parallax" view
+      // generate personal page "fade" view
       if (obj[i].id === "elem2") {
         let scrollBg = document.createElement("div");
         scrollBg.classList.add("fadeIn", "fadeIn__Background");
@@ -130,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (window.scrollY >= pageBreaks[0]) {
         animation_0(elem0, wrapperHeight, numberOfPages);
         animation_1(obj[1], elem1);
+        setBodyClass("view0");
         elem0.style.visibility = "visible";
         elem2.style.visibility = "hidden";
         elem3.style.visibility = "hidden";
@@ -138,16 +138,19 @@ document.addEventListener("DOMContentLoaded", function() {
       if (window.scrollY >= pageBreaks[1]) {
         animation_2(elem1, wrapperHeight);
         animation_3(elem2, wrapperHeight);
+        setBodyClass("view1");        
         elem0.style.visibility = "hidden";
         elem2.style.visibility = "visible";
       }
 
       if (window.scrollY >= pageBreaks[2]) {
         animation_4(wrapperHeight);
+        setBodyClass("view2");        
         elem3.style.visibility = "visible";
       }
 
       if (window.scrollY >= pageBreaks[3]) {
+        setBodyClass("view3");        
       }
     });
 

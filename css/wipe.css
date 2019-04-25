@@ -4,8 +4,6 @@
   flex-direction: column;
 }
 
-
-
 .wipe__Background {
   position: absolute;
   transition-timing-function: ease-in-out;
@@ -37,15 +35,11 @@
   overflow-y: hidden;
   padding: 0 0 1em 0;
 
-
   position: relative;
 
   transition-timing-function: ease-in-out;
   transition: 0.2s;
 }
-
-
-
 
 .wipe__Wrapper--active {
   left: 0;
@@ -56,7 +50,7 @@
 }
 
 .wipe__Intro {
-    position: relative;
+  position: relative;
   top: 0;
   left: 0;
   display: flex;
@@ -65,11 +59,7 @@
   width: 100%;
   z-index: 20;
   hyphens: auto;
- 
 }
-
-
-
 
 .wipe__Description {
   margin: 1em;
@@ -80,27 +70,22 @@
   letter-spacing: 0.05em;
 }
 
-
-
-
 .wipe__Image {
   z-index: 20;
-  width: 85%;  
+  width: 85%;
   flex-shrink: 0;
   max-width: 350px;
   height: auto;
   margin: 0 1em;
 }
 
-
 .wipe__Image:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .wipe__Image:last-child {
   margin-right: 0;
 }
-
 
 .wipeElem {
   display: block;
@@ -168,28 +153,21 @@
   transform: rotate(-15deg) scaleY(100);
 }
 
-
-
-
 @media only screen and (min-width: 769px) {
+  .wipe {
+    flex-direction: row;
+  }
 
-    .wipe {
-        flex-direction: row;
-    }
+  .wipe__Wrapper {
+    width: 60%;
+    height: 90%;
+    position: absolute;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 1%;
 
-
-    .wipe__Wrapper {
-        width: 60%;
-        height: 90%;
-        position: absolute;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin-top: 1%;
-
-        overflow: hidden;        
-    }
-    
-
+    overflow: hidden;
+  }
 
   .wipe__Intro {
     position: absolute;
@@ -208,12 +186,3 @@
     margin: 0 2em;
   }
 }
-
-
-
-
-
-
-
-
-
