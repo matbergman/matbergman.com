@@ -168,23 +168,24 @@ animation_1 = (obj, element) => {
   const wipeElem0 = element.querySelector(".wipeElem__0");
   let wipeElem0Pos = wipeElem0.offsetLeft + wipeElem0.offsetWidth;
   let wipeElem0Value = wipeElem0Pos * -1 + window.scrollY;
-  const contentWipeText = document.querySelector(".wipe__Description");
+  const contentWipeElem = document.querySelector(".wipe__Description");
 
   if (wipeElem0Value >= 0) {
     wipeElem0Value = 0;
 
     // content - animate
     if (contentWipeIncrement === 0) {
-      contentWipeText.innerHTML = "";
-      let contentWipeString = obj.intro.split(/(\s+)/);
-      drawText(contentWipeString, contentWipeText);
+      contentWipeElem.innerHTML = "";
+      const contentWipeText = obj.intro;
+      const contentWipeString = obj.intro.split(/(\s+)/);
+      drawText(contentWipeText, contentWipeString, contentWipeElem);
       contentWipeIncrement++;
     }
   }
 
   // content - hide on scrollup
   if (wipeElem0Value < 0) {
-    contentWipeText.classList.remove("drawText--Active");
+    contentWipeElem.classList.remove("drawText--Active");
     contentWipeIncrement = 0;
   }
 
@@ -235,7 +236,8 @@ animation_4 = windowHeight => {
   elementScroll.style.height = windowHeight + "px";
 };
 
-drawText = (str, elem) => {
+drawText = (text, str, elem) => {
+  if (!isMobile()) {
   setTimeout(function() {
     elem.classList.add("drawText--Active");
     for (let i = 0; i < str.length; i++) {
@@ -244,6 +246,11 @@ drawText = (str, elem) => {
       }, i * 10);
     }
   }, 500);
+}
+else {
+  elem.classList.add("drawText--Active");  
+  elem.innerHTML = text;
+}
 };
 
 homeInit = obj => {
@@ -342,9 +349,10 @@ homeInit = obj => {
     }
 
     // content - animate
-    let contentHomeText = document.querySelector(".content__Home__Text");
-    let contentHomeString = obj.content.article1.text.split(/(\s+)/);
-    drawText(contentHomeString, contentHomeText);
+    const contentHomeElem = document.querySelector(".content__Home__Text");
+    const contentHomeText = obj.content.article1.text;
+    const contentHomeString = obj.content.article1.text.split(/(\s+)/);
+    drawText(contentHomeText, contentHomeString, contentHomeElem);
   }, 100);
 };
 
