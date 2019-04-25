@@ -5,7 +5,7 @@ window.onbeforeunload = function() {
 window.onresize = function() {
   document.querySelector("#elem0").style.transform = `scale(1)`;
   layoutUpdate();
-  getWipeWrapperTranslate("wipe__Wrapper");
+  getWrapperTranslate("wipe__Wrapper");
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
       elem1.classList.add("wipe");
-      getWipeWrapperLeft();
+      getWrapperLeft("wipe__Wrapper");
     }
 
     // scroll event listener

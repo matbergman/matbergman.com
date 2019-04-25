@@ -35,23 +35,38 @@ getCardContent = (articles, newElem, type) => {
   }
 };
 
-getWipeWrapperTranslate = elem => {
-  const wrapperWidth = document.querySelector(".wrapper").offsetWidth;
+getWrapperTranslate = elem => {
   articlesWrapper = document.querySelector(`.${elem}`);
-  let articlePos = parseInt(articlesWrapper.style.left);
-  let articleValue = 0 - window.scrollY * 4;
+  const wrapperWidth = document.querySelector(".wrapper").offsetWidth;
 
-  let articleEnd = articlePos * -1 + wrapperWidth * 0.4;
-  if (articleValue <= articleEnd) {
-    articleValue = articleEnd;
+  if (!isMobile()) {
+    let articlePos = parseInt(articlesWrapper.style.left);
+    let articleValue = 0 - window.scrollY * 4;
+  
+    let articleEnd = articlePos * -1 + wrapperWidth * 0.4;
+    if (articleValue <= articleEnd) {
+      articleValue = articleEnd;
+    }
+  
+    articlesWrapper.style.transform = `translateX(${articleValue}px)`;
+}
+  else {
+    articlesWrapper.style.transform = "translateX(0px)";
+    articlesWrapper.style.left = "0px";
   }
-  articlesWrapper.style.transform = `translateX(${articleValue}px)`;
+
 };
 
-getWipeWrapperLeft = () => {
-  const wipeWrapper = elem1.querySelector(".wipe__Wrapper");
+getWrapperLeft = elem => {
+  const wipeWrapper = document.querySelector(`.${elem}`);
   const wrapperWidth = document.querySelector(".wrapper").offsetWidth;
-  wipeWrapper.style.left = `${wrapperWidth * 2}px`;
+
+  if (!isMobile()) {
+    wipeWrapper.style.left = `${wrapperWidth * 2}px`;
+  }
+  else {
+    wipeWrapper.style.left = "0px";
+  }
 };
 
 toggleFullscreen = (elem, obj) => {
@@ -195,7 +210,7 @@ animation_1 = (obj, element) => {
 
   wipeElem2.style.transform = `translateX(${wipeElem2Value}px) rotate(-38deg) scaleX(100)`;
 
-  getWipeWrapperTranslate("wipe__Wrapper");
+  getWrapperTranslate("wipe__Wrapper");
 };
 
 animation_2 = (element, windowHeight) => {
@@ -332,6 +347,10 @@ homeInit = obj => {
     drawText(contentHomeString, contentHomeText);
   }, 100);
 };
+
+function isMobile() {
+  return window.innerWidth < 768;
+}
 
 function isTablet() {
   return window.innerWidth >= 768;
