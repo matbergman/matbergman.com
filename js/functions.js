@@ -28,9 +28,8 @@ getCardContent = (articles, newElem, type) => {
     articleImage.src = `${imagePath}/${articles[j][1].thumbnail}`;
 
     newElem.appendChild(articleImage);
-
     articleImage.addEventListener("click", function() {
-      toggleFullscreen(articleImage, articles[j][1]);
+      toggleFullscreen(newElem, articleImage, articles[j][1]);
     });
   }
 };
@@ -66,9 +65,11 @@ getWrapperLeft = elem => {
   }
 };
 
-toggleFullscreen = (elem, obj) => {
+toggleFullscreen = (parentElem, elem, obj) => {
   const headerMain = document.querySelector(".header__Main");
-  const parentElem = elem.parentNode.parentNode;
+
+
+  console.log(parentElem.parentNode);
 
   if (toggleFullscreenState === false) {
     const fullscreenElem = document.createElement("div");
@@ -107,17 +108,17 @@ toggleFullscreen = (elem, obj) => {
     fullscreenElem.appendChild(articleContent);
     fullscreenElem.appendChild(buttonClose);
 
-    parentElem.appendChild(fullscreenElem);
+    parentElem.parentNode.appendChild(fullscreenElem);
 
     fullscreenElem.addEventListener("click", function() {
-      toggleFullscreen(elem, obj);
+      toggleFullscreen(parentElem, elem, obj);
     });
 
     headerMain.classList.add("header__Main--hide");
 
     toggleFullscreenState = true;
   } else {
-    parentElem.removeChild(document.querySelector(".fullscreen"));
+    parentElem.parentNode.removeChild(document.querySelector(".fullscreen"));
 
     headerMain.classList.remove("header__Main--hide");
 

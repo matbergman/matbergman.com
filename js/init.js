@@ -68,8 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
       if (obj[i].id === "elem2") {
         let scrollBg = document.createElement("div");
         scrollBg.classList.add("fadeIn", "fadeIn__Background");
+
+        const fadeWrapper = document.createElement("div");
+        fadeWrapper.classList.add("fade__Wrapper");
+
         newSection.appendChild(scrollBg);
-        getCardContent(Object.entries(obj[i].content), newSection, "fadeIn");
+        newSection.appendChild(fadeWrapper);
+        getCardContent(Object.entries(obj[i].content), fadeWrapper, "fadeIn");
       }
 
       // generate contact form view
@@ -123,6 +128,13 @@ document.addEventListener("DOMContentLoaded", function() {
       elem1.classList.add("wipe");
       getWrapperLeft("wipe__Wrapper");
     }
+
+    // elem2 - set fade elements
+    elem2.classList.add("fade");
+
+    // elem3 - set contact elements
+    elem3.classList.add("contact");
+
 
     // scroll event listener
     window.addEventListener("scroll", function(e) {
