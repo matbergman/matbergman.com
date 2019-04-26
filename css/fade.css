@@ -27,21 +27,18 @@
 }
 
 .fadeIn__Image {
-  z-index: 20;
+    margin: 0 2em;
 }
 
-.fadeIn__Article {
+.fadeIn__Image {
   opacity: 0;
-  width: 40%;
   border: 1px solid #000000;
   z-index: 20;
-  transform: rotateX(180deg);
+  transition-timing-function: ease-in-out;
+  transition: opacity .5s;
+  transform-style: preserve-3d;
 }
 
-.fadeIn__Article.fade {
+.fadeIn__Image.fade--active {
   opacity: 1;
-  transition-timing-function: ease-in-out;
-  transition: transform 1s opacity 0.4s;
-  transform-style: preserve-3d;
-  transform: rotateX(0deg);
 }

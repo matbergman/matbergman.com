@@ -233,13 +233,24 @@ animation_2 = (element, windowHeight) => {
 
 animation_3 = (element, windowHeight) => {
   setView(element, windowHeight);
-  const fadeInArticles = element.querySelectorAll(".fadeIn__Article");
-  for (let i = 0; i < fadeInArticles.length; i++) {
-    fadeInArticles[i].classList.remove("fade");
-    if (isInViewport(fadeInArticles[i])) {
-      fadeInArticles[i].classList.add("fade");
+  const fadeInImages = element.querySelectorAll(".fadeIn__Image");
+
+  
+  for (let i = 0; i < fadeInImages.length; i++) {
+
+    if (!fadeInImages[i].classList.contains("fade--active")) {
+
+      if (isInViewport(fadeInImages[i])) {
+        fadeInImages[i].classList.add("fade--active");
+      }
+
     }
+    if (!isInViewport(fadeInImages[i]) && fadeInImages[i].classList.contains("fade--active")) {
+      fadeInImages[i].classList.remove("fade--active");
+
   }
+  }
+
 };
 
 animation_4 = windowHeight => {
