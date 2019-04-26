@@ -1,10 +1,10 @@
 .fade__Wrapper {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 20;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 20;
 }
 
 .fadeIn {

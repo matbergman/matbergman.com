@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // elem3 - set contact elements
     elem3.classList.add("contact");
 
-
     // scroll event listener
     window.addEventListener("scroll", function(e) {
       if (window.scrollY >= pageBreaks[0]) {
@@ -150,19 +149,19 @@ document.addEventListener("DOMContentLoaded", function() {
       if (window.scrollY >= pageBreaks[1]) {
         animation_2(elem1, wrapperHeight);
         animation_3(elem2, wrapperHeight);
-        setBodyClass("view1");        
+        setBodyClass("view1");
         elem0.style.visibility = "hidden";
         elem2.style.visibility = "visible";
       }
 
       if (window.scrollY >= pageBreaks[2]) {
         animation_4(wrapperHeight);
-        setBodyClass("view2");        
+        setBodyClass("view2");
         elem3.style.visibility = "visible";
       }
 
       if (window.scrollY >= pageBreaks[3]) {
-        setBodyClass("view3");        
+        setBodyClass("view3");
       }
     });
 

@@ -68,7 +68,6 @@ getWrapperLeft = elem => {
 toggleFullscreen = (parentElem, elem, obj) => {
   const headerMain = document.querySelector(".header__Main");
 
-
   console.log(parentElem.parentNode);
 
   if (toggleFullscreenState === false) {
@@ -139,8 +138,13 @@ isInViewport = elem => {
 };
 
 setView = (element, windowHeight) => {
-  element.style.top = windowHeight + "px";
-  element.style.height = windowHeight + "px";
+  if (isMobile()) {
+    element.style.top = "0px";
+    element.style.height = "auto";
+  } else {
+    element.style.top = windowHeight + "px";
+    element.style.height = windowHeight + "px";
+  }
 };
 
 setBodyClass = className => {
