@@ -1,4 +1,13 @@
 .scale {
+
+  position: fixed;
+  z-index: 40;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
   transition-timing-function: ease-in-out;
   transition: 0.2s;
 }

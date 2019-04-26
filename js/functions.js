@@ -231,33 +231,34 @@ animation_2 = (element, windowHeight) => {
   setView(element, windowHeight);
 };
 
-animation_3 = (element, windowHeight) => {
+animation_3 = (obj, element, windowHeight) => {
   setView(element, windowHeight);
-  const fadeInImages = element.querySelectorAll(".fadeIn__Image");
+  const fadeImages = element.querySelectorAll(".fade__Image");
 
+  const contentFadeElem = document.querySelector(".fade__Description");
+  contentFadeElem.innerHTML = obj.intro;
   
-  for (let i = 0; i < fadeInImages.length; i++) {
 
-    if (!fadeInImages[i].classList.contains("fade--active")) {
-
-      if (isInViewport(fadeInImages[i])) {
-        fadeInImages[i].classList.add("fade--active");
+  for (let i = 0; i < fadeImages.length; i++) {
+    if (!fadeImages[i].classList.contains("fade--active")) {
+      if (isInViewport(fadeImages[i])) {
+        fadeImages[i].classList.add("fade--active");
       }
-
     }
-    if (!isInViewport(fadeInImages[i]) && fadeInImages[i].classList.contains("fade--active")) {
-      fadeInImages[i].classList.remove("fade--active");
-
+    if (
+      !isInViewport(fadeImages[i]) &&
+      fadeImages[i].classList.contains("fade--active")
+    ) {
+      fadeImages[i].classList.remove("fade--active");
+    }
   }
-  }
-
 };
 
 animation_4 = windowHeight => {
   const elementScroll = document.querySelector("#elem3");
   if (isMobile()) {
     elementScroll.style.top = "auto";
-    elementScroll.style.height = "auto";
+    elementScroll.style.height = "100%";
   } else {
     elementScroll.style.top = windowHeight + "px";
     elementScroll.style.height = windowHeight + "px";

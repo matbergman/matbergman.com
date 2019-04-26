@@ -67,14 +67,23 @@ document.addEventListener("DOMContentLoaded", function() {
       // generate personal page "fade" view
       if (obj[i].id === "elem2") {
         let scrollBg = document.createElement("div");
-        scrollBg.classList.add("fadeIn", "fadeIn__Background");
+        scrollBg.classList.add("fade__Background");
 
         const fadeWrapper = document.createElement("div");
         fadeWrapper.classList.add("fade__Wrapper");
 
+        const fadetro = document.createElement("div");
+        fadetro.classList.add("fade__Intro");
+
+        const fadeDescription = document.createElement("p");
+        fadeDescription.classList.add("fade__Description");
+
+        fadetro.appendChild(fadeDescription);
+
         newSection.appendChild(scrollBg);
+        newSection.appendChild(fadetro);
         newSection.appendChild(fadeWrapper);
-        getCardContent(Object.entries(obj[i].content), fadeWrapper, "fadeIn");
+        getCardContent(Object.entries(obj[i].content), fadeWrapper, "fade");
       }
 
       // generate contact form view
@@ -151,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (window.scrollY >= pageBreaks[1]) {
         animation_2(elem1, wrapperHeight);
-        animation_3(elem2, wrapperHeight);
+        animation_3(obj[1], elem2, wrapperHeight);
         elem0.style.visibility = "hidden";
         elem2.style.visibility = "visible";
       }
