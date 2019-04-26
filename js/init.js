@@ -113,34 +113,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // set height of each scroll section
     wrapper.style.height = windowHeight * numberOfPages + "px";
-    for (let j = 0; j < numberOfPages; j++) {
-      pageBreaks[j] = wrapperHeight * j;
+    for (let i = 0; i < numberOfPages; i++) {
+      pageBreaks[i] = wrapperHeight * i;
     }
 
     // elem0 - scalable element size
     if (document.querySelector("#elem0")) {
       elem0.style.transform = `scale(1)`;
       elem0.classList.add("scale");
+      elem0.setAttribute("data-position", pageBreaks[0]);
     }
 
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
       elem1.classList.add("wipe");
       getWrapperLeft("wipe__Wrapper");
+      elem1.setAttribute("data-position", pageBreaks[1]);
     }
 
     // elem2 - set fade elements
     elem2.classList.add("fade");
+    elem2.setAttribute("data-position", pageBreaks[2]);
 
     // elem3 - set contact elements
     elem3.classList.add("contact");
+    elem3.setAttribute("data-position", pageBreaks[3]);
 
     // scroll event listener
     window.addEventListener("scroll", function(e) {
       if (window.scrollY >= pageBreaks[0]) {
         animation_0(elem0, wrapperHeight, numberOfPages);
         animation_1(obj[1], elem1);
-        setBodyClass("view0");
         elem0.style.visibility = "visible";
         elem2.style.visibility = "hidden";
         elem3.style.visibility = "hidden";
@@ -149,19 +152,16 @@ document.addEventListener("DOMContentLoaded", function() {
       if (window.scrollY >= pageBreaks[1]) {
         animation_2(elem1, wrapperHeight);
         animation_3(elem2, wrapperHeight);
-        setBodyClass("view1");
         elem0.style.visibility = "hidden";
         elem2.style.visibility = "visible";
       }
 
       if (window.scrollY >= pageBreaks[2]) {
         animation_4(wrapperHeight);
-        setBodyClass("view2");
         elem3.style.visibility = "visible";
       }
 
       if (window.scrollY >= pageBreaks[3]) {
-        setBodyClass("view3");
       }
     });
 

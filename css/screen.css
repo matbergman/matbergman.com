@@ -23,6 +23,10 @@ svg {
   height: 100%;
 }
 
+.noscroll {
+  overflow-y: hidden;
+}
+
 .header__Main {
   display: none;
   position: fixed;

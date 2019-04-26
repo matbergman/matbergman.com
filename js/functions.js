@@ -68,9 +68,17 @@ getWrapperLeft = elem => {
 toggleFullscreen = (parentElem, elem, obj) => {
   const headerMain = document.querySelector(".header__Main");
 
-  console.log(parentElem.parentNode);
+  if (!isMobile()) {
+    window.scrollTo({
+      top: parseInt(parentElem.parentNode.dataset.position),
+      left: 0,
+      behavior: "smooth"
+    });
+  }
 
   if (toggleFullscreenState === false) {
+    document.getElementsByTagName("body")[0].classList.add("noscroll");
+
     const fullscreenElem = document.createElement("div");
     fullscreenElem.classList.add("fullscreen");
 
@@ -117,6 +125,8 @@ toggleFullscreen = (parentElem, elem, obj) => {
 
     toggleFullscreenState = true;
   } else {
+    document.getElementsByTagName("body")[0].classList.remove("noscroll");
+
     parentElem.parentNode.removeChild(document.querySelector(".fullscreen"));
 
     headerMain.classList.remove("header__Main--hide");
@@ -139,20 +149,12 @@ isInViewport = elem => {
 
 setView = (element, windowHeight) => {
   if (isMobile()) {
-    element.style.top = "0px";
+    element.style.top = "auto";
     element.style.height = "auto";
   } else {
     element.style.top = windowHeight + "px";
     element.style.height = windowHeight + "px";
   }
-};
-
-setBodyClass = className => {
-  const bodyTag = document.getElementsByTagName("body")[0];
-  while (bodyTag.classList.length > 0) {
-    bodyTag.classList.remove(bodyTag.classList.item(0));
-  }
-  bodyTag.classList.add(className);
 };
 
 animation_0 = element => {
@@ -225,7 +227,7 @@ animation_1 = (obj, element) => {
 };
 
 animation_2 = (element, windowHeight) => {
-  element.style.position = `relative`;
+  element.style.position = "relative";
   setView(element, windowHeight);
 };
 
@@ -242,8 +244,13 @@ animation_3 = (element, windowHeight) => {
 
 animation_4 = windowHeight => {
   const elementScroll = document.querySelector("#elem3");
-  elementScroll.style.top = windowHeight + "px";
-  elementScroll.style.height = windowHeight + "px";
+  if (isMobile()) {
+    elementScroll.style.top = "auto";
+    elementScroll.style.height = "auto";
+  } else {
+    elementScroll.style.top = windowHeight + "px";
+    elementScroll.style.height = windowHeight + "px";
+  }
 };
 
 drawText = (text, str, elem) => {
@@ -263,7 +270,6 @@ drawText = (text, str, elem) => {
 };
 
 homeInit = obj => {
-  document.getElementsByTagName("body")[0].classList.add("view0");
   const contentElem = document.querySelector(".scale__Content");
   const stripeWrapper = document.createElement("div");
   stripeWrapper.classList.add("stripes");
