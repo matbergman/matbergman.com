@@ -158,25 +158,28 @@ setView = (element, windowHeight) => {
 };
 
 animation_0 = element => {
-  if (window.scrollY === 0) {
-    scaleValue = 1;
-  } else {
-    scaleValue = 1 / (window.scrollY / 5);
-  }
-  if (scaleValue <= 1) {
-    element.style.transform = `scale(${scaleValue})`;
-    element.style.opacity = 1;
-  }
-  if (scaleValue <= 0.025) {
-    element.style.opacity = scaleValue;
+  if (!isMobile()) {
+    if (window.scrollY === 0) {
+      scaleValue = 1;
+    } else {
+      scaleValue = 1 / (window.scrollY / 5);
+    }
+    if (scaleValue <= 1) {
+      element.style.transform = `scale(${scaleValue})`;
+      element.style.opacity = 1;
+    }
+    if (scaleValue <= 0.025) {
+      element.style.opacity = scaleValue;
+    }
   }
 };
 
 animation_1 = (obj, element) => {
-  element.style.position = `fixed`;
-  element.style.top = 0;
-  element.style.height = "100%";
-
+  if (!isMobile()) {
+    element.style.position = `fixed`;
+    element.style.top = 0;
+    element.style.height = "100%";
+  }
   const wipeElem0 = element.querySelector(".wipeElem__0");
   let wipeElem0Pos = wipeElem0.offsetLeft + wipeElem0.offsetWidth;
   let wipeElem0Value = wipeElem0Pos * -1 + window.scrollY;
@@ -234,22 +237,23 @@ animation_2 = (element, windowHeight) => {
 animation_3 = (obj, element, windowHeight) => {
   setView(element, windowHeight);
   const fadeImages = element.querySelectorAll(".fade__Image");
-
   const contentFadeElem = document.querySelector(".fade__Description");
   contentFadeElem.innerHTML = obj.intro;
-  
 
-  for (let i = 0; i < fadeImages.length; i++) {
-    if (!fadeImages[i].classList.contains("fade--active")) {
-      if (isInViewport(fadeImages[i])) {
+  if (!isMobile()) {
+    for (let i = 0; i < fadeImages.length; i++) {
+      if (
+        !fadeImages[i].classList.contains("fade--active") &&
+        isInViewport(fadeImages[i])
+      ) {
         fadeImages[i].classList.add("fade--active");
       }
-    }
-    if (
-      !isInViewport(fadeImages[i]) &&
-      fadeImages[i].classList.contains("fade--active")
-    ) {
-      fadeImages[i].classList.remove("fade--active");
+      if (
+        !isInViewport(fadeImages[i]) &&
+        fadeImages[i].classList.contains("fade--active")
+      ) {
+        fadeImages[i].classList.remove("fade--active");
+      }
     }
   }
 };
@@ -385,7 +389,7 @@ homeInit = obj => {
 };
 
 function isMobile() {
-  return window.innerWidth < 768;
+  return window.innerWidth < 767;
 }
 
 function isTablet() {

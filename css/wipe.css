@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 30;
@@ -148,8 +148,9 @@
   transform: rotate(-15deg) scaleY(100);
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .wipe {
+      position: fixed;
     flex-direction: row;
   }
 

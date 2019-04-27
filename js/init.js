@@ -51,15 +51,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const wipeWrapper = document.createElement("div");
         wipeWrapper.classList.add("wipe__Wrapper");
 
-        const articleIntro = document.createElement("div");
-        articleIntro.classList.add("wipe__Intro");
+        const wipeIntro = document.createElement("div");
+        wipeIntro.classList.add("wipe__Intro");
 
         const articleDescription = document.createElement("p");
         articleDescription.classList.add("wipe__Description", "drawText");
 
-        articleIntro.appendChild(articleDescription);
+        wipeIntro.appendChild(articleDescription);
 
-        newSection.appendChild(articleIntro);
+        newSection.appendChild(wipeIntro);
         newSection.appendChild(wipeWrapper);
         getCardContent(Object.entries(obj[i].content), wipeWrapper, "wipe");
       }
