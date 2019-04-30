@@ -1,11 +1,10 @@
 .contact {
     visibility: hidden;
-    position: absolute;
+    position: relative;
     width: 100%;
     background-color: #cccccc;
     z-index: 30;    
 }
-
 
 .form__Contact {
   display: flex;
@@ -13,4 +12,10 @@
   flex-direction: column;
   align-items: baseline;
   justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .contact {
+        position: absolute;
+    }
 }

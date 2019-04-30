@@ -81,17 +81,6 @@ svg {
   display: none;
 }
 
-.drawText {
-  opacity: 0;
-  transition: 0.125s;
-  transition-delay: 0.25s;
-  transition-timing-function: ease-out;
-}
-
-.drawText--Active {
-  opacity: 1;
-}
-
 .article__Text,
 .article__Tech {
   color: #000000;
@@ -140,6 +129,18 @@ svg {
 }
 
 @media only screen and (min-width: 768px) {
+
+  .drawText {
+    opacity: 0;
+    transition: 0.125s;
+    transition-delay: 0.25s;
+    transition-timing-function: ease-out;
+  }
+  
+  .drawText--Active {
+    opacity: 1;
+  }
+
   .header__Main {
     display: block;
   }

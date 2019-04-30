@@ -3,36 +3,7 @@ window.onbeforeunload = function() {
 };
 
 window.onresize = function() {
-
-  resizeFlag = true;
-
-  document.querySelector("#elem0").style.transform = `scale(1)`;
-  layoutUpdate();
-  getWrapperTranslate("wipe__Wrapper");
-  const views = document.querySelectorAll(".view");
-
-
-    // set height of each scroll section
-  document.querySelector(".wrapper").style.height = window.innerHeight * (document.querySelectorAll(".view").length - 1) + "px";
-
-  for (let i=1; i < views.length; i++) {
-    views[i].style.height = window.innerHeight + "px";
-  
-   // views[i].style.top = window.innerHeight + "px";
-  
-  }
-
-  for (let i = 0; i < document.querySelectorAll(".view").length; i++) {
-
-
-  document.querySelectorAll(".view")[i].setAttribute("data-position", window.innerHeight * i);
-
-
-}
-
-
-
-
+  resizeView();
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -84,11 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const articleDescription = document.createElement("p");
         articleDescription.classList.add("wipe__Description", "drawText");
 
+        if (isMobile) {
+          articleDescription.innerHTML = obj[i].intro;
+        }
+
         wipeIntro.appendChild(articleDescription);
 
         newSection.appendChild(wipeIntro);
-
-
 
         newSection.appendChild(wipeWrapper);
         getCardContent(Object.entries(obj[i].content), wipeWrapper, "wipe");
@@ -102,16 +75,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const fadeWrapper = document.createElement("div");
         fadeWrapper.classList.add("fade__Wrapper");
 
-        const fadetro = document.createElement("div");
-        fadetro.classList.add("fade__Intro");
+        const fadeIntro = document.createElement("div");
+        fadeIntro.classList.add("fade__Intro");
 
         const fadeDescription = document.createElement("p");
         fadeDescription.classList.add("fade__Description");
 
-        fadetro.appendChild(fadeDescription);
+        fadeIntro.appendChild(fadeDescription);
 
         newSection.appendChild(scrollBg);
-        newSection.appendChild(fadetro);
+        newSection.appendChild(fadeIntro);
         newSection.appendChild(fadeWrapper);
         getCardContent(Object.entries(obj[i].content), fadeWrapper, "fade");
       }
@@ -166,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
       elem1.classList.add("wipe");
-//      elem1.style.marginTop = wrapperHeight + "px";
+      //      elem1.style.marginTop = wrapperHeight + "px";
 
       getWrapperLeft("wipe__Wrapper");
       elem1.setAttribute("data-position", pageBreaks[1]);
@@ -203,7 +176,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       if (window.scrollY >= pageBreaks[3]) {
-
       }
     });
 
@@ -224,6 +196,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     headerMain.appendChild(navMain);
   };
-
-  
 });

@@ -3,8 +3,7 @@
     flex-direction: column;
     align-items: center;
     visibility: hidden;
-    position: absolute;
-
+    position: relative;
 }
 
 .fade__Wrapper {
@@ -53,6 +52,10 @@
 
 @media only screen and (min-width: 769px) {
 
+    .fade {
+        position: absolute;
+    }
+
     .fade__Intro {
         margin: 1em 4em 0 4em;
     }
@@ -61,7 +64,6 @@
         flex-direction: row;
         flex-wrap: wrap;        
     }
-
 
     .fade__Image {
         opacity: 0;

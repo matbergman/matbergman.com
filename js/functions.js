@@ -153,10 +153,9 @@ setView = (element, windowHeight) => {
     element.style.top = "auto";
     element.style.height = "auto";
   } else {
-
-
-    for (let i=0; i < document.querySelectorAll('.view').length; i++) {
-      document.querySelectorAll('.view')[i].style.top = document.querySelectorAll('.view')[i].dataset.position + "px";
+    for (let i = 0; i < document.querySelectorAll(".view").length; i++) {
+      document.querySelectorAll(".view")[i].style.top =
+        document.querySelectorAll(".view")[i].dataset.position + "px";
     }
 
     // if (document.querySelectorAll('.view')[1].dataset.position) {
@@ -166,13 +165,9 @@ setView = (element, windowHeight) => {
     //    element.style.top = windowHeight + "px";
     //  }
 
-   // element.style.top = window.innerHeight + "px";
+    // element.style.top = window.innerHeight + "px";
     element.style.height = window.innerHeight + "px";
-
-
-
-
-}
+  }
 };
 
 animation_0 = element => {
@@ -197,6 +192,8 @@ animation_1 = (obj, element) => {
     element.style.position = `fixed`;
     element.style.top = 0;
     element.style.height = "100%";
+  } else {
+    element.style.position = `relative`;
   }
   const wipeElem0 = element.querySelector(".wipeElem__0");
   let wipeElem0Pos = wipeElem0.offsetLeft + wipeElem0.offsetWidth;
@@ -248,7 +245,8 @@ animation_1 = (obj, element) => {
 };
 
 animation_2 = (element, windowHeight) => {
-  element.style.position = "absolute";
+  element.style.position = isMobile() ? "relative" : "absolute";
+
   setView(element, window.innerHeight);
 };
 
@@ -277,7 +275,7 @@ animation_3 = (obj, element, windowHeight) => {
 };
 
 animation_4 = windowHeight => {
-  console.log('animation_4');
+  console.log("animation_4");
   const elementScroll = document.querySelector("#elem3");
   if (isMobile()) {
     elementScroll.style.top = "auto";
@@ -445,14 +443,12 @@ function layoutUpdate() {
   }
 }
 
-function scrollNav(increment, pageBreak) {
-
+scrollNav = (increment, pageBreak) => {
   let breakValue;
 
   if (resizeFlag === true) {
     breakValue = document.querySelectorAll(".view")[increment].dataset.position;
-  }
-  else {
+  } else {
     breakValue = pageBreak;
   }
 
@@ -460,6 +456,28 @@ function scrollNav(increment, pageBreak) {
     top: breakValue,
     left: 0,
     behavior: "smooth"
-  });   
+  });
 }
 
+resizeView = () => {
+  const views = document.querySelectorAll(".view");
+  const wrapper = document.querySelector(".wrapper");
+
+  resizeFlag = true; // to reset the page breaks if the browser is vertically resized
+
+  // reset some animations
+  document.querySelector("#elem0").style.transform = `scale(1)`;
+  layoutUpdate();
+  getWrapperTranslate("wipe__Wrapper");
+
+  // set height of each scroll section
+  wrapper.style.height = window.innerHeight * (views.length - 1) + "px";
+
+  for (let i = 1; i < views.length; i++) {
+    views[i].style.height = window.innerHeight + "px";
+  }
+
+  for (let i = 0; i < views.length; i++) {
+    views[i].setAttribute("data-position", window.innerHeight * i);
+  }
+}
