@@ -3,6 +3,9 @@ window.onbeforeunload = function() {
 };
 
 window.onresize = function() {
+
+  resizeFlag = true;
+
   document.querySelector("#elem0").style.transform = `scale(1)`;
   layoutUpdate();
   getWrapperTranslate("wipe__Wrapper");
@@ -12,15 +15,18 @@ window.onresize = function() {
     // set height of each scroll section
   document.querySelector(".wrapper").style.height = window.innerHeight * (document.querySelectorAll(".view").length - 1) + "px";
 
-
   for (let i=1; i < views.length; i++) {
     views[i].style.height = window.innerHeight + "px";
+  
+   // views[i].style.top = window.innerHeight + "px";
+  
   }
 
-  for (let i = 0; i < document.querySelectorAll(".view").length - 1; i++) {
+  for (let i = 0; i < document.querySelectorAll(".view").length; i++) {
 
 
   document.querySelectorAll(".view")[i].setAttribute("data-position", window.innerHeight * i);
+
 
 }
 
@@ -197,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       if (window.scrollY >= pageBreaks[3]) {
+
       }
     });
 
@@ -209,15 +216,14 @@ document.addEventListener("DOMContentLoaded", function() {
       let navButton = document.createElement("button");
       navButton.classList.add("button__Main");
       navButton.innerText = obj[i].label;
-      navButton.addEventListener("click", function(e) {
-        window.scrollTo({
-          top: pageBreaks[i],
-          left: 0,
-          behavior: "smooth"
-        });
+
+      navButton.addEventListener("click", function() {
+        scrollNav(i, pageBreaks[i]);
       });
       navMain.appendChild(navButton);
     }
     headerMain.appendChild(navMain);
   };
+
+  
 });

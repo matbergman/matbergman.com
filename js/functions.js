@@ -1,6 +1,7 @@
 const imagePath = "images";
 let contentWipeIncrement = 0;
 let toggleFullscreenState = false;
+let resizeFlag = false;
 
 getAspectRatio = () => {
   if (window.innerWidth > window.innerHeight) {
@@ -252,7 +253,6 @@ animation_2 = (element, windowHeight) => {
 };
 
 animation_3 = (obj, element, windowHeight) => {
-  console.log('animation_3');
   setView(element, window.innerHeight);
   const fadeImages = element.querySelectorAll(".fade__Image");
   const contentFadeElem = document.querySelector(".fade__Description");
@@ -284,7 +284,7 @@ animation_4 = windowHeight => {
     elementScroll.style.height = "100%";
   } else {
     // elementScroll.style.top = windowHeight + "px";
-    elementScroll.style.height = windowHeight + "px";
+    elementScroll.style.height = window.innerHeight + "px";
   }
 };
 
@@ -444,3 +444,22 @@ function layoutUpdate() {
   if (window.innerHeight >= 1080) {
   }
 }
+
+function scrollNav(increment, pageBreak) {
+
+  let breakValue;
+
+  if (resizeFlag === true) {
+    breakValue = document.querySelectorAll(".view")[increment].dataset.position;
+  }
+  else {
+    breakValue = pageBreak;
+  }
+
+  window.scrollTo({
+    top: breakValue,
+    left: 0,
+    behavior: "smooth"
+  });   
+}
+

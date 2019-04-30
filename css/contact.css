@@ -1,6 +1,6 @@
 .contact {
     visibility: hidden;
-    position: relative;
+    position: absolute;
     width: 100%;
     background-color: #cccccc;
     z-index: 30;    
