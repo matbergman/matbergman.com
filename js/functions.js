@@ -275,13 +275,11 @@ animation_3 = (obj, element, windowHeight) => {
 };
 
 animation_4 = windowHeight => {
-  console.log("animation_4");
   const elementScroll = document.querySelector("#elem3");
   if (isMobile()) {
     elementScroll.style.top = "auto";
     elementScroll.style.height = "100%";
   } else {
-    // elementScroll.style.top = windowHeight + "px";
     elementScroll.style.height = window.innerHeight + "px";
   }
 };
@@ -457,7 +455,7 @@ scrollNav = (increment, pageBreak) => {
     left: 0,
     behavior: "smooth"
   });
-}
+};
 
 resizeView = () => {
   const views = document.querySelectorAll(".view");
@@ -480,4 +478,12 @@ resizeView = () => {
   for (let i = 0; i < views.length; i++) {
     views[i].setAttribute("data-position", window.innerHeight * i);
   }
-}
+
+  // mobile refinements
+  if (isMobile()) {
+    document.querySelector(".scale").style.opacity = 1;
+    document.querySelector(".wipe").style.position = "relative";
+    document.querySelector(".wipe").style.top = "0px";
+    document.querySelector(".wipe").style.height = "100%";
+  }
+};

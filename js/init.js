@@ -139,8 +139,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
       elem1.classList.add("wipe");
-      //      elem1.style.marginTop = wrapperHeight + "px";
-
       getWrapperLeft("wipe__Wrapper");
       elem1.setAttribute("data-position", pageBreaks[1]);
     }
