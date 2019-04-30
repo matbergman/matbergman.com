@@ -244,7 +244,7 @@ animation_2 = (element, windowHeight) => {
   setView(element, window.innerHeight);
 };
 
-animation_3 = (obj, element, windowHeight) => {
+animation_3 = (obj, element) => {
   setView(element, window.innerHeight);
   const fadeImages = element.querySelectorAll(".fade__Image");
   const contentFadeElem = document.querySelector(".fade__Description");
@@ -268,7 +268,7 @@ animation_3 = (obj, element, windowHeight) => {
   }
 };
 
-animation_4 = windowHeight => {
+animation_4 = () => {
   const elementScroll = document.querySelector("#elem3");
   if (isMobile()) {
     elementScroll.style.top = "auto";

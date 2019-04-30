@@ -2,9 +2,71 @@
   visibility: hidden;
   position: relative;
   width: 100%;
-  background-color: #cccccc;
   z-index: 30;
+  background: linear-gradient(45deg, #5082b7 0%,#3a6ea5 100%);  
+
 }
+
+.contact__Background {
+    position: absolute;
+    transition-timing-function: ease-in-out;
+    transition: 0.2s;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+    left: -66%;
+  }
+
+  .contact--active .contact__Background {
+      transform: translateX(66%);
+  }
+
+  .contact__Wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 20;
+    align-items: center;
+    align-content: space-evenly;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 2em 0 4em 0;
+  }
+
+  .contact__Intro {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: auto;
+    align-items: flex-start;
+    width: 100%;
+    z-index: 20;
+    hyphens: auto;
+  }
+
+.contactElem {
+    display: block;
+    position: absolute;
+    transition-timing-function: ease-in-out;
+    transition: 0.2s;
+
+}
+
+.contactElem__0 {
+    top: 0;
+    right: 66%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3a6796;
+    transform: rotate(11deg) scaleY(100);
+    z-index: 30;
+    border: 2px solid #95afc6;
+}
+
+
 
 .form__Contact {
   display: flex;

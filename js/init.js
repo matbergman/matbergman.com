@@ -52,14 +52,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const wipeIntro = document.createElement("div");
         wipeIntro.classList.add("wipe__Intro");
 
-        const articleDescription = document.createElement("p");
-        articleDescription.classList.add("wipe__Description", "drawText");
+        const wipeDescription = document.createElement("p");
+        wipeDescription.classList.add("wipe__Description", "drawText");
 
         if (isMobile) {
-          articleDescription.innerHTML = obj[i].intro;
+          wipeDescription.innerHTML = obj[i].intro;
         }
 
-        wipeIntro.appendChild(articleDescription);
+        wipeIntro.appendChild(wipeDescription);
 
         newSection.appendChild(wipeIntro);
 
@@ -91,6 +91,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // generate contact form view
       if (obj[i].id === "elem3") {
+
+        const contactBg = document.createElement("div");
+        contactBg.classList.add("contact__Background");
+        newSection.appendChild(contactBg);
+
+        let contactElem = document.createElement("span");
+        contactElem.classList.add("contactElem", "contactElem__0");
+        contactElem.setAttribute("role", "presentation");
+        contactBg.appendChild(contactElem);
+
+        const contactWrapper = document.createElement("div");
+        contactWrapper.classList.add("contact__Wrapper");
+
+        const contactIntro = document.createElement("div");
+        contactIntro.classList.add("contact__Intro");
+
+        const contactHeader = document.createElement("h2");
+        contactHeader.classList.add("contact__Header");
+        contactHeader.innerText = obj[i].header;
+
+
+        const contactDescription = document.createElement("p");
+        contactDescription.classList.add("contact__Description");
+
+        contactIntro.appendChild(contactHeader);
+        contactIntro.appendChild(contactDescription);
+
+        newSection.appendChild(contactIntro);
+
+        newSection.appendChild(contactWrapper);
+
+
+
+
         let contactForm = document.createElement("form");
         contactForm.classList.add("form__Contact");
 
@@ -114,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactForm.appendChild(contactInput);
         contactForm.appendChild(contactTextarea);
         contactForm.appendChild(contactSubmit);
-        newSection.appendChild(contactForm);
+        contactWrapper.appendChild(contactForm);
       }
 
       // render elements
@@ -174,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       if (window.scrollY >= pageBreaks[3]) {
+        elem3.classList.add("contact--active");
       }
     });
 
