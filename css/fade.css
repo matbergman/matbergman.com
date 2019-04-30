@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     visibility: hidden;
-    position: relative;
+    position: absolute;
 
 }
 

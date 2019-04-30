@@ -166,6 +166,8 @@
     padding: 0;
   }
 
+
+
   .wipe__Intro {
     position: absolute;
     width: 33%;
@@ -174,7 +176,7 @@
   }
 
   .wipe__Image {
-    width: 45%;
+    width: 30%;
     max-width: 350px;
     flex-shrink: 1;
     margin: 0;

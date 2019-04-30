@@ -152,9 +152,26 @@ setView = (element, windowHeight) => {
     element.style.top = "auto";
     element.style.height = "auto";
   } else {
-    element.style.top = windowHeight + "px";
-    element.style.height = windowHeight + "px";
-  }
+
+
+    for (let i=0; i < document.querySelectorAll('.view').length; i++) {
+      document.querySelectorAll('.view')[i].style.top = document.querySelectorAll('.view')[i].dataset.position + "px";
+    }
+
+    // if (document.querySelectorAll('.view')[1].dataset.position) {
+    //  element.style.top = document.querySelectorAll('.view')[1].dataset.position + "px";
+    //  }
+    //  else {
+    //    element.style.top = windowHeight + "px";
+    //  }
+
+   // element.style.top = window.innerHeight + "px";
+    element.style.height = window.innerHeight + "px";
+
+
+
+
+}
 };
 
 animation_0 = element => {
@@ -230,12 +247,13 @@ animation_1 = (obj, element) => {
 };
 
 animation_2 = (element, windowHeight) => {
-  element.style.position = "relative";
-  setView(element, windowHeight);
+  element.style.position = "absolute";
+  setView(element, window.innerHeight);
 };
 
 animation_3 = (obj, element, windowHeight) => {
-  setView(element, windowHeight);
+  console.log('animation_3');
+  setView(element, window.innerHeight);
   const fadeImages = element.querySelectorAll(".fade__Image");
   const contentFadeElem = document.querySelector(".fade__Description");
   contentFadeElem.innerHTML = obj.intro;
@@ -259,12 +277,13 @@ animation_3 = (obj, element, windowHeight) => {
 };
 
 animation_4 = windowHeight => {
+  console.log('animation_4');
   const elementScroll = document.querySelector("#elem3");
   if (isMobile()) {
     elementScroll.style.top = "auto";
     elementScroll.style.height = "100%";
   } else {
-    elementScroll.style.top = windowHeight + "px";
+    // elementScroll.style.top = windowHeight + "px";
     elementScroll.style.height = windowHeight + "px";
   }
 };

@@ -6,6 +6,27 @@ window.onresize = function() {
   document.querySelector("#elem0").style.transform = `scale(1)`;
   layoutUpdate();
   getWrapperTranslate("wipe__Wrapper");
+  const views = document.querySelectorAll(".view");
+
+
+    // set height of each scroll section
+  document.querySelector(".wrapper").style.height = window.innerHeight * (document.querySelectorAll(".view").length - 1) + "px";
+
+
+  for (let i=1; i < views.length; i++) {
+    views[i].style.height = window.innerHeight + "px";
+  }
+
+  for (let i = 0; i < document.querySelectorAll(".view").length - 1; i++) {
+
+
+  document.querySelectorAll(".view")[i].setAttribute("data-position", window.innerHeight * i);
+
+}
+
+
+
+
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -60,6 +81,9 @@ document.addEventListener("DOMContentLoaded", function() {
         wipeIntro.appendChild(articleDescription);
 
         newSection.appendChild(wipeIntro);
+
+
+
         newSection.appendChild(wipeWrapper);
         getCardContent(Object.entries(obj[i].content), wipeWrapper, "wipe");
       }
@@ -136,6 +160,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // elem1 - set wipe elements
     if (document.querySelector("#elem1")) {
       elem1.classList.add("wipe");
+//      elem1.style.marginTop = wrapperHeight + "px";
+
       getWrapperLeft("wipe__Wrapper");
       elem1.setAttribute("data-position", pageBreaks[1]);
     }
