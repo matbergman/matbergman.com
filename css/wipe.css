@@ -8,7 +8,7 @@
   left: 0;
   z-index: 30;
   width: 100%;
-  height: 100%;  
+  height: 100%;
 }
 
 .wipe__Background {
@@ -150,7 +150,7 @@
 
 @media only screen and (min-width: 768px) {
   .wipe {
-      position: fixed;
+    position: fixed;
     flex-direction: row;
   }
 
@@ -165,8 +165,6 @@
     overflow: hidden;
     padding: 0;
   }
-
-
 
   .wipe__Intro {
     position: absolute;

@@ -1,9 +1,9 @@
 .fade {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    visibility: hidden;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  position: relative;
 }
 
 .fade__Wrapper {
@@ -19,19 +19,17 @@
   flex-wrap: nowrap;
 }
 
-
 .fade__Intro {
-    z-index: 20;
-    font-size: 2em;
-    color: #efeee1;
-    margin: 1em;
+  z-index: 20;
+  font-size: 2em;
+  color: #efeee1;
+  margin: 1em;
 }
 
 .fade__Description {
-    margin:0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 
 .fade__Background {
   position: fixed;
@@ -49,32 +47,30 @@
   z-index: 20;
 }
 
-
 @media only screen and (min-width: 769px) {
+  .fade {
+    position: absolute;
+  }
 
-    .fade {
-        position: absolute;
-    }
+  .fade__Intro {
+    margin: 1em 4em 0 4em;
+  }
 
-    .fade__Intro {
-        margin: 1em 4em 0 4em;
-    }
+  .fade__Wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-    .fade__Wrapper {
-        flex-direction: row;
-        flex-wrap: wrap;        
-    }
+  .fade__Image {
+    width: 30%;
+    opacity: 0;
+    transition-timing-function: ease-in-out;
+    transition: opacity 0.5s;
+    transform-style: preserve-3d;
+    margin: 0 1em 1em 1em;
+  }
 
-    .fade__Image {
-        opacity: 0;
-        transition-timing-function: ease-in-out;
-        transition: opacity .5s;
-        transform-style: preserve-3d;
-        margin: 0 2em 2em 2em;
-      }
-      .fade__Image.fade--active {
-        opacity: 1;
-      }
-      
-
+  .fade__Image.fade--active {
+    opacity: 1;
+  }
 }

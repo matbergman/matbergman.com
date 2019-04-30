@@ -112,12 +112,10 @@
 }
 
 @media only screen and (min-width: 768px) {
-
-
   .scale {
     position: fixed;
   }
-  
+
   .scale__Content {
     height: 100vh;
     padding: 0;

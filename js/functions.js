@@ -157,15 +157,6 @@ setView = (element, windowHeight) => {
       document.querySelectorAll(".view")[i].style.top =
         document.querySelectorAll(".view")[i].dataset.position + "px";
     }
-
-    // if (document.querySelectorAll('.view')[1].dataset.position) {
-    //  element.style.top = document.querySelectorAll('.view')[1].dataset.position + "px";
-    //  }
-    //  else {
-    //    element.style.top = windowHeight + "px";
-    //  }
-
-    // element.style.top = window.innerHeight + "px";
     element.style.height = window.innerHeight + "px";
   }
 };
@@ -184,6 +175,9 @@ animation_0 = element => {
     if (scaleValue <= 0.025) {
       element.style.opacity = scaleValue;
     }
+  }
+  else {
+    element.style.opacity = 1;
   }
 };
 
@@ -481,7 +475,7 @@ resizeView = () => {
 
   // mobile refinements
   if (isMobile()) {
-    document.querySelector(".scale").style.opacity = 1;
+    // document.querySelector(".scale").style.opacity = 1;
     document.querySelector(".wipe").style.position = "relative";
     document.querySelector(".wipe").style.top = "0px";
     document.querySelector(".wipe").style.height = "100%";

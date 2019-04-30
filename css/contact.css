@@ -1,9 +1,9 @@
 .contact {
-    visibility: hidden;
-    position: relative;
-    width: 100%;
-    background-color: #cccccc;
-    z-index: 30;    
+  visibility: hidden;
+  position: relative;
+  width: 100%;
+  background-color: #cccccc;
+  z-index: 30;
 }
 
 .form__Contact {
@@ -15,7 +15,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .contact {
-        position: absolute;
-    }
+  .contact {
+    position: absolute;
+  }
 }
