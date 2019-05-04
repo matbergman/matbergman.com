@@ -98,6 +98,16 @@ svg {
   margin-bottom: 0;
 }
 
+.subhead {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: #efeee1;
+  font-size: 60px;
+  font-size: 3.6em;
+  font-weight: 400;
+}
+
 .fullscreen {
   display: flex;
   flex-direction: column;

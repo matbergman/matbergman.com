@@ -16,7 +16,7 @@
     {
       "id":  "elem1",
       "label": "Professional",
-      "header":  "header1",
+      "header":  "Professional",
       "intro": "I'm a skilled front end software engineer and user experience designer, with an eye for detail and mastery of layout, color, and typography fundamentals.",
       "content":  {
         "article1":  {
@@ -103,7 +103,7 @@
     },
     {
       "id":  "elem2",
-      "header":  "header2",
+      "header":  "Projects",
       "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "label": "Personal",
       "content":  {
@@ -151,13 +151,24 @@
     },
     {
       "id":  "elem3",
-      "header":  "header3",
+      "header":  "Contact",
       "label": "Contact",
-      "content":  {
-        "contactInputFor": "inputEmail",
-        "contactInputLabel": "Email address"
-
-      }
+      "contentName":  {
+        "contactNameId": "inputName",
+        "contactNameLabel": "Name"
+      },
+      "contentEmail":  {
+        "contactEmailId": "inputEmail",
+        "contactEmailLabel": "Email address"
+      },
+      "contentSubject":  {
+        "contactSubjectlId": "inputSubject",
+        "contactSubjectLabel": "Subject"
+      },      
+      "contentMessage":  {
+        "contactMessageId": "textareaMessage",
+        "contactMessageLabel": "Message"
+      }            
     }
   ]
 }

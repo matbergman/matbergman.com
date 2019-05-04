@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactIntro.classList.add("contact__Intro");
 
         const contactHeader = document.createElement("h2");
-        contactHeader.classList.add("contact__Header");
+        contactHeader.classList.add("subhead", "contact__Subhead");
         contactHeader.innerText = obj[i].header;
 
 
@@ -125,28 +125,57 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-        let contactForm = document.createElement("form");
+        const contactForm = document.createElement("form");
         contactForm.classList.add("form__Contact");
 
-        let contactInputLabel = document.createElement("label");
-        contactInputLabel.classList.add("form__Contact__Label");
-        contactInputLabel.htmlFor = obj[i].content.contactInputFor;
-        contactInputLabel.innerText = obj[i].content.contactInputLabel;
+        const contactNameLabel = document.createElement("label");
+        contactNameLabel.classList.add("form__Contact__Label");
+        contactNameLabel.htmlFor = obj[i].contentName.contactNameId;
+        contactNameLabel.innerText = obj[i].contentName.contactNameLabel;
+        let contactName = document.createElement("input");
+        contactName.type = "text";
+        contactName.classList.add("form__Contact__Input");
+        contactName.id = obj[i].contentName.contactNameId;
 
-        let contactInput = document.createElement("input");
-        contactInput.type = "text";
-        contactInput.classList.add("form__Contact__Input");
+        const contactEmailLabel = document.createElement("label");
+        contactEmailLabel.classList.add("form__Contact__Label");
+        contactEmailLabel.htmlFor = obj[i].contentEmail.contactEmailId;
+        contactEmailLabel.innerText = obj[i].contentEmail.contactEmailLabel;
+        const contactEmail = document.createElement("input");
+        contactEmail.type = "email";
+        contactEmail.classList.add("form__Contact__Input");
+        contactEmail.id = obj[i].contentEmail.contactEmailId;
 
-        let contactTextarea = document.createElement("textarea");
-        contactTextarea.classList.add("form__Contact__Textarea");
 
-        let contactSubmit = document.createElement("button");
+        const contactSubjectLabel = document.createElement("label");
+        contactSubjectLabel.classList.add("form__Contact__Label");
+        contactSubjectLabel.htmlFor = obj[i].contentSubject.contactSubjectId;
+        contactSubjectLabel.innerText = obj[i].contentSubject.contactSubjectLabel;
+        const contactSubject = document.createElement("input");
+        contactSubject.type = "text";
+        contactSubject.classList.add("form__Contact__Input");
+        contactSubject.id = obj[i].contentSubject.contactSubjectId;
+
+
+        const contactMessageLabel = document.createElement("label");
+        contactMessageLabel.classList.add("form__Contact__Label");
+        contactMessageLabel.htmlFor = obj[i].contentMessage.contactMessageId;
+        contactMessageLabel.innerText = obj[i].contentMessage.contactMessageLabel;
+        const contactMessage = document.createElement("textarea");
+        contactMessage.classList.add("form__Contact__Textarea");
+
+        const contactSubmit = document.createElement("button");
         contactSubmit.classList.add("form__Contact__Button");
-        contactSubmit.innerText = "Submit";
+        contactSubmit.innerText = "Submit Message";
 
-        contactForm.appendChild(contactInputLabel);
-        contactForm.appendChild(contactInput);
-        contactForm.appendChild(contactTextarea);
+        contactForm.appendChild(contactNameLabel);
+        contactForm.appendChild(contactName);
+        contactForm.appendChild(contactEmailLabel);
+        contactForm.appendChild(contactEmail);
+        contactForm.appendChild(contactSubjectLabel);
+        contactForm.appendChild(contactSubject);
+        contactForm.appendChild(contactMessageLabel);
+        contactForm.appendChild(contactMessage);
         contactForm.appendChild(contactSubmit);
         contactWrapper.appendChild(contactForm);
       }

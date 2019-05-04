@@ -1,4 +1,5 @@
 .contact {
+display: flex;
   visibility: hidden;
   position: relative;
   width: 100%;
@@ -31,8 +32,7 @@
     align-items: center;
     align-content: space-evenly;
     flex-wrap: nowrap;
-    margin: 0;
-    padding: 2em 0 4em 0;
+    width: 100%;
   }
 
   .contact__Intro {
@@ -42,10 +42,16 @@
     display: flex;
     height: auto;
     align-items: flex-start;
-    width: 100%;
+    width: 33%;
+    height: 100%;
     z-index: 20;
     hyphens: auto;
   }
+
+.contact__Subhead {
+    top: 33%;
+    margin: 0 0 0 32px;
+}
 
 .contactElem {
     display: block;
@@ -74,6 +80,28 @@
   flex-direction: column;
   align-items: baseline;
   justify-content: center;
+}
+
+.form__Contact__Label {
+  color: #efeee1;
+  font-size: 1.4em;
+}
+
+.form__Contact__Input,
+.form__Contact__Textarea {
+  font-size: 1.4em;
+  margin: 0 0 1em 0;
+}
+
+.form__Contact__Button {
+
+  background-color: #efeee1;
+  font-family: botanika-web, sans-serif;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2em;
+  outline: none;
+  padding: .5em;
 }
 
 @media only screen and (min-width: 768px) {
