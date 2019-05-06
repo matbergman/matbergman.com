@@ -237,13 +237,12 @@ animation_1 = (obj, element) => {
   getWrapperTranslate("wipe__Wrapper");
 };
 
-animation_2 = (element) => {
+animation_2 = element => {
   element.style.position = isMobile() ? "relative" : "absolute";
   setView(element, window.innerHeight);
 };
 
 animation_3 = (obj, element) => {
-  element.querySelector(".fade__Background").classList.add("fade__Background--animate");
   setView(element, window.innerHeight);
   const fadeImages = element.querySelectorAll(".fade__Image");
   const contentFadeElem = document.querySelector(".fade__Description");

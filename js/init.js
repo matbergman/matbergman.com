@@ -34,13 +34,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // background presentation elements
         for (let i = 0; i < 3; i++) {
-          let wipeElem = document.createElement("span");
+          const wipeElem = document.createElement("span");
           wipeElem.classList.add("wipeElem", "wipeElem__" + i);
           wipeElem.setAttribute("role", "presentation");
           wipeBg.appendChild(wipeElem);
         }
         for (let i = 0; i < 4; i++) {
-          let shadowElem = document.createElement("span");
+          const shadowElem = document.createElement("span");
           shadowElem.classList.add("shadowElem", "shadowElem__" + i);
           shadowElem.setAttribute("role", "presentation");
           wipeBg.appendChild(shadowElem);
@@ -74,8 +74,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // generate project page "fade" view
       if (obj[i].id === "elem2") {
-        let scrollBg = document.createElement("div");
-        scrollBg.classList.add("fade__Background");
+        const scrollBg = document.createElement("div");
+        scrollBg.classList.add("fade__Background", "fade__Background__0");
+
+        const scrollBg1 = document.createElement("div");
+        scrollBg1.classList.add("fade__Background", "fade__Background__1");
 
         const fadeWrapper = document.createElement("div");
         fadeWrapper.classList.add("fade__Wrapper");
@@ -94,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fadeIntro.appendChild(fadeDescription);
 
         newSection.appendChild(scrollBg);
+        newSection.appendChild(scrollBg1);
         newSection.appendChild(fadeIntro);
         newSection.appendChild(fadeWrapper);
         getCardContent(Object.entries(obj[i].content), fadeWrapper, "fade");
@@ -105,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactBg.classList.add("contact__Background");
         newSection.appendChild(contactBg);
 
-        let contactElem = document.createElement("span");
+        const contactElem = document.createElement("span");
         contactElem.classList.add("contactElem", "contactElem__0");
         contactElem.setAttribute("role", "presentation");
         contactBg.appendChild(contactElem);
@@ -133,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactNameLabel.classList.add("form__Contact__Label");
         contactNameLabel.htmlFor = obj[i].contentName.contactNameId;
         contactNameLabel.innerText = obj[i].contentName.contactNameLabel;
-        let contactName = document.createElement("input");
+        const contactName = document.createElement("input");
         contactName.type = "text";
         contactName.classList.add("form__Contact__Input");
         contactName.id = obj[i].contentName.contactNameId;
@@ -227,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (window.scrollY >= pageBreaks[1]) {
         animation_2(elem1, wrapperHeight);
-        animation_3(obj[1], elem2, wrapperHeight);
+        animation_3(obj[2], elem2, wrapperHeight);
         elem0.style.visibility = "hidden";
         elem2.style.visibility = "visible";
       }
@@ -244,11 +248,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // main navigation
     const headerMain = document.querySelector(".header__Main");
-    let navMain = document.createElement("nav");
+    const navMain = document.createElement("nav");
     navMain.classList.add("nav__Main");
 
     for (let i = 0; i < obj.length; i++) {
-      let navButton = document.createElement("button");
+      const navButton = document.createElement("button");
       navButton.classList.add("button__Main");
       navButton.innerText = obj[i].label;
 

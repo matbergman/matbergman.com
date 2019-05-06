@@ -1,7 +1,7 @@
 .fade {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   visibility: hidden;
   position: relative;
 }
@@ -21,7 +21,10 @@
 
 .fade__Intro {
   z-index: 20;
-  margin: 1em 1em 1em 4em;
+  margin: 0;
+  padding: 1em 1em 1em 4em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .fade__Description {
@@ -38,17 +41,26 @@
   transform: translateX(-130px);
   width: calc(100% + 130px);
   height: 100%;
-  z-index: 10;
-  background-color: #0f111e;
   background-image: url(../images/background.svg);
   background-repeat: repeat;
+  animation-name: fadeBackgroundAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: none;
+}
+
+.fade__Background__0 {
+  animation-duration: 12s;
+  z-index: 10;
+  background-color: #0f111e;
   background-size: 130px 113px;
 }
 
-.fade__Background.fade__Background--animate {
-  animation: fadeBackgroundAnimation 10s infinite;
-  animation-timing-function: linear;
-  animation-fill-mode: none;
+.fade__Background__1 {
+  animation-duration: 6s;
+  z-index: 20;
+  background-size: 260px 226px;
+  background-color: transparent;
 }
 
 @keyframes fadeBackgroundAnimation {
@@ -71,11 +83,19 @@
   }
 
   .fade__Intro {
-    margin: 1em 4em 0 4em;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
   }
 
   .fade__Subhead {
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0 32px;
+  }
+
+  .fade__Description {
+    margin: 0 0 0 2em;
   }
 
   .fade__Wrapper {
