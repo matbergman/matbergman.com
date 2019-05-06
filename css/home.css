@@ -25,7 +25,6 @@
 .scale__Article {
   display: flex;
   align-items: center;
-  line-height: 2em;
   height: 100%;
 }
 
@@ -105,7 +104,7 @@
 }
 
 .content__Home__Text {
-  font-size: 1.6em;
+  font-size: 2em;
   line-height: 1.4;
   letter-spacing: 0.05em;
   margin: 0;
@@ -148,10 +147,6 @@
 
   .content__Home__Polygon {
     display: block;
-  }
-
-  .content__Home__Text {
-    font-size: 2em;
   }
 }
 

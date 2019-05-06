@@ -52,6 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const wipeIntro = document.createElement("div");
         wipeIntro.classList.add("wipe__Intro");
 
+        const wipeHeader = document.createElement("h2");
+        wipeHeader.classList.add("subhead", "wipe__Subhead");
+        wipeHeader.innerHTML = obj[i].header;
+
         const wipeDescription = document.createElement("p");
         wipeDescription.classList.add("wipe__Description", "drawText");
 
@@ -59,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
           wipeDescription.innerHTML = obj[i].intro;
         }
 
+        wipeIntro.appendChild(wipeHeader);
         wipeIntro.appendChild(wipeDescription);
 
         newSection.appendChild(wipeIntro);
@@ -67,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         getCardContent(Object.entries(obj[i].content), wipeWrapper, "wipe");
       }
 
-      // generate personal page "fade" view
+      // generate project page "fade" view
       if (obj[i].id === "elem2") {
         let scrollBg = document.createElement("div");
         scrollBg.classList.add("fade__Background");
@@ -78,9 +83,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const fadeIntro = document.createElement("div");
         fadeIntro.classList.add("fade__Intro");
 
+        const fadeHeader = document.createElement("h2");
+        fadeHeader.classList.add("subhead", "fade__Subhead");
+        fadeHeader.innerHTML = obj[i].header;
+
         const fadeDescription = document.createElement("p");
         fadeDescription.classList.add("fade__Description");
 
+        fadeIntro.appendChild(fadeHeader);
         fadeIntro.appendChild(fadeDescription);
 
         newSection.appendChild(scrollBg);
@@ -91,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // generate contact form view
       if (obj[i].id === "elem3") {
-
         const contactBg = document.createElement("div");
         contactBg.classList.add("contact__Background");
         newSection.appendChild(contactBg);
@@ -111,19 +120,11 @@ document.addEventListener("DOMContentLoaded", function() {
         contactHeader.classList.add("subhead", "contact__Subhead");
         contactHeader.innerText = obj[i].header;
 
-
-        const contactDescription = document.createElement("p");
-        contactDescription.classList.add("contact__Description");
-
         contactIntro.appendChild(contactHeader);
-        contactIntro.appendChild(contactDescription);
 
         newSection.appendChild(contactIntro);
 
         newSection.appendChild(contactWrapper);
-
-
-
 
         const contactForm = document.createElement("form");
         contactForm.classList.add("form__Contact");
@@ -146,21 +147,21 @@ document.addEventListener("DOMContentLoaded", function() {
         contactEmail.classList.add("form__Contact__Input");
         contactEmail.id = obj[i].contentEmail.contactEmailId;
 
-
         const contactSubjectLabel = document.createElement("label");
         contactSubjectLabel.classList.add("form__Contact__Label");
         contactSubjectLabel.htmlFor = obj[i].contentSubject.contactSubjectId;
-        contactSubjectLabel.innerText = obj[i].contentSubject.contactSubjectLabel;
+        contactSubjectLabel.innerText =
+          obj[i].contentSubject.contactSubjectLabel;
         const contactSubject = document.createElement("input");
         contactSubject.type = "text";
         contactSubject.classList.add("form__Contact__Input");
         contactSubject.id = obj[i].contentSubject.contactSubjectId;
 
-
         const contactMessageLabel = document.createElement("label");
         contactMessageLabel.classList.add("form__Contact__Label");
         contactMessageLabel.htmlFor = obj[i].contentMessage.contactMessageId;
-        contactMessageLabel.innerText = obj[i].contentMessage.contactMessageLabel;
+        contactMessageLabel.innerText =
+          obj[i].contentMessage.contactMessageLabel;
         const contactMessage = document.createElement("textarea");
         contactMessage.classList.add("form__Contact__Textarea");
 

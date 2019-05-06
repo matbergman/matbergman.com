@@ -21,12 +21,12 @@
 
 .fade__Intro {
   z-index: 20;
-  font-size: 2em;
-  color: #efeee1;
-  margin: 1em;
+  margin: 1em 1em 1em 4em;
 }
 
 .fade__Description {
+  color: #efeee1;
+  font-size: 2em;
   margin: 0;
   padding: 0;
 }
@@ -34,13 +34,30 @@
 .fade__Background {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  transform: translateX(-130px);
+  width: calc(100% + 130px);
   height: 100%;
   z-index: 10;
   background-color: #0f111e;
   background-image: url(../images/background.svg);
   background-repeat: repeat;
   background-size: 130px 113px;
+}
+
+.fade__Background.fade__Background--animate {
+  animation: fadeBackgroundAnimation 10s infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: none;
+}
+
+@keyframes fadeBackgroundAnimation {
+  0% {
+    transform: translateX(-130px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 .fade__Image {
@@ -55,6 +72,10 @@
 
   .fade__Intro {
     margin: 1em 4em 0 4em;
+  }
+
+  .fade__Subhead {
+    margin: 0 0 0.5em 0;
   }
 
   .fade__Wrapper {

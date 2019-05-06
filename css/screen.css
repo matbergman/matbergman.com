@@ -35,7 +35,7 @@ svg {
   margin: 10px;
   z-index: 50;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #0f111e;
   border: 1px solid #da7317;
   border-radius: 0.25em;
   opacity: 1;
@@ -103,9 +103,9 @@ svg {
   margin: 0;
   padding: 0;
   color: #efeee1;
-  font-size: 60px;
   font-size: 3.6em;
   font-weight: 400;
+  margin: 0 0 0.5em 0;
 }
 
 .fullscreen {
@@ -158,5 +158,9 @@ svg {
     width: auto;
     max-width: 100%;
     object-fit: contain;
+  }
+
+  .subhead {
+    margin: 0 32px 0.5em 32px;
   }
 }
