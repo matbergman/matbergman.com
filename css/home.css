@@ -28,6 +28,11 @@
   height: 100%;
 }
 
+.scale__Link {
+  color: #00b6ff;
+  cursor: pointer;
+}
+
 .stripes {
   display: flex;
   position: fixed;

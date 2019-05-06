@@ -8,7 +8,7 @@
         "article1": {
           "classList": ["scale__Article"],
           "speed": 0,
-          "text":  "I'm Mat. You may know me from my professional work as a software engineer and user experience designer. Or maybe you came across my personal photography or animation projects. You can also contact me by email and Twitter."
+          "text":  "I'm Mat. You may know me from my <a class=\"scale__Link scale__Link__0\">professional</a> work as a software engineer and user experience designer. Or maybe you came across my personal photography or animation <a class=\"scale__Link scale__Link__1\">projects</a>. You can also <a class=\"scale__Link scale__Link__2\">contact</a> me by email and Twitter."
         }
       },
       "stripeCount":  14

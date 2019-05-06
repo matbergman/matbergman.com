@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
         wipeIntro.classList.add("wipe__Intro");
 
         const wipeHeader = document.createElement("h2");
-        wipeHeader.classList.add("subhead", "wipe__Subhead");
+        wipeHeader.classList.add("subhead", "wipe__Subhead", "drawText");
         wipeHeader.innerHTML = obj[i].header;
 
         const wipeDescription = document.createElement("p");
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < numberOfPages; i++) {
       pageBreaks[i] = wrapperHeight * i;
     }
-
+    
     // elem0 - scalable element size
     if (document.querySelector("#elem0")) {
       elem0.style.transform = `scale(1)`;
@@ -259,8 +259,10 @@ document.addEventListener("DOMContentLoaded", function() {
       navButton.addEventListener("click", function() {
         scrollNav(i, pageBreaks[i]);
       });
+      navButton.setAttribute("data-scroll", pageBreaks[i]);
       navMain.appendChild(navButton);
     }
     headerMain.appendChild(navMain);
   };
+
 });

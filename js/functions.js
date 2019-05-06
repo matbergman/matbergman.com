@@ -191,24 +191,27 @@ animation_1 = (obj, element) => {
   const wipeElem0 = element.querySelector(".wipeElem__0");
   let wipeElem0Pos = wipeElem0.offsetLeft + wipeElem0.offsetWidth;
   let wipeElem0Value = wipeElem0Pos * -1 + window.scrollY;
-  const contentWipeElem = document.querySelector(".wipe__Description");
+  const contentWipeHeaderElem = document.querySelector(".wipe__Subhead");
+  const contentWipeTextElem = document.querySelector(".wipe__Description");
 
   if (wipeElem0Value >= 0) {
     wipeElem0Value = 0;
 
     // content - animate
     if (contentWipeIncrement === 0) {
-      contentWipeElem.innerHTML = "";
+      contentWipeTextElem.innerHTML = "";
+      const contentWipeHeader = obj.header;
       const contentWipeText = obj.intro;
-      const contentWipeString = obj.intro.split(/(\s+)/);
-      drawText(contentWipeText, contentWipeString, contentWipeElem);
+      drawText(contentWipeHeader, contentWipeHeaderElem);
+      drawText(contentWipeText, contentWipeTextElem);
       contentWipeIncrement++;
     }
   }
 
   // content - hide on scrollup
   if (wipeElem0Value < 0) {
-    contentWipeElem.classList.remove("drawText--Active");
+    contentWipeHeaderElem.classList.remove("drawText--Active");
+    contentWipeTextElem.classList.remove("drawText--Active");
     contentWipeIncrement = 0;
   }
 
@@ -276,20 +279,9 @@ animation_4 = () => {
   }
 };
 
-drawText = (text, str, elem) => {
-  if (!isMobile()) {
-    setTimeout(function() {
-      elem.classList.add("drawText--Active");
-      for (let i = 0; i < str.length; i++) {
-        setTimeout(function() {
-          elem.innerHTML += str[i];
-        }, i * 10);
-      }
-    }, 500);
-  } else {
-    elem.classList.add("drawText--Active");
-    elem.innerHTML = text;
-  }
+drawText = (text, elem) => {
+  elem.classList.add("drawText--Active");
+  elem.innerHTML = text;
 };
 
 homeInit = obj => {
@@ -390,9 +382,20 @@ homeInit = obj => {
     // content - animate
     const contentHomeElem = document.querySelector(".content__Home__Text");
     const contentHomeText = obj.content.article1.text;
-    const contentHomeString = obj.content.article1.text.split(/(\s+)/);
-    drawText(contentHomeText, contentHomeString, contentHomeElem);
+    drawText(contentHomeText, contentHomeElem);
+
+
+    // homepage links
+    const homepageLinks = document.querySelectorAll(".scale__Link");
+    const navButtons = document.querySelectorAll(".button__Main");
+   for (let i=0; i < homepageLinks.length; i++) {
+      homepageLinks[i].addEventListener("click", function() {
+        scrollNav(i, navButtons[i+1].dataset.scroll);
+      });
+    }
+    
   }, 100);
+  
 };
 
 function isMobile() {
