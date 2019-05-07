@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         wipeBg.classList.add("wipe__Background");
         newSection.appendChild(wipeBg);
 
-        // background presentation elements
+        // wipe view - background presentation elements
         for (let i = 0; i < 3; i++) {
           const wipeElem = document.createElement("span");
           wipeElem.classList.add("wipeElem", "wipeElem__" + i);
@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
           wipeBg.appendChild(shadowElem);
         }
 
+        // wipe view - layout elements
         const wipeWrapper = document.createElement("div");
         wipeWrapper.classList.add("wipe__Wrapper");
 
@@ -74,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // generate project page "fade" view
       if (obj[i].id === "elem2") {
-        const scrollBg = document.createElement("div");
-        scrollBg.classList.add("fade__Background", "fade__Background__0");
+        const scrollBg0 = document.createElement("div");
+        scrollBg0.classList.add("fade__Background", "fade__Background__0");
 
         const scrollBg1 = document.createElement("div");
         scrollBg1.classList.add("fade__Background", "fade__Background__1");
@@ -96,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fadeIntro.appendChild(fadeHeader);
         fadeIntro.appendChild(fadeDescription);
 
-        newSection.appendChild(scrollBg);
+        newSection.appendChild(scrollBg0);
         newSection.appendChild(scrollBg1);
         newSection.appendChild(fadeIntro);
         newSection.appendChild(fadeWrapper);
@@ -124,14 +125,25 @@ document.addEventListener("DOMContentLoaded", function() {
         contactHeader.classList.add("subhead", "contact__Subhead");
         contactHeader.innerText = obj[i].header;
 
-        contactIntro.appendChild(contactHeader);
+        const contactDescription = document.createElement("a");
+        contactDescription.classList.add("contact__Description");
+        contactDescription.setAttribute("href", obj[i].twitter);
+        contactDescription.setAttribute("target", "_blank");
+        contactDescription.innerText = obj[i].text;
 
+        contactIntro.appendChild(contactHeader);
+        contactIntro.appendChild(contactDescription);
         newSection.appendChild(contactIntro);
 
         newSection.appendChild(contactWrapper);
 
         const contactForm = document.createElement("form");
         contactForm.classList.add("form__Contact");
+        contactForm.setAttribute("method", "POST");
+        contactForm.setAttribute(
+          "action",
+          "https://formspree.io/matbergman@gmail.com"
+        );
 
         const contactNameLabel = document.createElement("label");
         contactNameLabel.classList.add("form__Contact__Label");
@@ -141,6 +153,8 @@ document.addEventListener("DOMContentLoaded", function() {
         contactName.type = "text";
         contactName.classList.add("form__Contact__Input");
         contactName.id = obj[i].contentName.contactNameId;
+        contactName.setAttribute("name", "name");
+        contactName.setAttribute("tabindex", "1");
 
         const contactEmailLabel = document.createElement("label");
         contactEmailLabel.classList.add("form__Contact__Label");
@@ -150,6 +164,8 @@ document.addEventListener("DOMContentLoaded", function() {
         contactEmail.type = "email";
         contactEmail.classList.add("form__Contact__Input");
         contactEmail.id = obj[i].contentEmail.contactEmailId;
+        contactEmail.setAttribute("name", "email");
+        contactEmail.setAttribute("tabindex", "2");
 
         const contactSubjectLabel = document.createElement("label");
         contactSubjectLabel.classList.add("form__Contact__Label");
@@ -160,6 +176,8 @@ document.addEventListener("DOMContentLoaded", function() {
         contactSubject.type = "text";
         contactSubject.classList.add("form__Contact__Input");
         contactSubject.id = obj[i].contentSubject.contactSubjectId;
+        contactSubject.setAttribute("name", "subject");
+        contactSubject.setAttribute("tabindex", "3");
 
         const contactMessageLabel = document.createElement("label");
         contactMessageLabel.classList.add("form__Contact__Label");
@@ -168,10 +186,14 @@ document.addEventListener("DOMContentLoaded", function() {
           obj[i].contentMessage.contactMessageLabel;
         const contactMessage = document.createElement("textarea");
         contactMessage.classList.add("form__Contact__Textarea");
+        contactMessage.setAttribute("name", "message");
+        contactMessage.setAttribute("tabindex", "4");
 
         const contactSubmit = document.createElement("button");
         contactSubmit.classList.add("form__Contact__Button");
         contactSubmit.innerText = "Submit Message";
+        contactSubmit.setAttribute("type", "submit");
+        contactSubmit.setAttribute("tabindex", "5");
 
         contactForm.appendChild(contactNameLabel);
         contactForm.appendChild(contactName);
@@ -196,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < numberOfPages; i++) {
       pageBreaks[i] = wrapperHeight * i;
     }
-    
+
     // elem0 - scalable element size
     if (document.querySelector("#elem0")) {
       elem0.style.transform = `scale(1)`;
@@ -264,5 +286,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     headerMain.appendChild(navMain);
   };
-
 });

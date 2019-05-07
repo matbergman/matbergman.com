@@ -27,6 +27,7 @@ getCardContent = (articles, newElem, type) => {
     const articleImage = document.createElement("img");
     articleImage.classList.add("article__Image", `${type}__Image`);
     articleImage.src = `${imagePath}/${articles[j][1].thumbnail}`;
+    articleImage.alt = articles[j][1].alt;
 
     newElem.appendChild(articleImage);
     articleImage.addEventListener("click", function() {
@@ -90,6 +91,7 @@ toggleFullscreen = (parentElem, elem, obj) => {
     const imageElem = document.createElement("img");
     imageElem.classList.add("article__Image__Fullscreen");
     imageElem.src = `${imagePath}/${obj.fullsize}`;
+    imageElem.alt = obj.alt;
 
     const articleContent = document.createElement("div");
     articleContent.classList.add(`article__Content__Fullscreen`);
@@ -148,7 +150,7 @@ isInViewport = elem => {
   );
 };
 
-setView = (element, windowHeight) => {
+setView = element => {
   if (isMobile()) {
     element.style.top = "auto";
     element.style.height = "auto";
@@ -384,18 +386,15 @@ homeInit = obj => {
     const contentHomeText = obj.content.article1.text;
     drawText(contentHomeText, contentHomeElem);
 
-
     // homepage links
     const homepageLinks = document.querySelectorAll(".scale__Link");
     const navButtons = document.querySelectorAll(".button__Main");
-   for (let i=0; i < homepageLinks.length; i++) {
+    for (let i = 0; i < homepageLinks.length; i++) {
       homepageLinks[i].addEventListener("click", function() {
-        scrollNav(i, navButtons[i+1].dataset.scroll);
+        scrollNav(i, navButtons[i + 1].dataset.scroll);
       });
     }
-    
   }, 100);
-  
 };
 
 function isMobile() {
@@ -430,9 +429,6 @@ function layoutUpdate() {
   } else {
     headerHome.style.transform = `rotate(0deg) translateX(0px)`;
     contentHome.style.maxWidth = "none";
-  }
-
-  if (window.innerHeight >= 1080) {
   }
 }
 
@@ -476,7 +472,6 @@ resizeView = () => {
 
   // mobile refinements
   if (isMobile()) {
-    // document.querySelector(".scale").style.opacity = 1;
     document.querySelector(".wipe").style.position = "relative";
     document.querySelector(".wipe").style.top = "0px";
     document.querySelector(".wipe").style.height = "100%";

@@ -25,6 +25,7 @@
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article2": {
@@ -32,7 +33,8 @@
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",                    
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article3": {
@@ -40,7 +42,8 @@
           "speed": 4,
           "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg", 
+          "alt": "Lorem ipsum dolor set",                   
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article4":  {
@@ -48,7 +51,8 @@
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg",  
+          "alt": "Lorem ipsum dolor set",                  
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article5": {
@@ -56,7 +60,8 @@
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg",    
+          "alt": "Lorem ipsum dolor set",                
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article6":  {
@@ -64,7 +69,8 @@
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg", 
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article7": {
@@ -72,7 +78,8 @@
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article8": {
@@ -80,7 +87,8 @@
           "speed": 4,
           "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg", 
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article9":  {
@@ -88,7 +96,8 @@
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg", 
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article10": {
@@ -96,7 +105,8 @@
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",          
+          "fullsize": "image.jpg", 
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         }               
       }
@@ -112,7 +122,8 @@
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",   
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article2": {
@@ -120,7 +131,8 @@
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",   
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article3": {
@@ -128,7 +140,8 @@
           "speed": 4,
           "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",   
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article4":  {
@@ -136,7 +149,8 @@
           "speed": 5,
           "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",   
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article5": {
@@ -144,7 +158,8 @@
           "speed": 4.5,
           "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",   
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",          
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         }     
       }
@@ -153,6 +168,8 @@
       "id":  "elem3",
       "header":  "Contact",
       "label": "Contact",
+      "text": "@matbergman",
+      "twitter": "https://twitter.com/matbergman",
       "contentName":  {
         "contactNameId": "inputName",
         "contactNameLabel": "Name"

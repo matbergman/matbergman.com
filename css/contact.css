@@ -44,11 +44,23 @@
   display: flex;
   height: auto;
   align-items: flex-start;
+  justify-content: center;
   flex-direction: column;
-  width: 33%;
+  width: 100%;
   z-index: 20;
   hyphens: auto;
   margin: 1em 1em 0 4em;
+}
+
+.contact__Subhead {
+  margin: 0;
+}
+
+.contact__Description {
+  color: #efeee1;
+  text-decoration: none;
+  font-size: 1.4em;
+  margin: 0 0 2em 0;
 }
 
 .contactElem {
@@ -88,6 +100,7 @@
 .form__Contact__Textarea {
   font-size: 1.4em;
   margin: 0 0 1em 0;
+  padding: 0.25em;
   width: 100%;
 }
 
@@ -103,8 +116,8 @@
   border: none;
   border-radius: 6px;
   font-size: 1.2em;
-  outline: none;
   padding: 0.5em;
+  outline-color: #ffffff;
   cursor: pointer;
 }
 
@@ -126,8 +139,16 @@
     padding: 0;
   }
 
+  .contact__Intro {
+    width: 33%;
+    margin: -4em 1em 0 0;
+  }
+
   .contact__Subhead {
-    top: 33%;
+    margin: 0 0 0 32px;
+  }
+
+  .contact__Description {
     margin: 0 0 0 32px;
   }
 
