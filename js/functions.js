@@ -24,19 +24,32 @@ getHomeContent = (articles, newElem, type) => {
 
 getCardContent = (articles, newElem, type) => {
   for (let i = 0; i < articles.length; i++) {
+
+    const articleCard = document.createElement("li");
+    articleCard.classList.add("article__Card", `${type}__Card`)
+  
     const articleImage = document.createElement("img");
-    articleImage.classList.add("article__Image", `${type}__Image`);
+    articleImage.classList.add("article__Image");
     articleImage.src = `${imagePath}/${articles[i][1].thumbnail}`;
     articleImage.alt = articles[i][1].alt;
-    newElem.appendChild(articleImage);
+  
+    const articleDescription = document.createElement("p");
+    articleDescription.classList.add("article__Description");
+    articleDescription.innerText = articles[i][1].text;
+
+
+
+    articleCard.appendChild(articleImage);
+    articleCard.appendChild(articleDescription);
+    newElem.appendChild(articleCard);
 
     if (articles[i][1].fullsize) {
-      articleImage.addEventListener("click", function() {
-        toggleFullscreen(newElem, articleImage, articles[i][1]);
+      articleCard.addEventListener("click", function() {
+        toggleFullscreen(newElem, articleCard, articles[i][1]);
       });
     }
     if (articles[i][1].link) {
-      articleImage.addEventListener("click", function(e) {
+      articleCard.addEventListener("click", function(e) {
         e.preventDefault;
         window.open(articles[i][1].link, "_blank");
       });
@@ -257,23 +270,23 @@ animation_2 = element => {
 
 animation_3 = (obj, element) => {
   setView(element, window.innerHeight);
-  const fadeImages = element.querySelectorAll(".fade__Image");
+  const fadeCards = element.querySelectorAll(".fade__Card");
   const contentFadeElem = document.querySelector(".fade__Description");
   contentFadeElem.innerHTML = obj.intro;
 
   if (!isMobile()) {
-    for (let i = 0; i < fadeImages.length; i++) {
+    for (let i = 0; i < fadeCards.length; i++) {
       if (
-        !fadeImages[i].classList.contains("fade--active") &&
-        isInViewport(fadeImages[i])
+        !fadeCards[i].classList.contains("fade--active") &&
+        isInViewport(fadeCards[i])
       ) {
-        fadeImages[i].classList.add("fade--active");
+        fadeCards[i].classList.add("fade--active");
       }
       if (
-        !isInViewport(fadeImages[i]) &&
-        fadeImages[i].classList.contains("fade--active")
+        !isInViewport(fadeCards[i]) &&
+        fadeCards[i].classList.contains("fade--active")
       ) {
-        fadeImages[i].classList.remove("fade--active");
+        fadeCards[i].classList.remove("fade--active");
       }
     }
   }

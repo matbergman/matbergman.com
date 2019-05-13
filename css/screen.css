@@ -155,10 +155,6 @@ svg {
     display: block;
   }
 
-  .article__Image {
-    object-fit: contain;
-  }
-
   .subhead {
     margin: 0 32px 0.5em 32px;
   }

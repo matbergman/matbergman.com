@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // wipe view - layout elements
-        const wipeWrapper = document.createElement("div");
+        const wipeWrapper = document.createElement("ul");
         wipeWrapper.classList.add("wipe__Wrapper");
 
         const wipeIntro = document.createElement("div");
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const scrollBg1 = document.createElement("div");
         scrollBg1.classList.add("fade__Background", "fade__Background__1");
 
-        const fadeWrapper = document.createElement("div");
+        const fadeWrapper = document.createElement("ul");
         fadeWrapper.classList.add("fade__Wrapper");
 
         const fadeIntro = document.createElement("div");

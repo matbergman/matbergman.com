@@ -75,7 +75,7 @@
   }
 }
 
-.fade__Image {
+.fade__Card {
   margin: 0 0 4em 0;
   z-index: 20;
 }
@@ -86,7 +86,7 @@
   visibility: hidden;
 }
   
-  .fade__Image {
+  .fade__Card {
     width: 40%;
   }
 
@@ -118,7 +118,7 @@
     justify-content: space-around;
   }
 
-  .fade__Image {
+  .fade__Card {
     width: 30%;
     opacity: 0;
     transition-timing-function: ease-in-out;
@@ -127,7 +127,7 @@
     margin: 0 1em 1em 1em;
   }
 
-  .fade__Image.fade--active {
+  .fade__Card.fade--active {
     opacity: 1;
   }
 }

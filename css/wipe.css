@@ -70,16 +70,16 @@
   hyphens: auto;
 }
 
-.wipe__Image {
+.wipe__Card {
   z-index: 20;
   margin: 0 0 4em 0;
 }
 
-.wipe__Image:first-child {
+.wipe__Card:first-child {
   margin-left: 0;
 }
 
-.wipe__Image:last-child {
+.wipe__Card:last-child {
   margin-right: 0;
 }
 
@@ -181,7 +181,7 @@
     margin: 0;
   }
 
-  .wipe__Image {
+  .wipe__Card {
     width: 30%;
     max-width: 350px;
     flex-shrink: 1;
