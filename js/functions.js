@@ -35,10 +35,10 @@ getCardContent = (articles, newElem, type) => {
         toggleFullscreen(newElem, articleImage, articles[i][1]);
       });
     }
-    else {
+    if (articles[i][1].link) {
       articleImage.addEventListener("click", function(e) {
         e.preventDefault;
-        window.open(articles[i][1].link,'_blank');
+        window.open(articles[i][1].link, "_blank");
       });
     }
   }
