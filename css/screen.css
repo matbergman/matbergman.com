@@ -92,6 +92,7 @@ svg {
 .article__Image {
   max-width: none;
   height: auto;
+  cursor: pointer;
 }
 
 .article__Image:last-child {

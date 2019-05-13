@@ -1,165 +1,177 @@
 {
   "site": [
     {
-      "id":  "elem0",
+      "id": "elem0",
       "label": "Home",
-      "header":  "Mat Bergman",
-      "content":  {
+      "header": "Mat Bergman",
+      "content": {
         "article1": {
           "classList": ["scale__Article"],
-          "text":  "I'm Mat. You may know me from my <a class=\"scale__Link scale__Link__0\">professional</a> work as a software engineer and user experience designer. Or maybe you came across my personal photography or animation <a class=\"scale__Link scale__Link__1\">projects</a>. You can also <a class=\"scale__Link scale__Link__2\">contact</a> me by email and Twitter."
+          "text": "I'm Mat. You may know me from my <a class=\"scale__Link scale__Link__0\">professional</a> work as a software engineer and user experience designer. Or maybe you came across my personal photography or animation <a class=\"scale__Link scale__Link__1\">projects</a>. You can also <a class=\"scale__Link scale__Link__2\">contact</a> me by email and Twitter."
         }
       },
-      "stripeCount":  14
+      "stripeCount": 14
     },
     {
-      "id":  "elem1",
+      "id": "elem1",
       "label": "Professional",
-      "header":  "Professional",
+      "header": "Professional",
       "intro": "I'm a skilled front end software engineer and user experience designer, with an eye for detail and mastery of layout, color, and typography fundamentals.",
-      "content":  {
-        "article1":  {
-          "classList":  ["wipe__Article"],
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "content": {
+        "article1": {
+          "classList": ["wipe__Article"],
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
           "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article2": {
-          "classList":  ["wipe__Article"],
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "classList": ["wipe__Article"],
+          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",                    
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article3": {
-          "classList":  ["wipe__Article"],
-          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "classList": ["wipe__Article"],
+          "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg", 
-          "alt": "Lorem ipsum dolor set",                   
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
-        "article4":  {
-          "classList":  ["wipe__Article"],
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "article4": {
+          "classList": ["wipe__Article"],
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",  
-          "alt": "Lorem ipsum dolor set",                  
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article5": {
-          "classList":  ["wipe__Article"],
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "classList": ["wipe__Article"],
+          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",    
-          "alt": "Lorem ipsum dolor set",                
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
-        "article6":  {
-          "classList":  ["wipe__Article"],
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "article6": {
+          "classList": ["wipe__Article"],
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg", 
-          "alt": "Lorem ipsum dolor set",          
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article7": {
-          "classList":  ["wipe__Article"],
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "classList": ["wipe__Article"],
+          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",          
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article8": {
-          "classList":  ["wipe__Article"],
-          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "classList": ["wipe__Article"],
+          "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg", 
-          "alt": "Lorem ipsum dolor set",          
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
-        "article9":  {
-          "classList":  ["wipe__Article"],
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "article9": {
+          "classList": ["wipe__Article"],
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg", 
-          "alt": "Lorem ipsum dolor set",          
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article10": {
-          "classList":  ["wipe__Article"],
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "classList": ["wipe__Article"],
+          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg", 
-          "alt": "Lorem ipsum dolor set",          
+          "fullsize": "image.jpg",
+          "alt": "Lorem ipsum dolor set",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
-        }               
+        }
       }
     },
     {
-      "id":  "elem2",
-      "header":  "Projects",
+      "id": "elem2",
+      "header": "Projects",
       "intro": "I make these for my enjoyment.",
       "label": "Projects",
-      "content":  {
-        "article1":  {
-          "classList":  ["fade", "fade__Article"],
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "thumbnail": "thumbnail.jpg",
-          "link": "https://www.matbergman.com"
+      "content": {
+        "article1": {
+          "classList": ["fade", "fade__Article"],
+          "text": "A gallery of stereo photography by Mat Bergman",
+          "thumbnail": "icon-stereo.png",
+          "link": "https://photos.google.com/share/AF1QipOBc1D0OvzRzBiPwfJDxdrU3AbRCjBS7V0hXAEadXlPIGMPMrZKZGlU1jbzwXMFWA?key=bnoyNUpnTHhkQkd3dllKTTByQ25SeGFZbXZLMHhB"
         },
         "article2": {
-          "classList":  ["fade", "fade__Article"],
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "thumbnail": "thumbnail.jpg",
-          "link": "https://www.matbergman.com"
+          "classList": ["fade", "fade__Article"],
+          "text": "About the Golden Gate Stereoscopic Society",
+          "thumbnail": "icon-ggss.png",
+          "link": "https://www.ggstereo.org"
         },
         "article3": {
-          "classList":  ["fade", "fade__Article"],
-          "text":  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "thumbnail": "thumbnail.jpg",
-          "link": "https://www.matbergman.com"
+          "classList": ["fade", "fade__Article"],
+          "text": "SpriteBrush light painting app for Android devices",
+          "thumbnail": "icon-spritebrush.jpg",
+          "link": "https://www.spritebrush.com/"
         },
-        "article4":  {
-          "classList":  ["fade", "fade__Article"],
-          "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "thumbnail": "thumbnail.jpg",
-          "link": "https://www.matbergman.com"
+        "article4": {
+          "classList": ["fade", "fade__Article"],
+          "text": "SpriteBrush Stereo Harmonograph video",
+          "thumbnail": "icon-harmonograph.jpg",
+          "link": "https://youtu.be/7ii4U1bOOkw"
         },
         "article5": {
-          "classList":  ["fade", "fade__Article"],
-          "text":  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "thumbnail": "thumbnail.jpg",
-          "link": "https://www.matbergman.com"
-        }     
+          "classList": ["fade", "fade__Article"],
+          "text": "Lenticulations - 3D animated bullet time autostereo wigglegram Nimslo photos",
+          "thumbnail": "icon-lenticulations.jpg",
+          "link": "/lenticulations/"
+        },
+        "article6": {
+          "classList": ["fade", "fade__Article"],
+          "text": "Vectortronic Lego Mindstorms robot animation",
+          "thumbnail": "icon-vectortronic.jpg",
+          "link": "/vectortronic/"
+        },
+        "article7": {
+          "classList": ["fade", "fade__Article"],
+          "text": "Last Thread 3-D video short with Thor Klippert",
+          "thumbnail": "icon-lastThread.jpg",
+          "link": "https://youtu.be/aB0DCvkjjzk"
+        }
       }
     },
     {
-      "id":  "elem3",
-      "header":  "Contact",
+      "id": "elem3",
+      "header": "Contact",
       "label": "Contact",
       "text": "@matbergman",
       "twitter": "https://twitter.com/matbergman",
-      "contentName":  {
+      "contentName": {
         "contactNameId": "inputName",
         "contactNameLabel": "Name"
       },
-      "contentEmail":  {
+      "contentEmail": {
         "contactEmailId": "inputEmail",
         "contactEmailLabel": "Email address"
       },
-      "contentSubject":  {
+      "contentSubject": {
         "contactSubjectlId": "inputSubject",
         "contactSubjectLabel": "Subject"
-      },      
-      "contentMessage":  {
+      },
+      "contentMessage": {
         "contactMessageId": "textareaMessage",
         "contactMessageLabel": "Message"
-      }            
+      }
     }
   ]
 }
