@@ -23,16 +23,24 @@ getHomeContent = (articles, newElem, type) => {
 };
 
 getCardContent = (articles, newElem, type) => {
-  for (let j = 0; j < articles.length; j++) {
+  for (let i = 0; i < articles.length; i++) {
     const articleImage = document.createElement("img");
     articleImage.classList.add("article__Image", `${type}__Image`);
-    articleImage.src = `${imagePath}/${articles[j][1].thumbnail}`;
-    articleImage.alt = articles[j][1].alt;
-
+    articleImage.src = `${imagePath}/${articles[i][1].thumbnail}`;
+    articleImage.alt = articles[i][1].alt;
     newElem.appendChild(articleImage);
-    articleImage.addEventListener("click", function() {
-      toggleFullscreen(newElem, articleImage, articles[j][1]);
-    });
+
+    if (articles[i][1].fullsize) {
+      articleImage.addEventListener("click", function() {
+        toggleFullscreen(newElem, articleImage, articles[i][1]);
+      });
+    }
+    else {
+      articleImage.addEventListener("click", function(e) {
+        e.preventDefault;
+        window.open(articles[i][1].link,'_blank');
+      });
+    }
   }
 };
 
