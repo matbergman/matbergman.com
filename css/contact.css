@@ -1,7 +1,6 @@
 .contact {
   display: flex;
   flex-direction: column;
-  visibility: hidden;
   position: relative;
   width: 100%;
   z-index: 30;
@@ -131,7 +130,9 @@
   .contact {
     position: absolute;
     flex-direction: row;
+    visibility: hidden;
   }
+  
 
   .contact__Wrapper {
     width: 100%;

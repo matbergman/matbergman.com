@@ -156,12 +156,19 @@ svg {
   }
 
   .article__Image {
-    width: auto;
-    max-width: 100%;
     object-fit: contain;
   }
 
   .subhead {
     margin: 0 32px 0.5em 32px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+
+  .article__Image {
+    width: auto;
+    max-width: 100%;
+ 
   }
 }

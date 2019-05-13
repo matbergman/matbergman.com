@@ -214,9 +214,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // ***** set interactive attributes for rendered elements *****
 
     // set height of each scroll section
-    wrapper.style.height = windowHeight * numberOfPages + "px";
-    for (let i = 0; i < numberOfPages; i++) {
-      pageBreaks[i] = wrapperHeight * i;
+    if (!isMobile()) {
+      wrapper.style.height = windowHeight * numberOfPages + "px";
+      for (let i = 0; i < numberOfPages; i++) {
+        pageBreaks[i] = wrapperHeight * i;
+      }
     }
 
     // elem0 - scalable element size

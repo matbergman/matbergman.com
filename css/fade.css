@@ -2,35 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  visibility: hidden;
   position: relative;
+  height: auto;
 }
 
 .fade__Wrapper {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   z-index: 20;
   width: 100%;
-  height: 100%;
-  padding: 2em 0 4em 0;
+  height: auto;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .fade__Intro {
   z-index: 20;
-  margin: 0;
-  padding: 1em 1em 1em 4em;
+  margin: 0 0 1em 0;
+  padding: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fade__Subhead {
+  margin: 0 0 0 32px;
 }
 
 .fade__Description {
   color: #efeee1;
   font-size: 1.8em;
-  margin: 0;
+  margin: 0 0 0 32px;
   padding: 0;
 }
 
@@ -77,6 +80,22 @@
   z-index: 20;
 }
 
+@media only screen and (min-width:768px) {
+
+.fade {
+  visibility: hidden;
+}
+  
+  .fade__Image {
+    width: 40%;
+  }
+
+  .fade__Wrapper {
+    height: calc(100% - 110px);
+  }
+
+}
+
 @media only screen and (min-width: 769px) {
   .fade {
     position: absolute;
@@ -87,11 +106,7 @@
     align-items: baseline;
     justify-content: flex-start;
     margin: 0;
-    padding: 0;
-  }
-
-  .fade__Subhead {
-    margin: 0 0 0 32px;
+    padding: 1em 0;
   }
 
   .fade__Description {
@@ -100,7 +115,7 @@
 
   .fade__Wrapper {
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .fade__Image {
