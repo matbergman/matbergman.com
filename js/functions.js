@@ -24,20 +24,17 @@ getHomeContent = (articles, newElem, type) => {
 
 getCardContent = (articles, newElem, type) => {
   for (let i = 0; i < articles.length; i++) {
-
     const articleCard = document.createElement("li");
-    articleCard.classList.add("article__Card", `${type}__Card`)
-  
+    articleCard.classList.add("article__Card", `${type}__Card`);
+
     const articleImage = document.createElement("img");
     articleImage.classList.add("article__Image");
     articleImage.src = `${imagePath}/${articles[i][1].thumbnail}`;
     articleImage.alt = articles[i][1].alt;
-  
+
     const articleDescription = document.createElement("p");
     articleDescription.classList.add("article__Description");
     articleDescription.innerText = articles[i][1].text;
-
-
 
     articleCard.appendChild(articleImage);
     articleCard.appendChild(articleDescription);

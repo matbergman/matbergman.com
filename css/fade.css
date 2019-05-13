@@ -80,12 +80,11 @@
   z-index: 20;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
+  .fade {
+    visibility: hidden;
+  }
 
-.fade {
-  visibility: hidden;
-}
-  
   .fade__Card {
     width: 40%;
   }
@@ -93,7 +92,6 @@
   .fade__Wrapper {
     height: calc(100% - 110px);
   }
-
 }
 
 @media only screen and (min-width: 769px) {
