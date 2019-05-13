@@ -89,10 +89,14 @@ svg {
   margin: 0;
 }
 
+.article__Card {
+  cursor: pointer;
+  padding: 1px;
+}
+
 .article__Image {
   max-width: none;
   height: auto;
-  cursor: pointer;
 }
 
 .article__Image:last-child {
