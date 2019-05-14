@@ -25,15 +25,15 @@ getHomeContent = (articles, newElem, type) => {
 getCardContent = (articles, newElem, type) => {
   for (let i = 0; i < articles.length; i++) {
     const articleCard = document.createElement("li");
-    articleCard.classList.add("article__Card", `${type}__Card`);
+    articleCard.classList.add("card", `card__${type}`);
 
     const articleImage = document.createElement("img");
-    articleImage.classList.add("article__Image");
+    articleImage.classList.add("card__Image");
     articleImage.src = `${imagePath}/${articles[i][1].thumbnail}`;
     articleImage.alt = articles[i][1].alt;
 
     const articleDescription = document.createElement("p");
-    articleDescription.classList.add("article__Description");
+    articleDescription.classList.add("card__Description");
     articleDescription.innerText = articles[i][1].text;
 
     articleCard.appendChild(articleImage);
@@ -107,19 +107,19 @@ toggleFullscreen = (parentElem, elem, obj) => {
     buttonClose.setAttribute("role", "presentation");
 
     const imageElem = document.createElement("img");
-    imageElem.classList.add("article__Image__Fullscreen");
+    imageElem.classList.add("card__Image__Fullscreen");
     imageElem.src = `${imagePath}/${obj.fullsize}`;
     imageElem.alt = obj.alt;
 
     const articleContent = document.createElement("div");
-    articleContent.classList.add(`article__Content__Fullscreen`);
+    articleContent.classList.add(`card__Content__Fullscreen`);
 
     const articleText = document.createElement("p");
-    articleText.classList.add("article__Text");
+    articleText.classList.add("card__Text");
     obj.text ? (articleText.innerHTML = obj.text) : null;
 
     const articleTech = document.createElement("p");
-    articleTech.classList.add("article__Tech");
+    articleTech.classList.add("card__Tech");
     if (obj.tech) {
       articleTech.innerText = "Technologies: ";
       for (let i = 0; i < obj.tech.length; i++) {
@@ -267,7 +267,7 @@ animation_2 = element => {
 
 animation_3 = (obj, element) => {
   setView(element, window.innerHeight);
-  const fadeCards = element.querySelectorAll(".fade__Card");
+  const fadeCards = element.querySelectorAll(".card__fade");
   const contentFadeElem = document.querySelector(".fade__Description");
   contentFadeElem.innerHTML = obj.intro;
 

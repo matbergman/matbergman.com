@@ -81,25 +81,25 @@ svg {
   display: none;
 }
 
-.article__Text,
-.article__Tech {
+.card__Text,
+.card__Tech {
   color: #000000;
   font-size: 2em;
   padding: 0.5em 1em;
   margin: 0;
 }
 
-.article__Card {
+.card {
   cursor: pointer;
   padding: 1px;
 }
 
-.article__Image {
+.card__Image {
   max-width: none;
   height: auto;
 }
 
-.article__Image:last-child {
+.card__Image:last-child {
   margin-bottom: 0;
 }
 
@@ -129,14 +129,14 @@ svg {
   max-width: none;
 }
 
-.article__Image__Fullscreen {
+.card__Image__Fullscreen {
   display: block;
   width: 90%;
   border: 3px solid #000000;
   border-bottom: 0px;
 }
 
-.article__Content__Fullscreen {
+.card__Content__Fullscreen {
   display: block;
   width: 90%;
   border: 3px solid #000000;
@@ -165,7 +165,7 @@ svg {
 }
 
 @media only screen and (min-width: 960px) {
-  .article__Image {
+  .card__Image {
     width: auto;
     max-width: 100%;
   }
