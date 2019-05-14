@@ -95,12 +95,23 @@ svg {
 }
 
 .card__Image {
-  max-width: none;
+  width: auto;
+  max-width: 100%;
   height: auto;
 }
 
+  .card:hover .card__Image {
+    outline: 1px solid #fff;
+  }
+
 .card__Image:last-child {
   margin-bottom: 0;
+}
+
+.card__Description {
+  color: #efeee1;
+  margin: 0.25em 0 0 0;
+  padding: 0;
 }
 
 .subhead {
@@ -166,7 +177,6 @@ svg {
 
 @media only screen and (min-width: 960px) {
   .card__Image {
-    width: auto;
-    max-width: 100%;
+
   }
 }

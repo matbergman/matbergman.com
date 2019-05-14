@@ -23,12 +23,12 @@
           "text": "Adobe Advertising Cloud Dashboard",
           "thumbnail": "icon-adobe.jpg",
           "fullsize": "fullsize-adobe-1.png",
-          "alt": "Lorem ipsum dolor set",
+          "alt": "Adobe Advertising Cloud dashboard screenshot",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article2": {
           "classList": ["wipe__Article"],
-          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "text": "CSS Demystified Presentation",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
           "alt": "Lorem ipsum dolor set",
@@ -36,7 +36,7 @@
         },
         "article3": {
           "classList": ["wipe__Article"],
-          "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "text": "iVapeIQ Shopify Theme",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
           "alt": "Lorem ipsum dolor set",
@@ -44,7 +44,7 @@
         },
         "article4": {
           "classList": ["wipe__Article"],
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "text": "Aereo Web App Design",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
           "alt": "Lorem ipsum dolor set",
@@ -52,7 +52,7 @@
         },
         "article5": {
           "classList": ["wipe__Article"],
-          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "text": "Microsoft Azure IoT Dashboard",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
           "alt": "Lorem ipsum dolor set",
@@ -60,7 +60,7 @@
         },
         "article6": {
           "classList": ["wipe__Article"],
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "text": "Fox Sports Go Tablet App",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
           "alt": "Lorem ipsum dolor set",
@@ -68,31 +68,7 @@
         },
         "article7": {
           "classList": ["wipe__Article"],
-          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
-        },
-        "article8": {
-          "classList": ["wipe__Article"],
-          "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
-        },
-        "article9": {
-          "classList": ["wipe__Article"],
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
-        },
-        "article10": {
-          "classList": ["wipe__Article"],
-          "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "text": "MLB.TV App",
           "thumbnail": "thumbnail.jpg",
           "fullsize": "image.jpg",
           "alt": "Lorem ipsum dolor set",
