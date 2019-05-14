@@ -171,7 +171,6 @@ svg {
 }
 
 @media only screen and (min-width: 768px) {
-
   .drawText {
     opacity: 0;
     transition: 0.125s;
@@ -198,5 +197,4 @@ svg {
   .card__Tech {
     font-size: 1.8em;
   }
-
 }
