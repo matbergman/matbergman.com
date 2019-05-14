@@ -29,22 +29,11 @@
         "article2": {
           "classList": ["wipe__Article"],
           "text": "USA Baseball",
-          "textLink": "https://www.usabaseball.com",
+          "textLink":"https://www.usabaseball.com",
           "thumbnail": "icon-usabaseball.jpg",
           "fullsize": "fullsize-usabaseball.jpg",
           "alt": "MLB responsive web site",
-          "tech": [
-            "ES6 JavaScript",
-            "CSS3",
-            "LESS",
-            "BEM",
-            "HTML5",
-            "Node.js",
-            "JSON",
-            "Handlebars",
-            "atomic design",
-            "styleguides"
-          ]
+          "tech": ["ES6 JavaScript", "CSS3", "LESS", "BEM", "HTML5", "Node.js", "JSON", "Handlebars", "atomic design", "styleguides"]
         },
         "article3": {
           "classList": ["wipe__Article"],
@@ -58,33 +47,20 @@
         "article4": {
           "classList": ["wipe__Article"],
           "text": "iVapeIQ Shopify Theme",
-          "textLink": "https://ivapeiq.com/",
+          "textLink": "https://ivapeiq.com/",          
           "thumbnail": "icon-ivapeiq.jpg",
           "fullsize": "fullsize-ivapeiq.jpg",
           "alt": "iVapeIQ Shopify web site",
-          "tech": [
-            "Shopify Liquid template",
-            "ES6 JavaScript",
-            "CSS3",
-            "HTML5",
-            "Information Architecture"
-          ]
+          "tech": ["Shopify Liquid template", "ES6 JavaScript", "CSS3", "HTML5", "Information Architecture"]
         },
         "article5": {
           "classList": ["wipe__Article"],
           "text": "Aereo Web App Design",
-          "textLink": "https://matbergman.com/assets/aereo-pdf-design.pdf",
+          "textLink": "https://matbergman.com/assets/aereo-pdf-design.pdf",  
           "thumbnail": "icon-aereo.jpg",
           "fullsize": "fullsize-aereo.jpg",
           "alt": "Aereo app design PDF",
-          "tech": [
-            "Information Architecture",
-            "UX Design",
-            "Sketch",
-            "Zeplin",
-            "Adobe Creative Suite",
-            "styleguides"
-          ]
+          "tech": ["Information Architecture", "UX Design", "Sketch", "Zeplin", "Adobe Creative Suite", "styleguides"]
         },
         "article6": {
           "classList": ["wipe__Article"],
@@ -100,14 +76,7 @@
           "thumbnail": "icon-foxSportsGo.jpg",
           "fullsize": "fullsize-foxSportsGo.jpg",
           "alt": "App screenshot",
-          "tech": [
-            "JavaScript",
-            "WinJS",
-            "HTML5",
-            "CSS3",
-            "JSON",
-            "Sketch",
-            "Zeplin"
+          "tech": ["JavaScript", "WinJS", "HTML5", "CSS3", "JSON", "Sketch", "Zeplin"
           ]
         },
         "article8": {
@@ -116,14 +85,7 @@
           "thumbnail": "icon-mlbtv.jpg",
           "fullsize": "fullsize-mlbtv.jpg",
           "alt": "App screenshot",
-          "tech": [
-            "JavaScript",
-            "WinJS",
-            "HTML5",
-            "CSS3",
-            "JSON",
-            "Sketch",
-            "Zeplin"
+          "tech": ["JavaScript", "WinJS", "HTML5", "CSS3", "JSON", "Sketch", "Zeplin"
           ]
         }
       }
@@ -136,36 +98,43 @@
       "content": {
         "article1": {
           "classList": ["fade", "fade__Article"],
+          "alt": "Stereo (3-D) Photography Gallery",
           "thumbnail": "icon-stereo.png",
           "link": "https://photos.google.com/share/AF1QipOBc1D0OvzRzBiPwfJDxdrU3AbRCjBS7V0hXAEadXlPIGMPMrZKZGlU1jbzwXMFWA?key=bnoyNUpnTHhkQkd3dllKTTByQ25SeGFZbXZLMHhB"
         },
         "article2": {
           "classList": ["fade", "fade__Article"],
+          "alt": "About the Golden Gate Stereoscopic Society",
           "thumbnail": "icon-ggss.png",
           "link": "https://www.ggstereo.org"
         },
         "article3": {
           "classList": ["fade", "fade__Article"],
+          "alt": "SpriteBrush light painting app for Android devices",
           "thumbnail": "icon-spritebrush.jpg",
           "link": "https://www.spritebrush.com/"
         },
         "article4": {
           "classList": ["fade", "fade__Article"],
+          "alt": "Stereo Harmonograph video",
           "thumbnail": "icon-harmonograph.jpg",
           "link": "https://youtu.be/7ii4U1bOOkw"
         },
         "article5": {
           "classList": ["fade", "fade__Article"],
+          "alt": "Lenticulations - 3D animated bullet time autostereo wigglegram Nimslo photos",
           "thumbnail": "icon-lenticulations.jpg",
           "link": "/lenticulations/"
         },
         "article6": {
           "classList": ["fade", "fade__Article"],
+          "alt": "Vectortronic Lego Mindstorms robot animation",
           "thumbnail": "icon-vectortronic.jpg",
           "link": "/vectortronic/"
         },
         "article7": {
           "classList": ["fade", "fade__Article"],
+          "alt": "Last Thread 3-D video short with Thor Klippert",
           "thumbnail": "icon-lastThread.jpg",
           "link": "https://youtu.be/aB0DCvkjjzk"
         }
