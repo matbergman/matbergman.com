@@ -22,57 +22,109 @@
           "classList": ["wipe__Article"],
           "text": "Adobe Advertising Cloud Dashboard",
           "thumbnail": "icon-adobe.jpg",
-          "fullsize": "fullsize-adobe-1.png",
+          "fullsize": "fullsize-adobe-4.png",
           "alt": "Adobe Advertising Cloud dashboard screenshot",
           "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
         },
         "article2": {
           "classList": ["wipe__Article"],
-          "text": "CSS Demystified Presentation",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
+          "text": "USA Baseball",
+          "textLink": "https://www.usabaseball.com",
+          "thumbnail": "icon-usabaseball.jpg",
+          "fullsize": "fullsize-usabaseball.jpg",
+          "alt": "MLB responsive web site",
+          "tech": [
+            "ES6 JavaScript",
+            "CSS3",
+            "LESS",
+            "BEM",
+            "HTML5",
+            "Node.js",
+            "JSON",
+            "Handlebars",
+            "atomic design",
+            "styleguides"
+          ]
         },
         "article3": {
           "classList": ["wipe__Article"],
-          "text": "iVapeIQ Shopify Theme",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
+          "text": "CSS Demystified Presentation",
+          "textLink": "https://github.com/matbergman/css-demystified",
+          "thumbnail": "icon-cssDemystified.jpg",
+          "fullsize": "fullsize-cssDemystified.jpg",
+          "alt": "CSS Demystified presentation source files",
+          "tech": ["PPTX", "demo files"]
         },
         "article4": {
           "classList": ["wipe__Article"],
-          "text": "Aereo Web App Design",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
+          "text": "iVapeIQ Shopify Theme",
+          "textLink": "https://ivapeiq.com/",
+          "thumbnail": "icon-ivapeiq.jpg",
+          "fullsize": "fullsize-ivapeiq.jpg",
+          "alt": "iVapeIQ Shopify web site",
+          "tech": [
+            "Shopify Liquid template",
+            "ES6 JavaScript",
+            "CSS3",
+            "HTML5",
+            "Information Architecture"
+          ]
         },
         "article5": {
           "classList": ["wipe__Article"],
-          "text": "Microsoft Azure IoT Dashboard",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
+          "text": "Aereo Web App Design",
+          "textLink": "https://matbergman.com/assets/aereo-pdf-design.pdf",
+          "thumbnail": "icon-aereo.jpg",
+          "fullsize": "fullsize-aereo.jpg",
+          "alt": "Aereo app design PDF",
+          "tech": [
+            "Information Architecture",
+            "UX Design",
+            "Sketch",
+            "Zeplin",
+            "Adobe Creative Suite",
+            "styleguides"
+          ]
         },
         "article6": {
           "classList": ["wipe__Article"],
-          "text": "Fox Sports Go Tablet App",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
+          "text": "Microsoft Azure IoT Dashboard",
+          "thumbnail": "icon-azure.jpg",
+          "fullsize": "fullsize-azure.jpg",
+          "alt": "Web dashboard screenshot",
+          "tech": ["ES6 JavaScript", "CSS3", "HTML5", "BEM", "Node.js", "JSON"]
         },
         "article7": {
           "classList": ["wipe__Article"],
-          "text": "MLB.TV App",
-          "thumbnail": "thumbnail.jpg",
-          "fullsize": "image.jpg",
-          "alt": "Lorem ipsum dolor set",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
+          "text": "Fox Sports Go Tablet App",
+          "thumbnail": "icon-foxSportsGo.jpg",
+          "fullsize": "fullsize-foxSportsGo.jpg",
+          "alt": "App screenshot",
+          "tech": [
+            "JavaScript",
+            "WinJS",
+            "HTML5",
+            "CSS3",
+            "JSON",
+            "Sketch",
+            "Zeplin"
+          ]
+        },
+        "article8": {
+          "classList": ["wipe__Article"],
+          "text": "MLB.TV Console App",
+          "thumbnail": "icon-mlbtv.jpg",
+          "fullsize": "fullsize-mlbtv.jpg",
+          "alt": "App screenshot",
+          "tech": [
+            "JavaScript",
+            "WinJS",
+            "HTML5",
+            "CSS3",
+            "JSON",
+            "Sketch",
+            "Zeplin"
+          ]
         }
       }
     },
@@ -84,43 +136,36 @@
       "content": {
         "article1": {
           "classList": ["fade", "fade__Article"],
-          "text": "A gallery of stereo photography by Mat Bergman",
           "thumbnail": "icon-stereo.png",
           "link": "https://photos.google.com/share/AF1QipOBc1D0OvzRzBiPwfJDxdrU3AbRCjBS7V0hXAEadXlPIGMPMrZKZGlU1jbzwXMFWA?key=bnoyNUpnTHhkQkd3dllKTTByQ25SeGFZbXZLMHhB"
         },
         "article2": {
           "classList": ["fade", "fade__Article"],
-          "text": "About the Golden Gate Stereoscopic Society",
           "thumbnail": "icon-ggss.png",
           "link": "https://www.ggstereo.org"
         },
         "article3": {
           "classList": ["fade", "fade__Article"],
-          "text": "SpriteBrush light painting app for Android devices",
           "thumbnail": "icon-spritebrush.jpg",
           "link": "https://www.spritebrush.com/"
         },
         "article4": {
           "classList": ["fade", "fade__Article"],
-          "text": "SpriteBrush Stereo Harmonograph video",
           "thumbnail": "icon-harmonograph.jpg",
           "link": "https://youtu.be/7ii4U1bOOkw"
         },
         "article5": {
           "classList": ["fade", "fade__Article"],
-          "text": "Lenticulations - 3D animated bullet time autostereo wigglegram Nimslo photos",
           "thumbnail": "icon-lenticulations.jpg",
           "link": "/lenticulations/"
         },
         "article6": {
           "classList": ["fade", "fade__Article"],
-          "text": "Vectortronic Lego Mindstorms robot animation",
           "thumbnail": "icon-vectortronic.jpg",
           "link": "/vectortronic/"
         },
         "article7": {
           "classList": ["fade", "fade__Article"],
-          "text": "Last Thread 3-D video short with Thor Klippert",
           "thumbnail": "icon-lastThread.jpg",
           "link": "https://youtu.be/aB0DCvkjjzk"
         }

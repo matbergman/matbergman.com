@@ -81,12 +81,28 @@ svg {
   display: none;
 }
 
-.card__Text,
-.card__Tech {
+.card__Head {
   color: #000000;
   font-size: 2em;
   padding: 0.5em 1em;
   margin: 0;
+}
+
+.card__Tech {
+  color: #000000;
+  font-size: 1.8em;
+  padding: 0.5em 1em;
+  margin: 0;
+}
+
+.card__Link {
+  font-weight: 400;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.card__Link:hover {
+  text-decoration: underline;
 }
 
 .card {
@@ -98,11 +114,12 @@ svg {
   width: auto;
   max-width: 100%;
   height: auto;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
-  .card:hover .card__Image {
-    outline: 1px solid #fff;
-  }
+.card:hover .card__Image {
+  outline: 1px solid #efeee1;
+}
 
 .card__Image:last-child {
   margin-bottom: 0;
@@ -119,7 +136,7 @@ svg {
   margin: 0;
   padding: 0;
   color: #efeee1;
-  font-size: 3.6em;
+  font-size: 2.6em;
   font-weight: 400;
   margin: 0 0 0.5em 0;
 }
@@ -151,7 +168,7 @@ svg {
   display: block;
   width: 90%;
   border: 3px solid #000000;
-  background-color: #efeee1;
+  background-color: #f1f1f1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -172,11 +189,5 @@ svg {
 
   .subhead {
     margin: 0 32px 0.5em 32px;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .card__Image {
-
   }
 }

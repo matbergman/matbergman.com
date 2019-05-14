@@ -28,16 +28,19 @@ getCardContent = (articles, newElem, type) => {
     articleCard.classList.add("card", `card__${type}`);
 
     const articleImage = document.createElement("img");
-    articleImage.classList.add("card__Image");
+    articleImage.classList.add("card__Image", `${type}__Image`);
     articleImage.src = `${imagePath}/${articles[i][1].thumbnail}`;
     articleImage.alt = articles[i][1].alt;
 
-    const articleDescription = document.createElement("p");
-    articleDescription.classList.add("card__Description");
-    articleDescription.innerText = articles[i][1].text;
-
     articleCard.appendChild(articleImage);
-    articleCard.appendChild(articleDescription);
+
+    if (articles[i][1].text) {
+      const articleDescription = document.createElement("p");
+      articleDescription.classList.add("card__Description");
+      articleDescription.innerText = articles[i][1].text;
+      articleCard.appendChild(articleDescription);
+    }
+
     newElem.appendChild(articleCard);
 
     if (articles[i][1].fullsize) {
@@ -111,29 +114,38 @@ toggleFullscreen = (parentElem, elem, obj) => {
     imageElem.src = `${imagePath}/${obj.fullsize}`;
     imageElem.alt = obj.alt;
 
-    const articleContent = document.createElement("div");
-    articleContent.classList.add(`card__Content__Fullscreen`);
+    const fullscreenContent = document.createElement("div");
+    fullscreenContent.classList.add(`card__Content__Fullscreen`);
 
-    const articleText = document.createElement("p");
-    articleText.classList.add("card__Text");
-    obj.text ? (articleText.innerHTML = obj.text) : null;
+    const fullscreenHead = document.createElement("h3");
+    fullscreenHead.classList.add("card__Head");
+    obj.text ? (fullscreenHead.innerHTML = obj.text + " ") : null;
 
-    const articleTech = document.createElement("p");
-    articleTech.classList.add("card__Tech");
+    if (obj.textLink) {
+      const fullscreenLink = document.createElement("a");
+      fullscreenLink.classList.add("card__Link");
+      fullscreenLink.href = obj.textLink;
+      fullscreenLink.setAttribute("target", "_blank");
+      fullscreenLink.innerText = `(${obj.textLink})`;
+      fullscreenHead.appendChild(fullscreenLink);
+    }
+
+    const fullscreenTech = document.createElement("p");
+    fullscreenTech.classList.add("card__Tech");
     if (obj.tech) {
-      articleTech.innerText = "Technologies: ";
+      fullscreenTech.innerText = "Tech: ";
       for (let i = 0; i < obj.tech.length; i++) {
-        articleTech.innerText += obj.tech[i];
+        fullscreenTech.innerText += obj.tech[i];
         i < obj.tech.length - 1
-          ? (articleTech.innerText += ", ")
-          : (articleTech.innerText += ".");
+          ? (fullscreenTech.innerText += ", ")
+          : (fullscreenTech.innerText += ".");
       }
     }
 
     fullscreenElem.appendChild(imageElem);
-    articleContent.appendChild(articleText);
-    articleContent.appendChild(articleTech);
-    fullscreenElem.appendChild(articleContent);
+    fullscreenContent.appendChild(fullscreenHead);
+    fullscreenContent.appendChild(fullscreenTech);
+    fullscreenElem.appendChild(fullscreenContent);
     fullscreenElem.appendChild(buttonClose);
 
     parentElem.parentNode.appendChild(fullscreenElem);
