@@ -45,7 +45,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: auto;
   z-index: 20;
   hyphens: auto;
   margin: 1em 1em 0 4em;
