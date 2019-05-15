@@ -92,7 +92,7 @@
   }
 
   .fade__Wrapper {
-    height: calc(100% - 110px);
+    height: calc(100% - 65px);
   }
 
   .fade__Description {
@@ -106,9 +106,10 @@
   }
 
   .fade__Intro {
+    flex-direction: row;
     align-items: baseline;
     margin: 0;
-    padding: 1em 0;
+    padding: .25em 0;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
   }
