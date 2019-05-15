@@ -186,7 +186,7 @@
   }
 
   .card__wipe {
-    width: 30%;
+    width: 40%;
     max-width: 350px;
     flex-shrink: 1;
     margin: 0;
@@ -194,5 +194,11 @@
 
   .wipe__Description {
     margin: 0 32px;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  .card__wipe {
+    width: 30%;
   }
 }

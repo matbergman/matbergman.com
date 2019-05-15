@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactDescription.classList.add("contact__Description");
         contactDescription.setAttribute("href", obj[i].twitter);
         contactDescription.setAttribute("target", "_blank");
+        contactDescription.setAttribute("rel", "noreferrer")
         contactDescription.innerText = obj[i].text;
 
         contactIntro.appendChild(contactHeader);
@@ -154,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactName.classList.add("form__Contact__Input");
         contactName.id = obj[i].contentName.contactNameId;
         contactName.setAttribute("name", "name");
-        contactName.setAttribute("tabindex", "1");
+        contactName.setAttribute("tabindex", "0");
 
         const contactEmailLabel = document.createElement("label");
         contactEmailLabel.classList.add("form__Contact__Label");
@@ -165,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactEmail.classList.add("form__Contact__Input");
         contactEmail.id = obj[i].contentEmail.contactEmailId;
         contactEmail.setAttribute("name", "email");
-        contactEmail.setAttribute("tabindex", "2");
+        contactEmail.setAttribute("tabindex", "0");
 
         const contactSubjectLabel = document.createElement("label");
         contactSubjectLabel.classList.add("form__Contact__Label");
@@ -177,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactSubject.classList.add("form__Contact__Input");
         contactSubject.id = obj[i].contentSubject.contactSubjectId;
         contactSubject.setAttribute("name", "subject");
-        contactSubject.setAttribute("tabindex", "3");
+        contactSubject.setAttribute("tabindex", "0");
 
         const contactMessageLabel = document.createElement("label");
         contactMessageLabel.classList.add("form__Contact__Label");
@@ -186,14 +187,15 @@ document.addEventListener("DOMContentLoaded", function() {
           obj[i].contentMessage.contactMessageLabel;
         const contactMessage = document.createElement("textarea");
         contactMessage.classList.add("form__Contact__Textarea");
+        contactMessage.id = obj[i].contentMessage.contactMessageId;
         contactMessage.setAttribute("name", "message");
-        contactMessage.setAttribute("tabindex", "4");
+        contactMessage.setAttribute("tabindex", "0");
 
         const contactSubmit = document.createElement("button");
         contactSubmit.classList.add("form__Contact__Button");
         contactSubmit.innerText = "Submit Message";
         contactSubmit.setAttribute("type", "submit");
-        contactSubmit.setAttribute("tabindex", "5");
+        contactSubmit.setAttribute("tabindex", "0");
 
         contactForm.appendChild(contactNameLabel);
         contactForm.appendChild(contactName);

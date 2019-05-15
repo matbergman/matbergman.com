@@ -7,7 +7,7 @@
       "content": {
         "article1": {
           "classList": ["scale__Article"],
-          "text": "I'm Mat. You may know me from my <a class=\"scale__Link scale__Link__0\">professional</a> work as a software engineer and user experience designer. Or maybe you came across my personal photography or animation <a class=\"scale__Link scale__Link__1\">projects</a>. You can also <a class=\"scale__Link scale__Link__2\">contact</a> me by email and Twitter."
+          "text": "I'm Mat. You may know me from my <a class=\"scale__Link scale__Link__0\">professional</a> work as a software engineer and user experience designer. Or maybe you came across one of my personal photography or animation <a class=\"scale__Link scale__Link__1\">projects</a>. Let's talk! <a class=\"scale__Link scale__Link__2\">Contact</a> me by email and Twitter."
         }
       },
       "stripeCount": 14
@@ -16,7 +16,7 @@
       "id": "elem1",
       "label": "Professional",
       "header": "Professional",
-      "intro": "I'm a skilled front end software engineer and user experience designer, with an eye for detail and mastery of layout, color, and typography fundamentals.",
+      "intro": "I specialize in designing and developing responsive, accessible, and nimble interfaces for web sites and apps. Acronyms I admire include UX, UI, JS, TS, ES6, JSON, CSS3, HTML5, LESS, SASS, and BEM.",
       "content": {
         "article1": {
           "classList": ["wipe__Article"],
@@ -29,11 +29,22 @@
         "article2": {
           "classList": ["wipe__Article"],
           "text": "USA Baseball",
-          "textLink":"https://www.usabaseball.com",
+          "textLink": "https://www.usabaseball.com",
           "thumbnail": "icon-usabaseball.jpg",
           "fullsize": "fullsize-usabaseball.jpg",
           "alt": "MLB responsive web site",
-          "tech": ["ES6 JavaScript", "CSS3", "LESS", "BEM", "HTML5", "Node.js", "JSON", "Handlebars", "atomic design", "styleguides"]
+          "tech": [
+            "ES6 JavaScript",
+            "CSS3",
+            "LESS",
+            "BEM",
+            "HTML5",
+            "Node.js",
+            "JSON",
+            "Handlebars",
+            "atomic design",
+            "styleguides"
+          ]
         },
         "article3": {
           "classList": ["wipe__Article"],
@@ -47,20 +58,33 @@
         "article4": {
           "classList": ["wipe__Article"],
           "text": "iVapeIQ Shopify Theme",
-          "textLink": "https://ivapeiq.com/",          
+          "textLink": "https://ivapeiq.com/",
           "thumbnail": "icon-ivapeiq.jpg",
           "fullsize": "fullsize-ivapeiq.jpg",
           "alt": "iVapeIQ Shopify web site",
-          "tech": ["Shopify Liquid template", "ES6 JavaScript", "CSS3", "HTML5", "Information Architecture"]
+          "tech": [
+            "Shopify Liquid template",
+            "ES6 JavaScript",
+            "CSS3",
+            "HTML5",
+            "Information Architecture"
+          ]
         },
         "article5": {
           "classList": ["wipe__Article"],
           "text": "Aereo Web App Design",
-          "textLink": "https://matbergman.com/assets/aereo-pdf-design.pdf",  
+          "textLink": "https://matbergman.com/assets/aereo-pdf-design.pdf",
           "thumbnail": "icon-aereo.jpg",
           "fullsize": "fullsize-aereo.jpg",
           "alt": "Aereo app design PDF",
-          "tech": ["Information Architecture", "UX Design", "Sketch", "Zeplin", "Adobe Creative Suite", "styleguides"]
+          "tech": [
+            "Information Architecture",
+            "UX Design",
+            "Sketch",
+            "Zeplin",
+            "Adobe Creative Suite",
+            "styleguides"
+          ]
         },
         "article6": {
           "classList": ["wipe__Article"],
@@ -76,7 +100,14 @@
           "thumbnail": "icon-foxSportsGo.jpg",
           "fullsize": "fullsize-foxSportsGo.jpg",
           "alt": "App screenshot",
-          "tech": ["JavaScript", "WinJS", "HTML5", "CSS3", "JSON", "Sketch", "Zeplin"
+          "tech": [
+            "JavaScript",
+            "WinJS",
+            "HTML5",
+            "CSS3",
+            "JSON",
+            "Sketch",
+            "Zeplin"
           ]
         },
         "article8": {
@@ -85,7 +116,14 @@
           "thumbnail": "icon-mlbtv.jpg",
           "fullsize": "fullsize-mlbtv.jpg",
           "alt": "App screenshot",
-          "tech": ["JavaScript", "WinJS", "HTML5", "CSS3", "JSON", "Sketch", "Zeplin"
+          "tech": [
+            "JavaScript",
+            "WinJS",
+            "HTML5",
+            "CSS3",
+            "JSON",
+            "Sketch",
+            "Zeplin"
           ]
         }
       }
@@ -93,7 +131,7 @@
     {
       "id": "elem2",
       "header": "Projects",
-      "intro": "I make these for my enjoyment.",
+      "intro": "My personal museum of curiosities.",
       "label": "Projects",
       "content": {
         "article1": {
@@ -155,13 +193,18 @@
         "contactEmailLabel": "Email address"
       },
       "contentSubject": {
-        "contactSubjectlId": "inputSubject",
+        "contactSubjectId": "inputSubject",
         "contactSubjectLabel": "Subject"
       },
       "contentMessage": {
         "contactMessageId": "textareaMessage",
         "contactMessageLabel": "Message"
       }
+    }
+  ],
+  "copy": [
+    {
+      "consoleMessage": "  __  __       _     ____                                       \n|  \\/  | __ _| |_  | __ )  ___ _ __ __ _ _ __ ___   __ _ _ __  \n| |\\/| |/ _` | __| |  _ \\ / _ \\ '__/ _` | '_ ` _ \\ / _` | '_ \\ \n| |  | | (_| | |_  | |_) |  __/ | | (_| | | | | | | (_| | | | |\n|_|  |_|\\__,_|\\__| |____/ \\___|_|  \\__, |_| |_| |_|\\__,_|_| |_|\n                                   |___/                       \n\nFind my source code at https://github.com/matbergman/matbergman.com.\n\nDesign and implementation by Mat Bergman.\n\nNo frameworks, libraries, packages, or preprocessors are used in this project. It's built with CSS3, JavaScript, and HTML5."
     }
   ]
 }

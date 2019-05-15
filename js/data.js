@@ -24,6 +24,7 @@ xhr.send();
 xhrSuccess = obj => {
   showLayout(obj.site); // generate layout elements
   homeInit(obj.site[0]); // populate the first view (homepage)
+  console.info(obj.copy[0].consoleMessage);
 };
 
 // Display error if data is not loaded
