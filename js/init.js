@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // wipe view - layout elements
         const wipeWrapper = document.createElement("ul");
-        wipeWrapper.classList.add("wipe__Wrapper");
+        wipeWrapper.classList.add("list__Wrapper", "wipe__Wrapper");
 
         const wipeIntro = document.createElement("div");
-        wipeIntro.classList.add("wipe__Intro");
+        wipeIntro.classList.add("card__Intro", "wipe__Intro");
 
         const wipeHeader = document.createElement("h2");
         wipeHeader.classList.add("subhead", "wipe__Subhead", "drawText");
@@ -82,10 +82,10 @@ document.addEventListener("DOMContentLoaded", function() {
         scrollBg1.classList.add("fade__Background", "fade__Background__1");
 
         const fadeWrapper = document.createElement("ul");
-        fadeWrapper.classList.add("fade__Wrapper");
+        fadeWrapper.classList.add("list__Wrapper", "fade__Wrapper");
 
         const fadeIntro = document.createElement("div");
-        fadeIntro.classList.add("fade__Intro");
+        fadeIntro.classList.add("card__Intro", "fade__Intro");
 
         const fadeHeader = document.createElement("h2");
         fadeHeader.classList.add("subhead", "fade__Subhead");
@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const fadeDescription = document.createElement("p");
         fadeDescription.classList.add("fade__Description");
+        fadeDescription.innerHTML = obj[i].intro;
 
         fadeIntro.appendChild(fadeHeader);
         fadeIntro.appendChild(fadeDescription);
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactWrapper.classList.add("contact__Wrapper");
 
         const contactIntro = document.createElement("div");
-        contactIntro.classList.add("contact__Intro");
+        contactIntro.classList.add("card__Intro", "contact__Intro");
 
         const contactHeader = document.createElement("h2");
         contactHeader.classList.add("subhead", "contact__Subhead");

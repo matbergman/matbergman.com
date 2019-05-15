@@ -2,42 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  height: auto;
-}
-
-.fade__Wrapper {
-  position: relative;
-  display: flex;
   justify-content: flex-start;
-  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
   z-index: 20;
-  width: 90%;
-  height: auto;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.fade__Intro {
-  z-index: 20;
-  margin: 0 0 1em 0;
-  padding: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.fade__Subhead {
-  margin: 0 0 0 32px;
-}
-
-.fade__Description {
-  color: #efeee1;
-  font-size: 1.4em;
-  margin: 0 0 0 32px;
-  padding: 0;
+  height: auto;
 }
 
 .fade__Background {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -75,6 +50,27 @@
   }
 }
 
+.fade__Wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.fade__Intro {
+}
+
+.fade__Description {
+  color: #efeee1;
+  font-size: 1.8em;
+  margin: 0;
+  padding: 0;
+}
+
 .card__fade {
   margin: 0 0 4em 0;
   z-index: 20;
@@ -85,12 +81,21 @@
     visibility: hidden;
   }
 
+  .fade__Wrapper {
+    padding: 0;
+    width: 60%;
+  }
+
   .card__fade {
     width: 40%;
   }
 
   .fade__Wrapper {
     height: calc(100% - 110px);
+  }
+
+  .fade__Description {
+    font-size: 1.4em;
   }
 }
 
@@ -100,15 +105,20 @@
   }
 
   .fade__Intro {
-    display: flex;
     align-items: baseline;
-    justify-content: flex-start;
     margin: 0;
     padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
   }
 
+  .fade__Subhead,
   .fade__Description {
-    margin: 0 0 0 2em;
+    margin: 0 0 0 32px;
+  }
+
+  .fade__Background {
+    display: block;
   }
 
   .fade__Wrapper {

@@ -3,11 +3,12 @@
   flex-direction: column;
   position: relative;
   width: 100%;
+  height: auto;
   z-index: 30;
-  background: linear-gradient(45deg, #15368a 0%, #25479e 100%);
 }
 
 .contact__Background {
+  display: none;
   position: absolute;
   transition-timing-function: ease-in-out;
   transition: 0.2s;
@@ -37,18 +38,7 @@
 }
 
 .contact__Intro {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: flex;
-  height: auto;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  width: auto;
-  z-index: 20;
-  hyphens: auto;
-  margin: 1em 1em 0 4em;
+
 }
 
 .contact__Subhead {
@@ -135,6 +125,11 @@
     position: absolute;
     flex-direction: row;
     visibility: hidden;
+    background: linear-gradient(45deg, #15368a 0%, #25479e 100%);    
+  }
+
+  .contact__Background {
+    display: block;
   }
 
   .contact__Wrapper {
@@ -144,6 +139,8 @@
   }
 
   .contact__Intro {
+    justify-content: center;
+    height: 100%;
     width: 33%;
     margin: -4em 1em 0 0;
   }

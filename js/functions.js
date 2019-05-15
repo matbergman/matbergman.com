@@ -288,8 +288,6 @@ animation_2 = element => {
 animation_3 = (obj, element) => {
   setView(element, window.innerHeight);
   const fadeCards = element.querySelectorAll(".card__fade");
-  const contentFadeElem = document.querySelector(".fade__Description");
-  contentFadeElem.innerHTML = obj.intro;
 
   if (!isMobile()) {
     for (let i = 0; i < fadeCards.length; i++) {

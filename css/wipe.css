@@ -12,6 +12,7 @@
 }
 
 .wipe__Background {
+  display: none;
   position: absolute;
   transition-timing-function: ease-in-out;
   transition: 0.2s;
@@ -27,14 +28,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  z-index: 20;
   align-items: center;
   align-content: space-evenly;
   flex-wrap: nowrap;
-  width: 90%;
   height: 100%;
-  margin: 0;
-  padding: 2em 0 4em 0;
   transition-timing-function: ease-in-out;
   transition: 0.2s;
 }
@@ -51,13 +48,6 @@
   position: relative;
   top: 0;
   left: 0;
-  display: flex;
-  height: auto;
-  flex-direction: column;
-  align-items: flex-start;
-  width: auto;
-  z-index: 20;
-  margin: 1em 1em 1em 4em;
 }
 
 .wipe__Subhead {
@@ -174,8 +164,11 @@
     flex-direction: row;
   }
 
+  .wipe__Background {
+    display: block;
+  }
+
   .wipe__Wrapper {
-    width: 60%;
     height: 90%;
     position: absolute;
     flex-direction: row;
@@ -192,7 +185,6 @@
     height: 100%;
     align-items: flex-start;
     justify-content: center;
-    margin: 0;
   }
 
   .card__wipe {

@@ -7,6 +7,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-color: #0f111e;
+  background-image: url(../images/background-mobile.svg);
+  background-position: top left;
+  background-repeat: repeat-y;
 }
 
 ul,
@@ -132,20 +136,38 @@ svg {
   margin-bottom: 0;
 }
 
+.card__Intro {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+  z-index: 20;
+  margin: 0 0 0 65px;
+  padding: 2em 0 0 0;
+  border-top: 1px solid #888888;
+  width: calc(100% - 80px);
+}
+
 .card__Description {
   color: #efeee1;
   margin: 0.25em 0 0 0;
   padding: 0;
 }
 
+.list__Wrapper {
+  width: auto;
+  margin: 2em 1em 0 67px;
+  z-index: 20;
+}
+
 .subhead {
   position: relative;
-  margin: 0;
+  margin: 0 0 0.5em 0;
   padding: 0;
   color: #efeee1;
   font-size: 2.6em;
   font-weight: 400;
-  margin: 0 0 0.5em 0;
 }
 
 .fullscreen {
@@ -179,6 +201,10 @@ svg {
 }
 
 @media only screen and (min-width: 768px) {
+  body {
+    background: transparent;
+  }
+
   .drawText {
     opacity: 0;
     transition: 0.125s;
@@ -198,11 +224,24 @@ svg {
     margin: 0 32px 0.5em 32px;
   }
 
+  .card__Intro {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: auto;
+  }
+
   .card__Head {
     font-size: 2em;
   }
 
   .card__Tech {
     font-size: 1.8em;
+  }
+
+  .list__Wrapper {
+    width: 60%;
+    margin: 0;
+    padding: 2em 0 4em 0;
   }
 }
