@@ -231,14 +231,6 @@ svg {
     width: auto;
   }
 
-  .card__Head {
-    font-size: 2em;
-  }
-
-  .card__Tech {
-    font-size: 1.8em;
-  }
-
   .list__Wrapper {
     width: 60%;
     margin: 0;
