@@ -22,58 +22,58 @@ getHomeContent = (articles, newElem, type) => {
   }
 };
 
-getCardContent = (articles, newElem, type) => {
-  for (let i = 0; i < articles.length; i++) {
-    const articleCard = document.createElement("li");
-    articleCard.classList.add("card", `card__${type}`);
+getCardContent = (cardList, newElem, type) => {
+  for (let i = 0; i < cardList.length; i++) {
+    const card = document.createElement("li");
+    card.classList.add("card", `card__${type}`);
 
-    const articleImage = document.createElement("img");
-    articleImage.classList.add("card__Image", `${type}__Image`);
-    articleImage.src = `${imagePath}/${articles[i][1].thumbnail}`;
-    articleImage.alt = articles[i][1].alt;
+    const cardImage = document.createElement("img");
+    cardImage.classList.add("card__Image", `${type}__Image`);
+    cardImage.src = `${imagePath}/${cardList[i][1].thumbnail}`;
+    cardImage.alt = cardList[i][1].alt;
 
-    articleCard.appendChild(articleImage);
+    card.appendChild(cardImage);
 
-    if (articles[i][1].text) {
-      const articleDescription = document.createElement("p");
-      articleDescription.classList.add("card__Description");
-      articleDescription.innerText = articles[i][1].text;
-      articleCard.appendChild(articleDescription);
+    if (cardList[i][1].text) {
+      const cardDescription = document.createElement("p");
+      cardDescription.classList.add("card__Description");
+      cardDescription.innerText = cardList[i][1].text;
+      card.appendChild(cardDescription);
     }
 
-    newElem.appendChild(articleCard);
+    newElem.appendChild(card);
 
-    if (articles[i][1].fullsize) {
-      articleCard.addEventListener("click", function() {
-        toggleFullscreen(newElem, articleCard, articles[i][1]);
+    if (cardList[i][1].fullsize) {
+      card.addEventListener("click", function() {
+        toggleFullscreen(newElem, card, cardList[i][1]);
       });
     }
-    if (articles[i][1].link) {
-      articleCard.addEventListener("click", function(e) {
+    if (cardList[i][1].link) {
+      card.addEventListener("click", function(e) {
         e.preventDefault;
-        window.open(articles[i][1].link, "_blank");
+        window.open(cardList[i][1].link, "_blank");
       });
     }
   }
 };
 
 getWrapperTranslate = elem => {
-  articlesWrapper = document.querySelector(`.${elem}`);
+  wrapperElem = document.querySelector(`.${elem}`);
   const wrapperWidth = document.querySelector(".wrapper").offsetWidth;
 
   if (!isMobile()) {
-    let articlePos = parseInt(articlesWrapper.style.left);
-    let articleValue = 0 - window.scrollY * 4;
+    let wrapperPos = parseInt(wrapperElem.style.left);
+    let wrapperValue = 0 - window.scrollY * 4;
 
-    let articleEnd = articlePos * -1 + wrapperWidth * 0.4;
-    if (articleValue <= articleEnd) {
-      articleValue = articleEnd;
+    let wrapperEnd = wrapperPos * -1 + wrapperWidth * 0.4;
+    if (wrapperValue <= wrapperEnd) {
+      wrapperValue = wrapperEnd;
     }
 
-    articlesWrapper.style.transform = `translateX(${articleValue}px)`;
+    wrapperElem.style.transform = `translateX(${wrapperValue}px)`;
   } else {
-    articlesWrapper.style.transform = "translateX(0px)";
-    articlesWrapper.style.left = "0px";
+    wrapperElem.style.transform = "translateX(0px)";
+    wrapperElem.style.left = "0px";
   }
 };
 
@@ -193,6 +193,7 @@ setView = element => {
   }
 };
 
+// homepage "scale" animation
 animation_0 = element => {
   if (!isMobile()) {
     if (window.scrollY === 0) {
@@ -212,6 +213,7 @@ animation_0 = element => {
   }
 };
 
+// professional page "wipe" animation
 animation_1 = (obj, element) => {
   if (!isMobile()) {
     element.style.position = `fixed`;
@@ -220,6 +222,9 @@ animation_1 = (obj, element) => {
   } else {
     element.style.position = `relative`;
   }
+
+  const shadowElem = element.querySelector(".shadowElem__4");
+
   const wipeElem0 = element.querySelector(".wipeElem__0");
   let wipeElem0Pos = wipeElem0.offsetLeft + wipeElem0.offsetWidth;
   let wipeElem0Value = wipeElem0Pos * -1 + window.scrollY;
@@ -236,6 +241,7 @@ animation_1 = (obj, element) => {
       const contentWipeText = obj.intro;
       drawText(contentWipeHeader, contentWipeHeaderElem);
       drawText(contentWipeText, contentWipeTextElem);
+      shadowElem.classList.add("shadowElem__4--active");
       contentWipeIncrement++;
     }
   }
@@ -245,6 +251,7 @@ animation_1 = (obj, element) => {
     contentWipeHeaderElem.classList.remove("drawText--Active");
     contentWipeTextElem.classList.remove("drawText--Active");
     contentWipeIncrement = 0;
+    shadowElem.classList.remove("shadowElem__4--active");
   }
 
   // animate - scale homepage view
@@ -272,6 +279,7 @@ animation_1 = (obj, element) => {
   getWrapperTranslate("wipe__Wrapper");
 };
 
+// project page "fade" animation
 animation_2 = element => {
   element.style.position = isMobile() ? "relative" : "absolute";
   setView(element, window.innerHeight);
@@ -301,6 +309,7 @@ animation_3 = (obj, element) => {
   }
 };
 
+// contact us page
 animation_4 = () => {
   const elementScroll = document.querySelector("#elem3");
   if (isMobile()) {

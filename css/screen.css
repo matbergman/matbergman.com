@@ -6,6 +6,7 @@ body {
   font-family: botanika-web, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ul,
@@ -55,6 +56,10 @@ svg {
   cursor: pointer;
   color: #efeee1;
   font-family: botanika-web, sans-serif;
+}
+
+.button__Main:hover {
+  text-decoration: underline;
 }
 
 .button__Close {
@@ -114,10 +119,13 @@ svg {
   max-width: 100%;
   height: auto;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+  outline: 1px solid #666666;
+  transition-timing-function: ease-in-out;
+  transition: 0.2s;
 }
 
 .card:hover .card__Image {
-  outline: 1px solid #efeee1;
+  transform: scale(1.05);
 }
 
 .card__Image:last-child {

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
           wipeElem.setAttribute("role", "presentation");
           wipeBg.appendChild(wipeElem);
         }
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
           const shadowElem = document.createElement("span");
           shadowElem.classList.add("shadowElem", "shadowElem__" + i);
           shadowElem.setAttribute("role", "presentation");
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactDescription.classList.add("contact__Description");
         contactDescription.setAttribute("href", obj[i].twitter);
         contactDescription.setAttribute("target", "_blank");
-        contactDescription.setAttribute("rel", "noreferrer")
+        contactDescription.setAttribute("rel", "noreferrer");
         contactDescription.innerText = obj[i].text;
 
         contactIntro.appendChild(contactHeader);
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const contactSubmit = document.createElement("button");
         contactSubmit.classList.add("form__Contact__Button");
-        contactSubmit.innerText = "Submit Message";
+        contactSubmit.innerText = obj[i].contentButtonLabel;
         contactSubmit.setAttribute("type", "submit");
         contactSubmit.setAttribute("tabindex", "0");
 

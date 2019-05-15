@@ -16,7 +16,7 @@
       "id": "elem1",
       "label": "Professional",
       "header": "Professional",
-      "intro": "I specialize in designing and developing responsive, accessible, and nimble interfaces for web sites and apps. Acronyms I admire include UX, UI, JS, TS, ES6, JSON, CSS3, HTML5, LESS, SASS, and BEM.",
+      "intro": "I specialize in designing and developing responsive, accessible, and nimble interfaces for web sites and apps. I admire acronyms like UX, UI, JS, TS, ES6, JSON, CSS3, HTML5, LESS, SASS, and BEM.",
       "content": {
         "article1": {
           "classList": ["wipe__Article"],
@@ -24,7 +24,7 @@
           "thumbnail": "icon-adobe.jpg",
           "fullsize": "fullsize-adobe-4.png",
           "alt": "Adobe Advertising Cloud dashboard screenshot",
-          "tech": ["JavaScript", "CSS3", "JSON", "HTML5", "Design"]
+          "tech": ["Angular 7", "TypeScript", "CSS3", "JSON", "HTML5", "SASS"]
         },
         "article2": {
           "classList": ["wipe__Article"],
@@ -199,7 +199,8 @@
       "contentMessage": {
         "contactMessageId": "textareaMessage",
         "contactMessageLabel": "Message"
-      }
+      },
+      "contentButtonLabel": "Send Message"
     }
   ],
   "copy": [

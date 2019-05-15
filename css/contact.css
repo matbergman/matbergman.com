@@ -60,6 +60,7 @@
   text-decoration: none;
   font-size: 1.8em;
   margin: 0 0 2em 0;
+  hyphens: none;
 }
 
 .contactElem {
@@ -108,22 +109,25 @@
 }
 
 .form__Contact__Button {
-  background-color: #da7317;
   color: #efeee1;
   font-family: botanika-web, sans-serif;
   font-weight: 600;
-  border: none;
+  background-color: #da7317;
+  border: 2px solid #efeee1;
   border-radius: 6px;
   font-size: 1.2em;
   padding: 0.5em;
-  outline-color: #ffffff;
+
   cursor: pointer;
+  transition-timing-function: ease-in-out;
+  transition: 0.1s;
 }
 
 .form__Contact__Button:hover {
   background-color: #efeee1;
+  border-color: #da7317;
   color: #000000;
-  font-weight: 400;
+  transform: scale(1.1);
 }
 
 @media only screen and (min-width: 768px) {
