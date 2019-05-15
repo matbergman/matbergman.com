@@ -237,3 +237,11 @@ svg {
     padding: 2em 0 4em 0;
   }
 }
+
+
+@media only screen and (max-height: 900px) {
+  .card__Image__Fullscreen,
+  .card__Content__Fullscreen {
+    width: 60%;
+  }
+}
