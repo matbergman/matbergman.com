@@ -61,9 +61,6 @@
   flex-wrap: wrap;
 }
 
-.fade__Intro {
-}
-
 .fade__Description {
   color: #efeee1;
   font-size: 1.8em;
@@ -88,6 +85,10 @@
 
   .card__fade {
     width: 40%;
+  }
+
+  .fade__Background {
+    display: block;
   }
 
   .fade__Wrapper {
@@ -115,10 +116,6 @@
   .fade__Subhead,
   .fade__Description {
     margin: 0 0 0 32px;
-  }
-
-  .fade__Background {
-    display: block;
   }
 
   .fade__Wrapper {
