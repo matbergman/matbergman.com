@@ -493,6 +493,9 @@ scrollNav = (increment, pageBreak) => {
 resizeView = () => {
   const views = document.querySelectorAll(".view");
   const wrapper = document.querySelector(".wrapper");
+  const wipeElem = document.querySelector(".wipe");
+  const fadeElem = document.querySelector(".fade");
+  const contactElem = document.querySelector(".contact");
 
   resizeFlag = true; // to reset the page breaks if the browser is vertically resized
 
@@ -514,8 +517,10 @@ resizeView = () => {
 
   // mobile refinements
   if (isMobile()) {
-    document.querySelector(".wipe").style.position = "relative";
-    document.querySelector(".wipe").style.top = "0px";
-    document.querySelector(".wipe").style.height = "100%";
+    wipeElem.style.position = "relative";
+    wipeElem.style.top = "0px";
+    wipeElem.style.height = "auto";
+    fadeElem.style.height = "auto";
+    contactElem.style.height = "auto";
   }
 };
