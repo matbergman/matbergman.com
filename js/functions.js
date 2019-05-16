@@ -39,7 +39,7 @@ getCardContent = (cardList, newElem, type) => {
 
     const cardImage = document.createElement("img");
     cardImage.classList.add("card__Image", `${type}__Image`);
-    cardImage.src = `${imagePath}/icon-loading.svg`;
+    cardImage.src = `${imagePath}/${cardList[i][1].thumbnail}`;
     cardImage.alt = cardList[i][1].alt;
 
     cardWrapper.appendChild(cardImage);
@@ -53,9 +53,12 @@ getCardContent = (cardList, newElem, type) => {
 
     card.appendChild(cardWrapper);
     newElem.appendChild(card);
-    cardImage.src = `${imagePath}/${cardList[i][1].thumbnail}`;
 
     if (cardList[i][1].fullsize) {
+      // cache fullsize images
+      let fullsizeCache = new Image();
+      fullsizeCache.src = `${imagePath}/${cardList[i][1].fullsize}`;
+
       card.addEventListener("click", function() {
         toggleFullscreen(newElem, card, cardList[i][1]);
       });
@@ -123,7 +126,7 @@ toggleFullscreen = (parentElem, elem, obj) => {
 
     const imageElem = document.createElement("img");
     imageElem.classList.add("card__Image__Fullscreen");
-    imageElem.src = fullsizePlaceholderImage.src = `${imagePath}/fullsize-loading.svg`;
+    imageElem.src = `${imagePath}/${obj.fullsize}`;
     imageElem.alt = obj.alt;
 
     const fullscreenContent = document.createElement("div");
@@ -167,7 +170,6 @@ toggleFullscreen = (parentElem, elem, obj) => {
     });
 
     headerMain.classList.add("header__Main--hide");
-    imageElem.src = `${imagePath}/${obj.fullsize}`;
     toggleFullscreenState = true;
   } else {
     document.getElementsByTagName("body")[0].classList.remove("noscroll");

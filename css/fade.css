@@ -109,7 +109,7 @@
 
   .fade__Intro {
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     margin: 0;
     padding: 0.25em 0;
     background-color: rgba(0, 0, 0, 0.4);
@@ -123,6 +123,7 @@
 
   .fade__Description {
     font-size: 1.4em;
+    margin-right: 400px;
   }
 }
 
