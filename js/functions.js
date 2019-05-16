@@ -486,33 +486,31 @@ scrollNav = (increment, pageBreak) => {
 };
 
 function resizeView() {
+  const views = document.querySelectorAll(".view");
+  const wrapper = document.querySelector(".wrapper");
 
-    const views = document.querySelectorAll(".view");
-    const wrapper = document.querySelector(".wrapper");
+  resizeFlag = true; // to reset the page breaks if the browser is vertically resized
 
-    resizeFlag = true; // to reset the page breaks if the browser is vertically resized
+  // reset some animations
+  document.querySelector("#elem0").style.transform = `scale(1)`;
+  layoutUpdate();
+  getWrapperTranslate("wipe__Wrapper");
 
-    // reset some animations
-    document.querySelector("#elem0").style.transform = `scale(1)`;
-    layoutUpdate();
-    getWrapperTranslate("wipe__Wrapper");
+  // set height of each scroll section
+  wrapper.style.height = window.innerHeight * (views.length - 1) + "px";
 
-    // set height of each scroll section
-    wrapper.style.height = window.innerHeight * (views.length - 1) + "px";
+  for (let i = 1; i < views.length; i++) {
+    views[i].style.height = window.innerHeight + "px";
+  }
 
-    for (let i = 1; i < views.length; i++) {
-      views[i].style.height = window.innerHeight + "px";
-    }
+  for (let i = 0; i < views.length; i++) {
+    views[i].setAttribute("data-position", window.innerHeight * i);
+  }
 
-    for (let i = 0; i < views.length; i++) {
-      views[i].setAttribute("data-position", window.innerHeight * i);
-    }
-
-    // mobile refinements
-    if (isMobile()) {
-      document.querySelector(".wipe").style.position = "relative";
-      document.querySelector(".wipe").style.top = "0px";
-      document.querySelector(".wipe").style.height = "100%";
-    }
-
-};
+  // mobile refinements
+  if (isMobile()) {
+    document.querySelector(".wipe").style.position = "relative";
+    document.querySelector(".wipe").style.top = "0px";
+    document.querySelector(".wipe").style.height = "100%";
+  }
+}

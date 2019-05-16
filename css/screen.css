@@ -114,8 +114,11 @@ svg {
 }
 
 .card {
+  position: relative;
   cursor: pointer;
   padding: 1px;
+  transition-timing-function: ease-in-out;
+  transition: 0.2s;
 }
 
 .card__Image {
@@ -124,12 +127,10 @@ svg {
   height: auto;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
   outline: 1px solid #666666;
-  transition-timing-function: ease-in-out;
-  transition: 0.2s;
 }
 
-.card:hover .card__Image {
-  transform: scale(1.05);
+.card:hover {
+  transform: scale(1.25);
 }
 
 .card__Image:last-child {
@@ -150,9 +151,14 @@ svg {
 }
 
 .card__Description {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0.5em;
+  background: rgba(0,0,0,0.8);
   color: #efeee1;
-  margin: 0.25em 0 0 0;
-  padding: 0;
+  font-size: .9em;
+
 }
 
 .list__Wrapper {
@@ -237,7 +243,6 @@ svg {
     padding: 2em 0 4em 0;
   }
 }
-
 
 @media only screen and (max-height: 900px) {
   .card__Image__Fullscreen,
