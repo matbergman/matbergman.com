@@ -89,6 +89,12 @@ svg {
   display: none;
 }
 
+.card {
+  position: relative;
+  cursor: pointer;
+  padding: 1px;
+}
+
 .card__Head {
   color: #000000;
   font-size: 1.2em;
@@ -113,12 +119,6 @@ svg {
   text-decoration: underline;
 }
 
-.card {
-  position: relative;
-  cursor: pointer;
-  padding: 1px;
-}
-
 .card__Wrapper {
   transition-timing-function: ease-in-out;
   transition: 0.2s;
@@ -133,7 +133,6 @@ svg {
   max-width: 100%;
   height: auto;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-  outline: 1px solid #666666;
 }
 
 .card__Image:last-child {
