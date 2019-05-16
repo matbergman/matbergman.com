@@ -7,7 +7,7 @@
       "content": {
         "article1": {
           "classList": ["scale__Article"],
-          "text": "I'm Mat. You may know me from my <a class=\"scale__Link scale__Link__0\">professional</a> work as a software engineer and user experience designer. Or maybe you came across one of my personal photography or animation <a class=\"scale__Link scale__Link__1\">projects</a>. Let's talk! <a class=\"scale__Link scale__Link__2\">Contact</a> me by email and Twitter."
+          "text": "I'm <a class=\"scale__Link scale__Link__0\">Mat</a>. You may know me from my <a class=\"scale__Link scale__Link__1\">professional</a> work as a software engineer and user experience designer. Or maybe you came across one of my personal photography or animation <a class=\"scale__Link scale__Link__2\">projects</a>. If you'd like to know more, <a class=\"scale__Link scale__Link__3\">contact</a> me by email and Twitter."
         }
       },
       "stripeCount": 14

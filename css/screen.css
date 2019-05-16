@@ -158,10 +158,9 @@ svg {
   bottom: 0;
   margin: 0;
   padding: 0.5em;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   color: #efeee1;
-  font-size: .9em;
-
+  font-size: 0.9em;
 }
 
 .list__Wrapper {

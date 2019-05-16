@@ -131,6 +131,11 @@
     cursor: pointer;
   }
 
+  .scale__Link__0 {
+    color: #efeee1;
+    cursor: initial;
+  }
+
   .stripes {
     width: auto;
     transform: rotate(10.5deg);

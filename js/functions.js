@@ -423,16 +423,17 @@ homeInit = obj => {
     }
 
     // content - animate
-    const contentHomeElem = document.querySelector(".content__Home__Text");
     const contentHomeText = obj.content.article1.text;
-    drawText(contentHomeText, contentHomeElem);
+
+    drawText(contentHomeText, contentHomeTextElem);
 
     // homepage links
     const homepageLinks = document.querySelectorAll(".scale__Link");
     const navButtons = document.querySelectorAll(".button__Main");
+
     for (let i = 0; i < homepageLinks.length; i++) {
       homepageLinks[i].addEventListener("click", function() {
-        scrollNav(i, navButtons[i + 1].dataset.scroll);
+        scrollNav(i, navButtons[i].dataset.scroll);
       });
     }
   }, 100);
@@ -489,7 +490,7 @@ scrollNav = (increment, pageBreak) => {
   });
 };
 
-function resizeView() {
+resizeView = () => {
   const views = document.querySelectorAll(".view");
   const wrapper = document.querySelector(".wrapper");
 
@@ -517,4 +518,4 @@ function resizeView() {
     document.querySelector(".wipe").style.top = "0px";
     document.querySelector(".wipe").style.height = "100%";
   }
-}
+};
