@@ -117,8 +117,15 @@ svg {
   position: relative;
   cursor: pointer;
   padding: 1px;
+}
+
+.card__Wrapper {
   transition-timing-function: ease-in-out;
   transition: 0.2s;
+}
+
+.card__Wrapper:hover {
+  transform: scale(1.2);
 }
 
 .card__Image {
@@ -127,10 +134,6 @@ svg {
   height: auto;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
   outline: 1px solid #666666;
-}
-
-.card:hover {
-  transform: scale(1.25);
 }
 
 .card__Image:last-child {

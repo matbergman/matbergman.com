@@ -27,20 +27,24 @@ getCardContent = (cardList, newElem, type) => {
     const card = document.createElement("li");
     card.classList.add("card", `card__${type}`);
 
+    const cardWrapper = document.createElement("div");
+    cardWrapper.classList.add("card__Wrapper");
+
     const cardImage = document.createElement("img");
     cardImage.classList.add("card__Image", `${type}__Image`);
     cardImage.src = `${imagePath}/${cardList[i][1].thumbnail}`;
     cardImage.alt = cardList[i][1].alt;
 
-    card.appendChild(cardImage);
+    cardWrapper.appendChild(cardImage);
 
     if (cardList[i][1].text) {
       const cardDescription = document.createElement("p");
       cardDescription.classList.add("card__Description");
       cardDescription.innerText = cardList[i][1].text;
-      card.appendChild(cardDescription);
+      cardWrapper.appendChild(cardDescription);
     }
 
+    card.appendChild(cardWrapper);
     newElem.appendChild(card);
 
     if (cardList[i][1].fullsize) {
