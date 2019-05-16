@@ -221,7 +221,7 @@ animation_0 = element => {
       element.style.opacity = scaleValue;
     }
   } else {
-    element.style.opacity = 1;
+    element.style.opacity = 0;
   }
 };
 
@@ -530,5 +530,10 @@ resizeView = () => {
     wipeElem.style.height = "auto";
     fadeElem.style.height = "auto";
     contactElem.style.height = "auto";
+  } else {
+    wipeElem.style.position = "absolute";
+    setView(wipeElem, window.innerHeight);
+    setView(fadeElem, window.innerHeight);
+    setView(contactElem, window.innerHeight);
   }
 };

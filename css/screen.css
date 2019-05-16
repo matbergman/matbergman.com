@@ -246,7 +246,7 @@ svg {
   }
 }
 
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 700px) {
   .card__Image__Fullscreen,
   .card__Content__Fullscreen {
     width: 60%;
