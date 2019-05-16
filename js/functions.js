@@ -485,8 +485,8 @@ scrollNav = (increment, pageBreak) => {
   });
 };
 
-resizeView = () => {
-  if (document.querySelector("#elem0")) {
+function resizeView() {
+
     const views = document.querySelectorAll(".view");
     const wrapper = document.querySelector(".wrapper");
 
@@ -514,5 +514,5 @@ resizeView = () => {
       document.querySelector(".wipe").style.top = "0px";
       document.querySelector(".wipe").style.height = "100%";
     }
-  }
+
 };

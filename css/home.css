@@ -24,8 +24,8 @@
 }
 
 .scale__Link {
-  color: #00b6ff;
-  cursor: pointer;
+  color: #efeee1;
+  cursor: none;
 }
 
 .stripes {
@@ -89,7 +89,7 @@
 
 .content__Home {
   font-family: botanika-web, sans-serif;
-  color: #ffffff;
+  color: #efeee1;
   position: relative;
   margin-right: 1em;
   margin-left: 4em;
@@ -123,7 +123,12 @@
       circle at bottom left,
       #0f111e 0%,
       #0a0918 80%
-    );    
+    );
+  }
+
+  .scale__Link {
+    color: #00b6ff;
+    cursor: pointer;
   }
 
   .stripes {

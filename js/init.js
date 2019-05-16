@@ -3,7 +3,9 @@ window.onbeforeunload = function() {
 };
 
 window.onresize = function() {
-  resizeView();
+  if (document.querySelector(".view")) {
+    resizeView();
+  }
 };
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -58,7 +58,7 @@
 
   height: auto;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .fade__Description {
@@ -81,6 +81,7 @@
   .fade__Wrapper {
     padding: 0;
     width: 60%;
+    flex-wrap: wrap;
   }
 
   .card__fade {
