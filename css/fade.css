@@ -28,14 +28,14 @@
 }
 
 .fade__Background__0 {
-  animation-duration: 12s;
+  animation-duration: 36s;
   z-index: 10;
   background-color: #0f111e;
   background-size: 130px 113px;
 }
 
 .fade__Background__1 {
-  animation-duration: 6s;
+  animation-duration: 24s;
   z-index: 20;
   background-size: 260px 226px;
   background-color: transparent;
@@ -75,7 +75,6 @@
 
 @media only screen and (min-width: 768px) {
   .fade {
-    visibility: hidden;
     position: absolute;
   }
 

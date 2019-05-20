@@ -124,7 +124,6 @@
   .contact {
     position: absolute;
     flex-direction: row;
-    visibility: hidden;
     background: linear-gradient(45deg, #15368a 0%, #25479e 100%);    
   }
 
