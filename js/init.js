@@ -221,9 +221,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // set height of each scroll section
     if (!isMobile()) {
       wrapper.style.height = windowHeight * numberOfPages + "px";
-      for (let i = 0; i < numberOfPages; i++) {
-        pageBreaks[i] = wrapperHeight * i;
-      }
+    }
+    for (let i = 0; i < numberOfPages; i++) {
+      pageBreaks[i] = wrapperHeight * i;
     }
 
     // elem0 - scalable element size

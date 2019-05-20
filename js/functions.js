@@ -1,11 +1,4 @@
 const imagePath = "images";
-
-const fullsizePlaceholderImage = new Image();
-fullsizePlaceholderImage.src = `${imagePath}/fullsize-loading.svg`;
-
-const iconPlaceholderImage = new Image();
-iconPlaceholderImage.src = `${imagePath}/icon-loading.svg`;
-
 let contentWipeIncrement = 0;
 let toggleFullscreenState = false;
 let resizeFlag = false;
@@ -223,7 +216,7 @@ animation_0 = element => {
       element.style.opacity = scaleValue;
     }
   } else {
-    element.style.opacity = 0;
+    element.style.opacity = isMobile() ? 1 : 0;
   }
 };
 
@@ -501,6 +494,7 @@ scrollNav = (increment, pageBreak) => {
 };
 
 resizeView = () => {
+  const scaleElem = document.querySelector("#elem0");
   const views = document.querySelectorAll(".view");
   const wrapper = document.querySelector(".wrapper");
   const wipeElem = document.querySelector(".wipe");
@@ -510,18 +504,14 @@ resizeView = () => {
   resizeFlag = true; // to reset the page breaks if the browser is vertically resized
 
   // reset some animations
-  document.querySelector("#elem0").style.transform = `scale(1)`;
+  scaleElem.style.transform = `scale(1)`;
   layoutUpdate();
   getWrapperTranslate("wipe__Wrapper");
 
-  // set height of each scroll section
+  // set height of wrapper and view elements for each section for correct scroll behavior
   wrapper.style.height = window.innerHeight * (views.length - 1) + "px";
-
-  for (let i = 1; i < views.length; i++) {
-    views[i].style.height = window.innerHeight + "px";
-  }
-
   for (let i = 0; i < views.length; i++) {
+    // views[i].style.height = window.innerHeight + "px";
     views[i].setAttribute("data-position", window.innerHeight * i);
   }
 
@@ -529,11 +519,13 @@ resizeView = () => {
   if (isMobile()) {
     wipeElem.style.position = "relative";
     wipeElem.style.top = "0px";
+    scaleElem.style.height = "auto";
     wipeElem.style.height = "auto";
     fadeElem.style.height = "auto";
     contactElem.style.height = "auto";
   } else {
     wipeElem.style.position = "absolute";
+    setView(scaleElem, window.innerHeight);
     setView(wipeElem, window.innerHeight);
     setView(fadeElem, window.innerHeight);
     setView(contactElem, window.innerHeight);

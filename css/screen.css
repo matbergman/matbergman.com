@@ -62,7 +62,8 @@ svg {
   font-family: botanika-web, sans-serif;
 }
 
-.button__Main:hover {
+.button__Main:hover,
+.button__Main:focus {
   text-decoration: underline;
 }
 
@@ -104,9 +105,9 @@ svg {
 
 .card__Tech {
   color: #000000;
-  font-size: 1em;
-  padding: 0.5em 1em;
-  margin: 0;
+  font-size: 1.2em;
+  margin: 0 1em .5em 1em;
+  padding: 0;
 }
 
 .card__Link {
