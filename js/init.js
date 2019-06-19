@@ -253,15 +253,21 @@ document.addEventListener("DOMContentLoaded", function() {
       if (window.scrollY >= pageBreaks[0]) {
         animation_0(elem0, wrapperHeight, numberOfPages);
         animation_1(obj[1], elem1);
+        elem0.style.visibility = "visible";
+        elem2.style.visibility = "hidden";
+        elem3.style.visibility = "hidden";        
       }
 
       if (window.scrollY >= pageBreaks[1]) {
         animation_2(elem1, wrapperHeight);
         animation_3(obj[2], elem2, wrapperHeight);
+        elem0.style.visibility = "hidden";
+        elem2.style.visibility = "visible";        
       }
 
       if (window.scrollY >= pageBreaks[2]) {
         animation_4(wrapperHeight);
+        elem3.style.visibility = "visible";
       }
 
       if (window.scrollY >= pageBreaks[3]) {
