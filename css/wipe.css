@@ -51,7 +51,6 @@
 }
 
 .wipe__Subhead {
-  color: #0f111e;
   margin-bottom: 1em;
 }
 
@@ -59,10 +58,10 @@
   margin: 0;
   padding: 0;
   font-size: 1.6em;
-  color: #0f111e;
   line-height: 1.4;
   letter-spacing: 0.05em;
   hyphens: auto;
+  color: #efeee1;
 }
 
 .card__wipe {
@@ -185,6 +184,16 @@
     height: 100%;
     align-items: flex-start;
     justify-content: center;
+    color: #0f111e;
+  }
+
+  .wipe__Subhead {
+    color: #0f111e;
+  }
+
+  .wipe__Description {
+    margin: 0 32px;
+    color: #0f111e;
   }
 
   .card__wipe {
@@ -192,10 +201,6 @@
     max-width: 350px;
     flex-shrink: 1;
     margin: 0;
-  }
-
-  .wipe__Description {
-    margin: 0 32px;
   }
 }
 
