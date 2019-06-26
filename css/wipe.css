@@ -20,7 +20,7 @@
   height: 100%;
   z-index: 10;
   overflow: hidden;
-  background-color: #1d3885;
+  background-color: #e0dede;
 }
 
 .wipe__Wrapper {
@@ -51,6 +51,7 @@
 }
 
 .wipe__Subhead {
+  color: #0f111e;
   margin-bottom: 1em;
 }
 
@@ -58,7 +59,7 @@
   margin: 0;
   padding: 0;
   font-size: 1.6em;
-  color: #efeee1;
+  color: #0f111e;
   line-height: 1.4;
   letter-spacing: 0.05em;
   hyphens: auto;
@@ -67,6 +68,8 @@
 .card__wipe {
   z-index: 20;
   margin: 0 0 4em 0;
+  padding: 0;
+  border: 1px solid #999999;
 }
 
 .card__wipe:first-child {
@@ -88,8 +91,7 @@
   right: 66%;
   width: 100vw;
   height: 100vh;
-  background-color: #e42900;
-  border-right: 1em solid #0f111e;
+  background-color: #f2f2f2;
   transform: rotate(11deg) scaleY(100);
   z-index: 30;
 }
@@ -99,8 +101,7 @@
   right: 0;
   width: 52%;
   height: 47%;
-  background-color: #e42900;
-  border: 0px solid #0f111e;
+  background-color: #e1e0e0;
   border-top-width: 1em;
   border-left-width: 1em;
   z-index: 20;
@@ -111,8 +112,7 @@
   right: -48%;
   width: 100vw;
   height: 100vh;
-  background-color: #e96d00;
-  border-top: 1em solid #0f111e;
+  background-color: #dfdfdf;
   transform: rotate(-38deg) scaleX(100);
   z-index: 10;
 }
@@ -125,7 +125,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #000000;
-  opacity: 0.1;
+  opacity: 0.03;
   z-index: 40;
 }
 

@@ -80,9 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const scrollBg0 = document.createElement("div");
         scrollBg0.classList.add("fade__Background", "fade__Background__0");
 
-        const scrollBg1 = document.createElement("div");
-        scrollBg1.classList.add("fade__Background", "fade__Background__1");
-
         const fadeWrapper = document.createElement("ul");
         fadeWrapper.classList.add("list__Wrapper", "fade__Wrapper");
 
@@ -101,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
         fadeIntro.appendChild(fadeDescription);
 
         newSection.appendChild(scrollBg0);
-        newSection.appendChild(scrollBg1);
         newSection.appendChild(fadeIntro);
         newSection.appendChild(fadeWrapper);
         getCardContent(Object.entries(obj[i].content), fadeWrapper, "fade");

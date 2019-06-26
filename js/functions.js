@@ -230,8 +230,6 @@ animation_1 = (obj, element) => {
     element.style.position = `relative`;
   }
 
-  const shadowElem = element.querySelector(".shadowElem__4");
-
   const wipeElem0 = element.querySelector(".wipeElem__0");
   let wipeElem0Pos = wipeElem0.offsetLeft + wipeElem0.offsetWidth;
   let wipeElem0Value = wipeElem0Pos * -1 + window.scrollY;
@@ -248,7 +246,6 @@ animation_1 = (obj, element) => {
       const contentWipeText = obj.intro;
       drawText(contentWipeHeader, contentWipeHeaderElem);
       drawText(contentWipeText, contentWipeTextElem);
-      shadowElem.classList.add("shadowElem__4--active");
       contentWipeIncrement++;
     }
   }
@@ -258,7 +255,6 @@ animation_1 = (obj, element) => {
     contentWipeHeaderElem.classList.remove("drawText--Active");
     contentWipeTextElem.classList.remove("drawText--Active");
     contentWipeIncrement = 0;
-    shadowElem.classList.remove("shadowElem__4--active");
   }
 
   // animate - scale homepage view
